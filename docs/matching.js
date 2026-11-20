@@ -31,7 +31,7 @@ export function normalise(text) {
   t = t.normalize("NFKD").replace(/\p{Mn}/gu, "");
   t = t.toLowerCase().replaceAll("ß", "ss");
   t = t.replace(/\s\([^)]*\)/g, " ");          // "Gold (mineral)" -> "Gold"
-  t = t.replace(/[‐-―_\/-]/g, " ");  // dashes, underscores, slashes
+  t = t.replace(/[‐-―−_\/-]/g, " ");  // dashes, the minus sign, underscores, slashes
   t = t.replace(/[^a-z0-9 ]/g, "");            // apostrophes, commas, dots...
   t = t.replace(/\s+/g, " ").trim();
   if (t.startsWith("the ")) t = t.slice(4);
