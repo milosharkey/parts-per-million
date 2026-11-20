@@ -6,9 +6,10 @@
   "colour": "#8A4F2A",
   "subject": "chemistry",
   "audience": "university",
-  "file": "data/prompts/aromatics-714b326008.json",
+  "family": "",
+  "file": "data/prompts/aromatics-43179d3ba9.json",
   "answers": 2195,
-  "generated": "2026-11-20T05:52:13+00:00"
+  "generated": "2026-11-20T11:20:44+00:00"
  },
  {
   "id": "elements",
@@ -17,9 +18,10 @@
   "colour": "#2F4B7C",
   "subject": "chemistry",
   "audience": "everyone",
-  "file": "data/prompts/elements-f2a41e9dd6.json",
+  "family": "",
+  "file": "data/prompts/elements-850a7b0015.json",
   "answers": 118,
-  "generated": "2026-11-20T06:03:25+00:00"
+  "generated": "2026-11-20T11:20:44+00:00"
  },
  {
   "id": "enzymes",
@@ -28,9 +30,10 @@
   "colour": "#A8437A",
   "subject": "biochemistry",
   "audience": "school",
-  "file": "data/prompts/enzymes-2f9ae941fd.json",
-  "answers": 5395,
-  "generated": "2026-11-20T06:03:27+00:00"
+  "family": "",
+  "file": "data/prompts/enzymes-df06789d05.json",
+  "answers": 5394,
+  "generated": "2026-11-20T11:20:47+00:00"
  },
  {
   "id": "lab_equipment",
@@ -39,9 +42,10 @@
   "colour": "#23756F",
   "subject": "lab",
   "audience": "school",
-  "file": "data/prompts/lab_equipment-bd313cba6e.json",
+  "family": "",
+  "file": "data/prompts/lab_equipment-97c880b074.json",
   "answers": 391,
-  "generated": "2026-11-20T06:38:16+00:00"
+  "generated": "2026-11-20T11:20:48+00:00"
  },
  {
   "id": "minerals",
@@ -50,9 +54,10 @@
   "colour": "#5E7F3E",
   "subject": "earth science",
   "audience": "everyone",
-  "file": "data/prompts/minerals-0537597ab2.json",
+  "family": "minerals",
+  "file": "data/prompts/minerals-91f5c6d5a9.json",
   "answers": 1769,
-  "generated": "2026-11-20T06:39:46+00:00"
+  "generated": "2026-11-20T11:20:48+00:00"
  },
  {
   "id": "named_reactions",
@@ -61,9 +66,10 @@
   "colour": "#A23B4A",
   "subject": "chemistry",
   "audience": "specialist",
-  "file": "data/prompts/named_reactions-2c809ad257.json",
+  "family": "",
+  "file": "data/prompts/named_reactions-87333c6825.json",
   "answers": 525,
-  "generated": "2026-11-20T06:39:46+00:00"
+  "generated": "2026-11-20T11:20:48+00:00"
  },
  {
   "id": "pigments",
@@ -72,8 +78,9 @@
   "colour": "#C2451C",
   "subject": "chemistry",
   "audience": "everyone",
-  "file": "data/prompts/pigments-639a0be91b.json",
-  "answers": 591,
-  "generated": "2026-11-20T06:44:13+00:00"
+  "family": "",
+  "file": "data/prompts/pigments-fb078d543a.json",
+  "answers": 545,
+  "generated": "2026-11-20T11:21:02+00:00"
  }
 ]

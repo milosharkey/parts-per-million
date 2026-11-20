@@ -1,6 +1,6 @@
 """normalise() and alias rules. These cases are also the specification the
 JavaScript port in the game must pass, so add a case whenever a rule changes."""
-from aliases import build_alias_index, descriptor_base, normalise, spelling_variants, suffix_base
+from aliases import build_alias_index, descriptor_base, normalise, spelled_forms, spelling_variants, suffix_base
 
 
 def test_normalise_basics():
@@ -28,6 +28,33 @@ def test_spelling_variants_both_ways():
 
 def test_haem_only_changes_word_starts():
     assert spelling_variants("chemistry") == {"chemistry"}
+
+
+def test_british_endings_and_words():
+    assert "recrystallisation" in spelling_variants("recrystallization")
+    assert "nazarov cyclization" in spelling_variants("nazarov cyclisation")
+    assert "spectrum analyser" in spelling_variants("spectrum analyzer")
+    assert "homogeniser" in spelling_variants("homogenizer")
+    assert "carbon fibre" in spelling_variants("carbon fiber")
+    assert "grey iron" in spelling_variants("gray iron")
+    assert spelling_variants("hydrolysis") == {"hydrolysis"}   # "lysi" isn't "lyse"
+
+
+def test_joined_brackets_also_accept_spaces():
+    # Typed with brackets, normalise() closes the gap; typed with spaces, it
+    # doesn't. Both are generated for the answer.
+    assert spelled_forms("Benzo(a)pyrene") == {"benzoapyrene", "benzo a pyrene"}
+    assert "iron iii chloride" in spelled_forms("Iron(III) chloride")
+    assert "benzo a pyrene" in spelled_forms("benzo[a]pyrene")
+    # A disambiguating bracket after a space is still just dropped.
+    assert spelled_forms("Mercury (element)") == {"mercury"}
+    assert spelled_forms("Monazite-(Ce)") == {"monazite ce"}
+
+
+def test_alias_index_accepts_spaced_brackets():
+    answers = [{"id": "B", "names": ["Benzo(a)pyrene"], "familiarity": 1.0}]
+    index, _ = build_alias_index(answers, min_length=3)
+    assert index["benzo a pyrene"] == index["benzoapyrene"] == "B"
 
 
 def test_alias_index_prefers_own_name_then_familiarity():

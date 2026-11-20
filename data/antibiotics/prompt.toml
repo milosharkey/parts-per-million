@@ -11,7 +11,16 @@ colour = "#BF360C"
 
 # All medicines, so page views are all patient-driven to a similar degree: no discount needed.
 category = "Category:Antibiotics"
-category_depth = 1
-skip_categories = ["resistance", "people", "companies", "lists", "stubs"]
+# The drug classes (penicillins, macrolides, quinolones) sit two or three
+# levels down, under categories like "Cell envelope antibiotics": at depth 1
+# amoxicillin and most of the must-accept list were missing.
+category_depth = 3
+# Phytoalexins are plants' own defences (resveratrol, allicin), and selection
+# compounds are lab tools for picking out cells.
+skip_categories = ["resistance", "people", "companies", "lists", "stubs", "phytoalexins", "selection", "veterinary"]
+# Only substances: answers need a chemical formula (P274), SMILES (P233), CAS
+# number (P231) or PubChem id (P662) on Wikidata. That drops the processes,
+# diseases, people and products the categories also hold (DECISIONS.md, 44).
+require_properties = ["P274", "P233", "P231", "P662"]
 min_views = 0
 kind = "antibiotic"

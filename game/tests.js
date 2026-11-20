@@ -80,6 +80,19 @@ check("no more than 2 specialist prompts", hand.filter((id) => "fgh".includes(id
 const nextHand = deal(bank, 3, hand, seeded(11));
 check("play again avoids last game's prompts", nextHand.every((id) => !hand.includes(id)), true);
 check("a small bank still fills the game", deal(bank.slice(0, 4), 7, [], seeded(3)).length, 4);
+const families = [
+  { id: "minerals", subject: "geology", audience: "everyone", family: "minerals" },
+  { id: "gemstones", subject: "geology", audience: "everyone", family: "minerals" },
+  { id: "chemists", subject: "chemistry", audience: "everyone", family: "chemists" },
+  { id: "nobel", subject: "chemistry", audience: "everyone", family: "chemists" },
+  ...["k", "l", "m", "n", "o", "p"].map((id) => ({ id, subject: `s${id}`, audience: "everyone" })),
+];
+const neverTogether = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].every((seed) => {
+  const h = deal(families, 7, [], seeded(seed));
+  return !(h.includes("minerals") && h.includes("gemstones")) && !(h.includes("chemists") && h.includes("nobel"));
+});
+check("one prompt per family in a game", neverTogether, true);
+check("a family fills a game only when nothing else is left", deal(families.slice(0, 4), 4, [], seeded(5)).length, 4);
 check("the day changes at 05:00 UTC", gameDate(new Date("2026-12-02T04:59:00Z"), 5), "2026-12-01");
 check("…and not before", gameDate(new Date("2026-12-02T05:00:00Z"), 5), "2026-12-02");
 

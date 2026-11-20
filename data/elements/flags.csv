@@ -6,3 +6,6 @@
 name,flag
 # Lightest element with no stable isotopes, and the first one made artificially.
 technetium,single_crystal
+# Fool's gold: the last element on the table, the one quiz fans reach for to
+# sound obscure. Sits in the window on the 20 November build (96.3% above).
+oganesson,fools_gold

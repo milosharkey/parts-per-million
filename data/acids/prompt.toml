@@ -9,9 +9,21 @@ subject = "chemistry"
 audience = "everyone"
 colour = "#9C3D54"
 
-# A big tree: check the probe's size and where things came from before building.
-category = "Category:Acids"
+# Every acid counts (an objective definition, so all candidates are in),
+# carboxylic acids included: they sit a level deeper than Category:Acids
+# reaches, which is why formic and lactic acid were missing at first.
+category = ["Category:Acids", "Category:Carboxylic acids"]
 category_depth = 1
-skip_categories = ["theory", "theories", "dissociation", "lists", "people", "salts", "esters", "derivatives"]
+# Acidophiles are microbes, acid attacks are crimes, and acid catalysts and
+# amphoteric compounds are mostly oxides and Lewis acids.
+skip_categories = ["theory", "theories", "dissociation", "lists", "people", "salts", "esters", "derivatives", "acidophiles", "acid attacks", "catalysts", "amphoteric"]
+# Only substances: answers need a chemical formula (P274), SMILES (P233), CAS
+# number (P231) or PubChem id (P662) on Wikidata. That drops the processes,
+# diseases, people and products the categories also hold (DECISIONS.md, 44).
+require_properties = ["P274", "P233", "P231", "P662"]
 min_views = 0
 kind = "acid"
+
+# Medicines are read about by patients, not players (as in aromatics).
+[view_discounts]
+"Template:Infobox drug" = 0.25

@@ -162,7 +162,8 @@ def publish(site: Path = config.SITE_DIR, quiet: bool = False) -> dict:
             bank.append({
                 "id": pid, "text": meta["text"], "label": meta.get("label", pid),
                 "colour": meta.get("colour", ""), "subject": meta.get("subject", ""),
-                "audience": meta.get("audience", ""), "file": files[pid],
+                "audience": meta.get("audience", ""), "family": spec.get("family", ""),
+                "file": files[pid],
                 "answers": len(result["answers"]), "generated": result["generated"],
             })
     (site / "data").mkdir(exist_ok=True)

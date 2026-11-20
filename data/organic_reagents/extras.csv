@@ -4,3 +4,17 @@ Grignard reagent,reagent
 Tollens' reagent,reagent
 Fehling's solution,reagent
 Fenton's reagent,reagent
+# Must-accept answers (reducing and oxidising agents the category misses),
+# and classic oxidants. Jones reagent is in its reaction's article.
+Lithium aluminium hydride,reagent
+Sodium borohydride,reagent
+Dess–Martin periodinane,reagent
+Pyridinium chlorochromate,reagent
+Osmium tetroxide,reagent
+Diisobutylaluminium hydride,reagent
+Jones oxidation,reagent
+Potassium permanganate,reagent
+Potassium dichromate,reagent
+Hydrogen peroxide,reagent
+Ozone,reagent
+AD-mix,reagent

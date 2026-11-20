@@ -12,6 +12,8 @@ colour = "#7A3E2B"
 # Check the probe for brand names of products (not plastics) coming in from subcategories.
 category = "Category:Plastics"
 category_depth = 1
-skip_categories = ["industry", "recycling", "pollution", "companies", "manufacturers", "people", "lists", "brands", "products"]
+# Plastics and the environment, their applications, welding and additives
+# are about what's done with plastics, not plastics themselves.
+skip_categories = ["industry", "recycling", "pollution", "companies", "manufacturers", "people", "lists", "brands", "products", "environment", "applications", "welding", "additives"]
 min_views = 0
 kind = "plastic"

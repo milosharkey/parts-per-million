@@ -3,3 +3,25 @@ title,kind
 Water,solvent
 Ethanol,solvent
 Acetone,solvent
+# Must-accept answers, to be sure, plus mixtures (no formula, so the
+# property filter would drop them).
+Methanol,solvent
+Hexane,solvent
+Toluene,solvent
+Benzene,solvent
+Chloroform,solvent
+Dichloromethane,solvent
+Diethyl ether,solvent
+Ethyl acetate,solvent
+Dimethylformamide,solvent
+Tetrahydrofuran,solvent
+Isopropyl alcohol,solvent
+Carbon tetrachloride,solvent
+Pyridine,solvent
+Xylene,solvent
+Turpentine,solvent
+White spirit,solvent
+Paint thinner,solvent
+Petroleum ether,solvent
+Dimethyl sulfoxide,solvent
+Acetonitrile,solvent

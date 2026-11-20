@@ -9,4 +9,6 @@ name,flag
 # Gem: Pasteur's flask from the experiment that ended spontaneous generation.
 # Fool's gold: sounds obscure, but every organic chemist has used one.
 Swan neck flask,single_crystal
-
+# Fool's gold: sounds like a specialist's answer, but it's on every school
+# distillation diagram (97.0% above on the 20 November build).
+Liebig condenser,fools_gold

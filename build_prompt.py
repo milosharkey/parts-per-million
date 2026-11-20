@@ -25,7 +25,7 @@ from pathlib import Path
 
 import config
 from structure import has_benzene_ring
-from aliases import build_alias_index, descriptor_base, normalise, spelling_variants, suffix_base
+from aliases import build_alias_index, descriptor_base, normalise, spelled_forms, suffix_base
 from prompts import PROMPTS, ids_with_status
 from scoring import (
     TIER_ORDER, calibrate_beta, familiarity, predicted_shares, tiers_with_floors, zscores,
@@ -120,6 +120,16 @@ WHERE {{
 GROUP BY ?item ?label
 """
 
+# Which of these items have at least one of some properties (prompt.toml,
+# require_properties). {path} is filled in first, e.g. "wdt:P274|wdt:P662".
+HAS_PROPERTIES_QUERY = """
+SELECT DISTINCT ?item
+WHERE {{
+  VALUES ?item {{ {values} }}
+  ?item {path} ?value .
+}}
+"""
+
 BATCH_SIZE = 200   # titles or items per query; batches that are too slow split themselves
 
 
@@ -191,6 +201,63 @@ def display_name(title: str) -> str:
     after a space are dropped, so "Monazite-(Ce)" keeps its suffix.
     """
     return re.sub(r"\s+\([^)]*\)$", "", title).strip()
+
+
+GREEK_CAPITALS = "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ"
+
+
+def fix_first_letter(name: str, label: str) -> str:
+    """Undo Wikipedia's capital first letter where the real name has none.
+
+    Every Wikipedia title starts with a capital, so the pH meter is titled
+    "PH meter", mTOR "MTOR", p-xylene "P-Xylene" and α-amylase "Α-Amylase"
+    (a Greek capital alpha, which reads as an A). Wikidata's labels keep the
+    real case. The first letter is lowered when:
+      - it's a Greek capital followed by something that isn't a letter
+        ("Α-Amylase", "Δ13C"): Greek prefixes in chemistry are lower case;
+      - or the label starts with the same letter in lower case and isn't an
+        ordinary word: its next character is a capital or not a letter
+        ("pH meter", "mTOR", "p-xylene", "n-butyllithium"). Ordinary words
+        ("microscope") keep the title's capital, and so do labels that are
+        capitalised themselves ("N-bromosuccinimide").
+    """
+    if not name or not name[0].isupper():
+        return name
+    if name[0] in GREEK_CAPITALS and (len(name) == 1 or not name[1].isalpha()):
+        return name[0].lower() + name[1:]
+    if (label and len(label) > 1 and label[0] == name[0].lower()
+            and (label[1].isupper() or not label[1].isalpha())
+            and normalise(label) == normalise(name)):
+        return label[0] + name[1:]
+    return name
+
+
+def keep_with_properties(spec: dict, source, answers: dict[str, dict]) -> dict[str, dict]:
+    """Only the answers whose Wikidata item has one of spec["require_properties"].
+
+    Categories mix things with ideas: "Category:Fatty acids" holds stearic
+    acid but also beta oxidation, and "Category:Sugars" a sweet called Pop
+    Rocks. For a prompt about substances, requiring a chemical formula (P274),
+    SMILES (P233), CAS number (P231) or PubChem id (P662) keeps the
+    substances and drops the processes, diseases, people and products in one
+    go. Extras always stay, so a mixture like turpentine can be added back by
+    hand. The lookup is cached like any other.
+    """
+    props = spec.get("require_properties")
+    if not props:
+        return answers
+    bad = [p for p in props if not re.fullmatch(r"P\d+", p)]
+    if bad:
+        raise ValueError(f"require_properties: {', '.join(bad)} aren't Wikidata property ids (like P274)")
+    template = HAS_PROPERTIES_QUERY.replace("{path}", "|".join(f"wdt:{p}" for p in props))
+    rows = lookup_batches(source, f"{spec['id']}_has_properties", [f"wd:{q}" for q in answers], template)
+    has = {r["item"].rsplit("/", 1)[-1] for r in rows}
+    kept = {q: a for q, a in answers.items() if q in has or a["extra"]}
+    dropped = sorted((a for q, a in answers.items() if q not in kept), key=lambda a: -a["sitelinks"])
+    if dropped:
+        print(f"  {len(dropped)} have none of {', '.join(props)} on Wikidata, so they're left out "
+              f"(e.g. {', '.join(a['title'] for a in dropped[:4])})")
+    return kept
 
 
 def clean_aliases(spec: dict, label: str, aliases: str) -> tuple[list[str], int]:
@@ -302,6 +369,7 @@ def collect_answers(spec: dict, source, data_dir: Path) -> dict[str, dict]:
             "kind": r.get("kind", spec.get("kind", "species")),
             "extra": r.get("extra", False),
             "raw_aliases": aliases,
+            "label": r.get("label"),
             "via": "extras.csv" if r.get("extra") else via.get(r["title"], ""),
         }
     if dropped:
@@ -323,17 +391,19 @@ def name_lookup(answers: dict[str, dict]) -> dict[str, dict]:
         lookup.setdefault(normalise(a["name"]), a)
     for a in answers.values():
         for other in [a["title"], *a["raw_aliases"]]:
-            for form in spelling_variants(normalise(other)):
+            for form in spelled_forms(other):
                 lookup.setdefault(form, a)
     return lookup
 
 
 def read_flags(path: Path, lookup: dict[str, dict]) -> None:
-    """Apply flags.csv: gem, Fool's gold, and minimum or fixed tiers.
+    """Apply flags.csv: gem, Fool's gold, minimum or fixed tiers, view weights.
 
     Sets a["flag"] (single_crystal or fools_gold), a["min_tier"], and for
     set:<tier> both a["min_tier"] and a["set_tier"]. Stage 6 explains the
-    difference between the two kinds of hand-set tier.
+    difference between the two kinds of hand-set tier. views:<factor>
+    (between 0 and 1) scales the answer's page views for the familiarity
+    score, as view_discounts does for a template (stage 2c).
     """
     for r in read_csv(path):
         a = lookup.get(normalise(r["name"]))
@@ -346,9 +416,15 @@ def read_flags(path: Path, lookup: dict[str, dict]) -> None:
             a["min_tier"] = flag[4:]
         elif flag.startswith("set:") and flag[4:] in TIER_ORDER:
             a["min_tier"] = a["set_tier"] = flag[4:]
+        elif re.fullmatch(r"views:(0(\.\d+)?|1(\.0+)?|\.\d+)", flag) and float(flag[6:]) > 0:
+            # One answer's page views count for less, like view_discounts
+            # does for a whole template: Margaret Thatcher's article is read
+            # for her politics, not her chemistry.
+            a["view_weight"] = min(a.get("view_weight", 1.0), float(flag[6:]))
         else:
             print(f"  ! flags.csv: unknown flag '{flag}' for '{r['name']}' (use single_crystal, "
-                  f"fools_gold, min:<tier> or set:<tier>, e.g. min:reagent_grade)")
+                  f"fools_gold, min:<tier>, set:<tier> or views:<factor>, e.g. min:reagent_grade "
+                  f"or views:0.1)")
 
 
 PARTICLES = {"van", "von", "de", "der", "den", "du", "da", "di", "le", "la", "'t", "ter", "ten", "dos", "del"}
@@ -411,6 +487,10 @@ def build(prompt_id: str, source, out_dir: Path) -> dict:
               f"python build_prompt.py probe {prompt_id}")
         return {}
 
+    # 1b. Prompts about substances can require a chemical formula or
+    #     similar on Wikidata (require_properties): see keep_with_properties.
+    answers = keep_with_properties(spec, source, answers)
+
     # 2. Pre-filter for big prompts: answers covered by fewer than
     #    min_sitelinks language Wikipedias are dropped before their page views
     #    are fetched, which is the slow part (half a second or so each).
@@ -458,6 +538,7 @@ def build(prompt_id: str, source, out_dir: Path) -> dict:
         dropped_aliases = 0
         for a in unnamed:
             row = names.get(a["id"], {})
+            a["label"] = row.get("label", "")
             a["raw_aliases"], n = clean_aliases(spec, row.get("label", ""), row.get("aliases", ""))
             dropped_aliases += n
         if dropped_aliases:
@@ -559,6 +640,10 @@ def build(prompt_id: str, source, out_dir: Path) -> dict:
     if renamed:
         print(f"  {renamed} answers share a name with a more familiar one: "
               f"they're shown by their Wikipedia titles instead")
+    #     And names shown with the case Wikipedia's titles lose: "pH meter",
+    #     not "PH meter" (fix_first_letter).
+    for a in ordered:
+        a["name"] = fix_first_letter(a["name"], a.get("label") or "")
 
     # 8. Alias index: every accepted spelling -> answer id. The own name goes
     #    first because build_alias_index treats the first name specially.
@@ -584,9 +669,9 @@ def build(prompt_id: str, source, out_dir: Path) -> dict:
     #    to the player to confirm.
     contested = {form for form, _, _ in collisions}
     for a in ordered:
-        own = spelling_variants(normalise(a["name"]))
+        own = spelled_forms(a["name"])
         for s in a["short_forms"]:
-            own |= {f for f in spelling_variants(normalise(s))
+            own |= {f for f in spelled_forms(s)
                     if index.get(f) == a["id"] and f not in contested}
         a["spellings"] = sorted(own)
 

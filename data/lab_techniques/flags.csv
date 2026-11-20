@@ -1,3 +1,8 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
+# Gem: the blots are a running pun (99.7% above on the 20 November build,
+# just past the window: check after the rebuild). Fool's gold: everyone did
+# it at school.
+Southwestern blot,single_crystal
+Flame test,fools_gold

@@ -6,6 +6,9 @@ label = "Minerals"            # short name on the label's colour band
 status = "ready"            # ready = in the bank and the playtest; draft = not reviewed yet
 subject = "earth science"
 audience = "everyone"       # everyone, school, university or specialist
+# Family: prompts too alike to play together. One per game, and not on two
+# days running (deal.js, schedule.py). Minerals and gemstones share most answers.
+family = "minerals"
 colour = "#5E7F3E"
 
 query = "minerals.rq"

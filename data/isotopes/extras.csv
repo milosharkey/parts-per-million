@@ -1,2 +1,7 @@
 # Answers the source misses. title = exact English Wikipedia article title.
 title,kind
+# The oxygen isotopes, whose articles the categories miss. If a title has
+# become a redirect, the build reports it and the alias below still works.
+Oxygen-16,isotope
+Oxygen-17,isotope
+Oxygen-18,isotope

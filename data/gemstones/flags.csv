@@ -1,3 +1,7 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
+# Gem: California's glowing blue state gem. Fool's gold: the crystal-healing
+# favourite. In their windows on the 20 November build (99.3% and 96.4%).
+Benitoite,single_crystal
+Moldavite,fools_gold

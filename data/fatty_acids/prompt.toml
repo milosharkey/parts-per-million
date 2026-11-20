@@ -13,5 +13,9 @@ colour = "#1565C0"
 category = "Category:Fatty acids"
 category_depth = 1
 skip_categories = ["lists", "people", "metabolism"]
+# Only substances: answers need a chemical formula (P274), SMILES (P233), CAS
+# number (P231) or PubChem id (P662) on Wikidata. That drops the processes,
+# diseases, people and products the categories also hold (DECISIONS.md, 44).
+require_properties = ["P274", "P233", "P231", "P662"]
 min_views = 0
 kind = "fatty acid"

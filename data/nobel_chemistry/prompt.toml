@@ -7,6 +7,9 @@ label = "Nobel chemists"
 status = "draft"
 subject = "history of science"
 audience = "university"
+# Family: prompts too alike to play together. One per game, and not on two
+# days running (deal.js, schedule.py). Chemists and Nobel laureates overlap.
+family = "chemists"
 colour = "#4F5D2F"
 
 # About 190 laureates. Surnames count on their own unless two winners share one.

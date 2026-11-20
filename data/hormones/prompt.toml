@@ -11,8 +11,16 @@ colour = "#2D6A4F"
 
 # Medicines that are also hormones bring patient page views (insulin, testosterone);
 # a view_discounts table like the compounds prompt's may be needed after playtests.
-category = "Category:Hormones"
+# Category:Hormones itself is mostly about hormones (endocrinology, receptors,
+# symptoms), so the hormones come from the subcategories by type too, plants
+# included. extras.csv makes sure of the big ones (DECISIONS.md, 44).
+category = ["Category:Hormones", "Category:Peptide hormones", "Category:Steroid hormones", "Category:Plant hormones"]
 category_depth = 1
-skip_categories = ["receptors", "disorders", "antagonists", "agonists", "lists", "people", "medications", "drugs"]
+# "oxytocin" and "corticotropin" skip two categories about one hormone's
+# drugs and receptors (the hormones themselves are extras).
+skip_categories = ["receptors", "disorders", "antagonists", "agonists", "lists", "people", "medications", "drugs", "hormonal agents", "oxytocin", "corticotropin"]
+# Only substances: a chemical formula, SMILES, CAS number, PubChem id or, for
+# protein hormones, a UniProt id (P352) on Wikidata (DECISIONS.md, 44).
+require_properties = ["P274", "P233", "P231", "P662", "P352"]
 min_views = 0
 kind = "hormone"

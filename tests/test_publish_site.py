@@ -113,3 +113,35 @@ def test_rested_prompts_come_first():
     last_used = {pid: day - timedelta(days=1) for pid in bank[:-2]}   # all but two used yesterday
     picked = schedule.plan_day(bank, last_used, day, 2, random.Random(0))
     assert set(picked) == set(bank[-2:])
+
+
+def test_a_family_is_played_once_a_day_and_not_two_days_running(monkeypatch):
+    import random
+    import schedule
+    prompts = {
+        "minerals": {"subject": "geology", "family": "minerals"},
+        "gemstones": {"subject": "geology", "family": "minerals"},
+        "elements": {"subject": "chemistry"},
+        "enzymes": {"subject": "biology"},
+        "pigments": {"subject": "art"},
+    }
+    monkeypatch.setattr(schedule, "PROMPTS", prompts)
+    bank = list(prompts)
+    day = date(2026, 12, 10)
+    for seed in range(10):
+        picked = schedule.plan_day(bank, {}, day, 4, random.Random(seed))
+        assert not {"minerals", "gemstones"} <= set(picked)          # never both in one day
+    # Minerals yesterday: neither family member today, while others are left.
+    picked = schedule.plan_day(bank, {}, day, 3, random.Random(0), {"minerals": day - timedelta(days=1)})
+    assert not {"minerals", "gemstones"} & set(picked)
+    # A bank with nothing else still fills the day.
+    assert len(schedule.plan_day(["minerals", "gemstones"], {}, day, 2, random.Random(0))) == 2
+
+
+def test_bank_carries_each_prompts_family(site, monkeypatch):
+    docs, _ = site
+    monkeypatch.setitem(publish_site.PROMPTS["minerals"], "family", "minerals")
+    publish(docs, quiet=True)
+    bank = {e["id"]: e for e in json.loads((docs / "data" / "bank.json").read_text())}
+    assert bank["minerals"]["family"] == "minerals"
+    assert bank["elements"]["family"] == ""

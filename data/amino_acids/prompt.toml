@@ -13,6 +13,15 @@ colour = "#3C6E9F"
 # non-proteinogenic ones (ornithine, GABA) that make the long tail.
 category = "Category:Amino acids"
 category_depth = 1
-skip_categories = ["metabolism", "enzymes", "transporters", "receptors", "disorders", "lists", "people"]
+skip_categories = ["metabolism", "enzymes", "transporters", "receptors", "disorders", "lists", "people", "motifs", "synthesis"]
+# Only substances: answers need a chemical formula (P274), SMILES (P233), CAS
+# number (P231) or PubChem id (P662) on Wikidata. That drops the processes,
+# diseases, people and products the categories also hold (DECISIONS.md, 44).
+require_properties = ["P274", "P233", "P231", "P662"]
 min_views = 0
 kind = "amino acid"
+
+# Gabapentin and pregabalin are amino acids, so they count, but their views
+# come from patients: medicines count a quarter, as in aromatics.
+[view_discounts]
+"Template:Infobox drug" = 0.25

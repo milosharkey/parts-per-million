@@ -20,3 +20,7 @@ kind = "{kind}"
 # Optional: count some infoboxes' page views for less (DECISIONS.md, 38).
 # [view_discounts]
 # "Template:Infobox drug" = 0.25
+
+# Optional:
+# family = "minerals"                     # prompts too alike to play together share one: one per game
+# require_properties = ["P274", "P233", "P231", "P662"]   # substances only: formula, SMILES, CAS or PubChem id

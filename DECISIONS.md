@@ -621,6 +621,24 @@ This is the "TOML would also work" from the old `prompts.py` notes. It needs Pyt
 5. `surnames = true` lets a surname count on its own for people prompts ("Curie"), unless two answers share it.
 6. 21 drafts are ready to pick, each with its source, notes and must-accept list: amino acids, alloys, plastics, solvents, acids, isotopes, Nobel chemists, chemists, cell parts, hormones, sugars, functional groups, organic reagents, pH indicators, lab techniques, rocks, gemstones, antibiotics, catalysts, fatty acids and vitamins. Their sources couldn't be tried overnight (no access to Wikipedia from where they were written), so the probe is the first step for each.
 
+### 44. The first full build of the drafts, and what it changed
+
+**Problem.** The first real build of all 21 drafts (20 November) showed the categories going wrong both ways. Some were too shallow: antibiotics found 4 of its 20 must-accept answers, hormones 6 and solvents 5, because amoxicillin, testosterone and methanol sit two or three subcategories down. Others pulled in junk from side branches: acid-attack cases in acids, gemologists in gemstones, autophagy proteins in cell parts (insulin came top), and concept pages everywhere (scurvy in vitamins, lactose intolerance in sugars). Medicines rode on their page views (gabapentin top of amino acids), and Wikipedia's capitalised titles showed "PH meter" and "Α-Amylase".
+
+**Decision.**
+1. `require_properties` (prompt.toml) keeps only answers whose Wikidata item has one of the listed properties. Prompts about substances require a chemical formula, SMILES, CAS number or PubChem id (hormones also a UniProt id), which drops processes, diseases, people and products in one line. Extras stay, so mixtures like turpentine can be added by hand.
+2. Shown names take their first letter from Wikidata's label where the case matters: "pH meter", "mTOR", "p-Xylene", "α-Amylase" (`fix_first_letter`).
+3. British spellings: "-isation", "-iser", "-lyse", "fibre" and "grey" join sulph/sulf and colour/color. Names with brackets joined on ("Benzo(a)pyrene", "Iron(III) chloride") also accept spaces where the brackets were ("benzo a pyrene", "iron iii chloride"). Both are generated on the answer side, so the game's matching is unchanged.
+4. `views:<factor>` in flags.csv counts one answer's views for less, for answers read about for something else (Thatcher in chemists, ethylene in hormones, fluorine in organic reagents).
+5. Families (`family` in prompt.toml) keep prompts that are too alike apart: never two in one game or one day, and a family never on two days running. Minerals and gemstones are one family, chemists and Nobel laureates another. Milo's call: both pairs are worth having, but not back to back.
+6. Catalysts no longer counts enzymes. They have their own prompt, and any line drawn between the two would leave someone unhappy (Milo's call).
+7. Vitamins and cell parts are retired (`retired/`): the bank was leaning too far into biology and biochemistry, against physical, inorganic and analytical chemistry.
+8. When a prompt has an objective limit, every candidate inside it counts: all the isotopes, all the laureates, every acid (carboxylic acids included). The effort goes into keeping out what isn't an answer, not into choosing which real answers are famous enough.
+9. The chemists query reads every occupation statement, not only the "truthy" one. When one of a person's occupations is marked preferred, the truthy form sees only that one, which is the likely reason Marie and Pierre Curie were missing (they're extras too, to be sure).
+10. Each draft got its clean-up (skips, exclusions, extras, aliases) and a gem and Fool's gold with blurbs, chosen from the 20 November build. Their windows will move once the junk is out, so the next build's checks decide.
+
+In the bank, pigments lost about 40 staining methods (Gram stain, H&E: procedures, not colourants), elements gained a Fool's gold (oganesson) and lab equipment another (the Liebig condenser, named after a man who didn't invent it).
+
 ## Known limitations
 
 - The weights, `TARGET_TOP_SHARE`, the tier cut-offs and `CURRICULUM_BOOST_SD` are tuned by eye on one prompt, and remain guesses until real recall data exists.
@@ -629,5 +647,5 @@ This is the "TOML would also work" from the old `prompts.py` notes. It needs Pyt
 - Answers without an English Wikipedia article are left out (see decision 7).
 - The demo has no daily rotation, no stored history and no real "what everyone else said" numbers: tiers come from the model's predictions. Those need the server side, which comes later.
 - Lab equipment, compounds, enzymes and pigments have had one review pass (decision 38). Their curriculum lists and the medicines discount are still first drafts.
-- The 21 draft prompts haven't been built: their categories and the chemists query are untried, and none has a curriculum list yet.
+- The 19 drafts have been built once and cleaned up from that build (decision 44), but not built again since. Some fixes rely on category names that haven't been tried (hormones' "Peptide hormones", "Steroid hormones", "Plant hormones"), and none has a curriculum list yet.
 - The UI mock-ups (the rising column, reveals, specimen cards, certificate of analysis) are designs, not yet in the game.

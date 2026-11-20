@@ -1,3 +1,6 @@
 # Answers the source misses. title = exact English Wikipedia article title.
 title,kind
-Omega-3 fatty acid,fatty acid
+Omega−3 fatty acid,fatty acid
+# Omega-3 and omega-6 are families, not single acids, but players will say
+# them. The titles use a minus sign (−), not a hyphen.
+Omega−6 fatty acid,fatty acid

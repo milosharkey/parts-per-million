@@ -7,12 +7,18 @@ label = "Gemstones"
 status = "draft"
 subject = "earth science"
 audience = "everyone"
+# Family: prompts too alike to play together. One per game, and not on two
+# days running (deal.js, schedule.py). Minerals and gemstones share most answers.
+family = "minerals"
 colour = "#00838F"
 
 # Diamond itself is an extra because its subcategory is skipped (it's full of named stones).
 category = "Category:Gemstones"
 category_depth = 1
 # Individual famous stones (the Hope Diamond) aren't a kind of gemstone.
-skip_categories = ["Individual", "Diamonds", "mines", "companies", "people", "lists", "jewellery", "jewelry"]
+# Gemologists are people, gemology and hardstone carving are mostly terms,
+# objects and institutions, and the Diamond and Jade categories are mostly
+# famous pieces and museums. Diamond, jade, jadeite and nephrite are extras.
+skip_categories = ["Individual", "Diamond", "mines", "companies", "people", "lists", "jewellery", "jewelry", "gemologists", "gemology", "hardstone carving", "in culture", "jade"]
 min_views = 0
 kind = "gemstone"

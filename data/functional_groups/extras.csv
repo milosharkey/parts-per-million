@@ -1,2 +1,8 @@
 # Answers the source misses. title = exact English Wikipedia article title.
 title,kind
+# Must-accept answers the category misses.
+Alkene,functional group
+Alkyne,functional group
+Phenyl group,functional group
+Hydroxy group,functional group
+Carbonyl group,functional group

@@ -11,7 +11,12 @@ colour = "#1F6F8B"
 
 # Water is everyone's first answer, but its article isn't filed as a solvent, so it's an extra.
 category = "Category:Solvents"
-category_depth = 0
+# Depth 0 missed methanol, hexane and the like, which sit in subcategories.
+category_depth = 1
 skip_categories = ["lists", "people"]
+# Only substances: answers need a chemical formula (P274), SMILES (P233), CAS
+# number (P231) or PubChem id (P662) on Wikidata. That drops the processes,
+# diseases, people and products the categories also hold (DECISIONS.md, 44).
+require_properties = ["P274", "P233", "P231", "P662"]
 min_views = 0
 kind = "solvent"

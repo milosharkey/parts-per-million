@@ -14,6 +14,10 @@ category = "Category:Isotopes"
 category_depth = 1
 skip_categories = ["lists", "people", "tables"]
 # "Isotopes of carbon" and the like are overviews, not an isotope.
-drop_title_patterns = ['^Isotopes of ', '^Table of ']
+# Every isotope counts (a closed set, so all are in), and nothing else: the
+# last pattern drops any title that isn't an element-number name like
+# "Uranium-235" or "Technetium-99m" (or deuterium, tritium, protium), which
+# clears out the topic pages (radiocarbon dating, island of stability).
+drop_title_patterns = ['^Isotopes of ', '^Table of ', '^(?!(?:[A-Z][a-z]*-\d+(?:m\d?)?|Deuterium|Tritium|Protium)$)']
 min_views = 0
 kind = "isotope"

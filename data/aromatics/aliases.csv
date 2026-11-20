@@ -9,3 +9,7 @@ Adrenaline,epinephrine
 Paracetamol,acetaminophen
 Polyethylene terephthalate,PET
 Polyethylene terephthalate,polyester
+# The gem: players type it with spaces ("benzo a pyrene" is accepted by the
+# bracket rule in aliases.py) or without the letter.
+Benzo(a)pyrene,benzopyrene
+Benzo(a)pyrene,BaP

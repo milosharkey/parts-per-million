@@ -2,16 +2,21 @@
 # A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
 # review it, then set status = "ready". Field reference: README.md, "Prompt settings".
 
-text = "Name a catalyst"
+text = "Name a catalyst that isn't an enzyme"
 label = "Catalysts"
 status = "draft"
 subject = "chemistry"
 audience = "university"
 colour = "#4E342E"
 
-# Named catalysts are the fun answers (Grubbs, Wilkinson's, Ziegler-Natta).
+# Named catalysts are the fun answers (Grubbs, Wilkinson's, Ziegler-Natta),
+# alongside the school ones: iron in the Haber process, manganese dioxide
+# with hydrogen peroxide.
 category = "Category:Catalysts"
 category_depth = 1
-skip_categories = ["lists", "people", "companies"]
+# Not enzymes (decided 2026-11-20): they have their own prompt, and any line
+# between "catalyst" and "enzyme" would leave someone unhappy. "enzyme" skips
+# Category:Enzymes and anything else named after them (DECISIONS.md, 44).
+skip_categories = ["lists", "people", "companies", "enzyme"]
 min_views = 0
 kind = "catalyst"

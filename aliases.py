@@ -44,6 +44,14 @@ SPELLING_PAIRS = [
     (r"\bhaem", "hem"),
     (r"\boestr", "estr"),
     (r"colour", "color"),
+    # Endings and words British players type differently (added 2026-11-20,
+    # DECISIONS.md, 44): "recrystallisation", "spectrum analyser",
+    # "homogeniser", "carbon fibre", "grey cast iron".
+    (r"isation", "ization"),
+    (r"iser", "izer"),
+    (r"lyse", "lyze"),
+    (r"fibre", "fiber"),
+    (r"\bgrey", "gray"),
 ]
 
 
@@ -136,6 +144,31 @@ def spelling_variants(normalised: str) -> set[str]:
     return variants
 
 
+# Brackets joined straight on to a word, as in "Benzo(a)pyrene" or
+# "Iron(III) chloride". normalise() drops the brackets and closes the gap
+# ("benzoapyrene"), which is what a player gets by typing the brackets; most
+# type spaces instead ("benzo a pyrene", "iron iii chloride").
+JOINED_BRACKETS = re.compile(r"(?<=\S)[(\[]([^)\]]*)[)\]]")
+
+
+def spelled_forms(raw: str) -> set[str]:
+    """Every normalised way a player might type one name.
+
+    normalise(raw) and its British/American twins, plus, for names with
+    brackets joined on to a word, the same with spaces where the brackets
+    were. Generated on the answer side only, like spelling_variants, so the
+    game's matching (game/matching.js) doesn't change.
+    """
+    forms = {normalise(raw)}
+    if JOINED_BRACKETS.search(raw):
+        forms.add(normalise(JOINED_BRACKETS.sub(r" \1 ", raw)))
+    variants: set[str] = set()
+    for f in forms:
+        if f:
+            variants |= spelling_variants(f)
+    return variants
+
+
 def alias_forms(raw_names: list[str], min_length: int) -> set[str]:
     """Every normalised form a list of raw names produces.
 
@@ -150,7 +183,7 @@ def alias_forms(raw_names: list[str], min_length: int) -> set[str]:
             continue
         if i > 0 and len(n) < min_length:
             continue   # also skips short forms shorter than min_length
-        forms |= spelling_variants(n)
+        forms |= spelled_forms(raw)
     return forms
 
 
@@ -171,7 +204,7 @@ def build_alias_index(answers: list[dict], min_length: int) -> tuple[dict[str, s
     # form -> list of (priority, familiarity, id) for every answer claiming it
     claims: dict[str, list[tuple[int, float, str]]] = {}
     for a in answers:
-        own = spelling_variants(normalise(a["names"][0]))
+        own = spelled_forms(a["names"][0])
         for form in alias_forms(a["names"], min_length):
             priority = 1 if form in own else 0
             claims.setdefault(form, []).append((priority, a["familiarity"], a["id"]))

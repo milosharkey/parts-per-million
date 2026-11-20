@@ -1,3 +1,23 @@
 # Answers the source misses. title = exact English Wikipedia article title.
 title,kind
 Penicillin,antibiotic
+# Must-accept answers, to be sure.
+Amoxicillin,antibiotic
+Ampicillin,antibiotic
+Erythromycin,antibiotic
+Tetracycline,antibiotic
+Doxycycline,antibiotic
+Vancomycin,antibiotic
+Ciprofloxacin,antibiotic
+Azithromycin,antibiotic
+Cefalexin,antibiotic
+Methicillin,antibiotic
+Chloramphenicol,antibiotic
+Gentamicin,antibiotic
+Clindamycin,antibiotic
+Metronidazole,antibiotic
+Nitrofurantoin,antibiotic
+Flucloxacillin,antibiotic
+Streptomycin,antibiotic
+Rifampicin,antibiotic
+Trimethoprim,antibiotic

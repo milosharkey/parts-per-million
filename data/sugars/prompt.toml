@@ -12,6 +12,12 @@ colour = "#A0522D"
 # Monosaccharides and disaccharides with their subcategories (hexoses, pentoses...).
 category = ["Category:Monosaccharides", "Category:Disaccharides"]
 category_depth = 1
-skip_categories = ["lists", "people", "derivatives"]
+# Category:Lactose is about the sugar's world (intolerance, lactase, infant
+# formula): lactose itself is in Category:Disaccharides.
+skip_categories = ["lists", "people", "derivatives", "lactose"]
+# Only substances: answers need a chemical formula (P274), SMILES (P233), CAS
+# number (P231) or PubChem id (P662) on Wikidata. That drops the processes,
+# diseases, people and products the categories also hold (DECISIONS.md, 44).
+require_properties = ["P274", "P233", "P231", "P662"]
 min_views = 0
 kind = "sugar"

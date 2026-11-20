@@ -1,3 +1,10 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
+# Fool's gold: the pub-quiz chemist. Her article is read for her politics, so
+# its views count a fiftieth here; check her window after the rebuild.
+# Gem: the man behind the single crystals in every computer chip (98.0% above
+# on the 20 November build).
+Margaret Thatcher,views:0.02
+Margaret Thatcher,fools_gold
+Jan Czochralski,single_crystal

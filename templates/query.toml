@@ -16,5 +16,7 @@ min_views = 0
 kind = "{kind}"
 
 # Optional:
+# family = "minerals"                     # prompts too alike to play together share one: one per game
+# require_properties = ["P274", "P233", "P231", "P662"]   # substances only: formula, SMILES, CAS or PubChem id
 # min_sitelinks = 10        # drop answers in fewer languages before fetching page views
 # surnames = true           # for people: "Curie" counts for Marie Curie

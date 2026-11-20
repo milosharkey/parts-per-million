@@ -21,6 +21,8 @@ min_views = 0
 kind = "{kind}"
 
 # Optional:
+# family = "minerals"                     # prompts too alike to play together share one: one per game
+# require_properties = ["P274", "P233", "P231", "P662"]   # substances only: formula, SMILES, CAS or PubChem id
 # drop_title_patterns = ['^Isotopes of ']   # regular expressions for titles that aren't answers
 # surnames = true                           # for people: "Curie" counts for Marie Curie
 # min_sitelinks = 5                         # drop articles in fewer languages (big sets)

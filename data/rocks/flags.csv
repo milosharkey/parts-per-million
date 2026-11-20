@@ -1,3 +1,7 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
+# Gem: home of diamonds (98.1% above). Fool's gold: "petrified lightning",
+# famous online (97.2% above).
+Kimberlite,single_crystal
+Fulgurite,fools_gold

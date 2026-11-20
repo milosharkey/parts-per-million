@@ -3,3 +3,7 @@ title,kind
 Steel,alloy
 Bronze,alloy
 Brass,alloy
+# Missing from the categories (must-accept answers and a famous steel).
+Duralumin,alloy
+Gunmetal,alloy
+Damascus steel,alloy

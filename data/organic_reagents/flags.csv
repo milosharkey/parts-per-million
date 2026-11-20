@@ -1,3 +1,11 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
+# Fluorine and quicklime are read about as an element and a building
+# material: their views count far less here. Gem: a Nobel-prize reaction sold
+# as a ready mix (98.5% above). Fool's gold: famous from "Things I Won't Work
+# With" (52.6% above, so the model already calls it fairly common).
+Fluorine,views:0.05
+Calcium oxide,views:0.1
+AD-mix,single_crystal
+Chlorine trifluoride,fools_gold

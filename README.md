@@ -6,7 +6,7 @@ Two parts so far:
 - **Step 2, the demo** (`game/` and `serve.py`): a playable page that loads those answer sets. See [Playing the demo](#playing-the-demo).
 - **Step 3, the playtest and the bank**: a site you can host on GitHub Pages that deals random prompts from a bank of reviewed ones and sends games and feedback to a Google Sheet ([Hosting the playtest](#hosting-the-playtest)), a daily schedule for later ([Planning days](#planning-days)), and a way to design new prompts ([Designing a prompt](#designing-a-prompt)).
 
-The pipeline builds an answer set for each prompt. Seven are reviewed and in the bank: minerals, chemical elements, named reactions, lab equipment, compounds with a benzene ring, enzymes, and pigments and dyes. Another 21 are drafts waiting to be built and reviewed. Each answer set has:
+The pipeline builds an answer set for each prompt. Seven are reviewed and in the bank: minerals, chemical elements, named reactions, lab equipment, compounds with a benzene ring, enzymes, and pigments and dyes. Another 19 are drafts, built once and cleaned up, waiting for a review (two more, vitamins and cell parts, are retired in `retired/`). Each answer set has:
 
 - every valid answer
 - how likely players are to say it
@@ -248,7 +248,7 @@ For the daily game rather than the playtest. The day changes at the same moment 
 
 ## Designing a prompt
 
-Every prompt is a folder in `data/`, and its settings are in `prompt.toml` there. 21 drafts are ready to pick (amino acids, alloys, plastics, solvents, acids, isotopes, Nobel chemists, chemists, cell parts, hormones, sugars, functional groups, organic reagents, pH indicators, lab techniques, rocks, gemstones, antibiotics, catalysts, fatty acids, vitamins), each with its source and the answers it must accept.
+Every prompt is a folder in `data/`, and its settings are in `prompt.toml` there. 19 drafts are ready to pick (amino acids, alloys, plastics, solvents, acids, isotopes, Nobel chemists, chemists, hormones, sugars, functional groups, organic reagents, pH indicators, lab techniques, rocks, gemstones, antibiotics, catalysts not counting enzymes, fatty acids), each with its source, the answers it must accept, and a gem and Fool's gold to check after its next build. Retired prompts live in `retired/`, where nothing reads them.
 
 **Taking a draft into the bank:**
 1. **Probe draft prompts** (or `python build_prompt.py probe <id>`): a quick look at every draft, without page views. It shows each one's size, its best-known candidates, where they came from (which subcategory), titles that look out of place (companies, dates, colons), and which must-accept answers are missing. It writes `results/<id>_probe.csv`.
@@ -273,6 +273,8 @@ The fields of `prompt.toml`. The folder name is the prompt's id, which also name
 | `category` | …a Wikipedia category, or a list of them, with `category_depth` (levels of subcategories to read) and `skip_categories` (subcategories with any of these words aren't read), or… |
 | `templates` | …every article using these infoboxes |
 | `require_benzene` | Keep only compounds whose structure has a benzene ring |
+| `require_properties` | Keep only answers whose Wikidata item has one of these properties, e.g. `["P274", "P233", "P231", "P662"]` (chemical formula, SMILES, CAS number, PubChem id): for prompts about substances, this drops the processes, diseases, people and products categories also hold. Extras always stay (decision 44) |
+| `family` | Prompts too alike to play together share a family (`minerals` for minerals and gemstones, `chemists` for chemists and Nobel laureates): one per game, and never on two days running (decision 44) |
 | `min_sitelinks`, `min_views` | Notability floors: articles in at least this many languages; page views over the window |
 | `view_discounts` | Count some infoboxes' page views for less, e.g. medicines read by patients (decision 38) |
 | `kind` | A label for answers in the review CSV |
@@ -283,3 +285,7 @@ The fields of `prompt.toml`. The folder name is the prompt's id, which also name
 | `surnames` | For people: a surname on its own counts, unless two answers share it |
 
 And the files beside it: `curriculum.csv` (school level), `aliases.csv`, `extras.csv`, `exclude.csv`, `flags.csv`, `blurbs.csv` and `must_accept.csv` (answers checked every build: one missing fails a prompt check).
+
+The flags in `flags.csv`: `single_crystal` (the gem), `fools_gold`, `min:<tier>` (no more common than this tier), `set:<tier>` (exactly this tier), and `views:<factor>` (between 0 and 1), which counts one answer's page views for less, like `view_discounts` does for a whole infobox: Margaret Thatcher's article is read for her politics, not her chemistry. A name can have more than one flag, one per row.
+
+**What counts as an answer.** When a prompt has a clear, objective limit, every candidate inside it is an answer: all the Nobel laureates, every isotope, every acid. The work is in keeping out what isn't one (topics, processes, people in the wrong place), not in deciding which real answers are famous enough.

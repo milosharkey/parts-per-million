@@ -12,9 +12,12 @@ Each row is a date and that day's prompts, separated by semicolons:
 Edit it by hand as much as you like: fill only adds days that aren't planned
 yet, and never changes a planned one. It picks from the bank (status =
 "ready"), mixing subjects the same way a playtest deal does (no more than 3
-of one subject or 2 specialist prompts a day) and not repeating a prompt
-within config.SCHEDULE_MIN_GAP_DAYS days when the bank is big enough to
-avoid it; when it isn't, the prompts used longest ago come first.
+of one subject or 2 specialist prompts a day, and one prompt per family:
+prompt.toml, family) and not repeating a prompt within
+config.SCHEDULE_MIN_GAP_DAYS days when the bank is big enough to avoid it;
+when it isn't, the prompts used longest ago come first. A family isn't
+played on two days running either, so minerals on Monday means no
+gemstones on Tuesday.
 
 Then run Publish site, which writes each day's file and checks the next two
 weeks are ready (DECISIONS.md, 42).
@@ -33,8 +36,14 @@ MAX_PER_SUBJECT = 3     # same rules as game/deal.js
 MAX_SPECIALIST = 2
 
 
-def plan_day(bank: list[str], last_used: dict[str, date], day: date, n: int, rng: random.Random) -> list[str]:
-    """Pick n prompts for one day: rested ones first, then a good mix."""
+def plan_day(bank: list[str], last_used: dict[str, date], day: date, n: int, rng: random.Random,
+             family_used: dict[str, date] | None = None) -> list[str]:
+    """Pick n prompts for one day: rested ones first, then a good mix.
+
+    family_used: the last day each family was played, so a family isn't
+    played two days running.
+    """
+    family_used = family_used or {}
     gap = config.SCHEDULE_MIN_GAP_DAYS
     def rest(pid: str) -> int:
         used = last_used.get(pid)
@@ -45,19 +54,33 @@ def plan_day(bank: list[str], last_used: dict[str, date], day: date, n: int, rng
     # long ago they were used.
     rested = [p for p in shuffled if rest(p) >= gap]
     tired = sorted((p for p in shuffled if rest(p) < gap), key=rest, reverse=True)
-    picked, skipped, subjects, specialists = [], [], {}, 0
+    picked, skipped, subjects, specialists, families = [], [], {}, 0, set()
+    yesterday = day - timedelta(days=1)
     for pid in rested + tired:
         if len(picked) == n:
             break
         spec = PROMPTS[pid]
         subject, hard = spec.get("subject", ""), spec.get("audience") == "specialist"
-        if subjects.get(subject, 0) >= MAX_PER_SUBJECT or (hard and specialists >= MAX_SPECIALIST):
+        family = spec.get("family", "")
+        clash = bool(family) and (family in families or family_used.get(family) == yesterday)
+        if subjects.get(subject, 0) >= MAX_PER_SUBJECT or (hard and specialists >= MAX_SPECIALIST) or clash:
             skipped.append(pid)
             continue
         picked.append(pid)
         subjects[subject] = subjects.get(subject, 0) + 1
         specialists += hard
-    picked += skipped[: n - len(picked)]
+        if family:
+            families.add(family)
+    # Fill any gap with what was skipped, family clashes last (as deal.js).
+    def clashes(pid: str) -> bool:
+        family = PROMPTS[pid].get("family", "")
+        return bool(family) and (family in families or family_used.get(family) == yesterday)
+    for pid in [p for p in skipped if not clashes(p)] + [p for p in skipped if clashes(p)]:
+        if len(picked) == n:
+            break
+        picked.append(pid)
+        if PROMPTS[pid].get("family"):
+            families.add(PROMPTS[pid]["family"])
     return picked
 
 
@@ -68,18 +91,24 @@ def fill(days: int, start: date, seed: int | None = None) -> list[tuple[date, li
         raise SystemExit("The bank is empty: mark some prompts ready (status in prompt.toml) first.")
     schedule = read_schedule()
     last_used: dict[str, date] = {}
+    family_used: dict[str, date] = {}
     for day, ids in schedule.items():
         for pid in ids:
             last_used[pid] = max(day, last_used.get(pid, day))
+            family = PROMPTS.get(pid, {}).get("family")
+            if family:
+                family_used[family] = max(day, family_used.get(family, day))
     rng = random.Random(seed)
     added = []
     day = start
     while len(added) < days:
         if day not in schedule:
-            ids = plan_day(bank, last_used, day, config.PROMPTS_PER_GAME, rng)
+            ids = plan_day(bank, last_used, day, config.PROMPTS_PER_GAME, rng, family_used)
             added.append((day, ids))
             for pid in ids:
                 last_used[pid] = day
+                if PROMPTS[pid].get("family"):
+                    family_used[PROMPTS[pid]["family"]] = day
         day += timedelta(days=1)
     if added:
         new = not SCHEDULE.exists()

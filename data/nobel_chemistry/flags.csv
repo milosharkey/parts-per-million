@@ -1,3 +1,6 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
+# Gem: co-inventor of the chromatography everyone did at school (98.4% above
+# on the 20 November build).
+Archer Martin,single_crystal

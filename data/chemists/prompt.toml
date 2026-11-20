@@ -7,6 +7,9 @@ label = "Chemists"
 status = "draft"
 subject = "history of science"
 audience = "school"
+# Family: prompts too alike to play together. One per game, and not on two
+# days running (deal.js, schedule.py). Chemists and Nobel laureates overlap.
+family = "chemists"
 colour = "#8C5A3C"
 
 # From Wikidata: anyone whose occupation is chemist (Q593644). Overlaps the Nobel

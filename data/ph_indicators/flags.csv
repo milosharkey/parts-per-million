@@ -1,3 +1,10 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
+# Fool's gold: the school experiment everyone did. Gem: curry stains turn red
+# with soap. Both articles are read for the food, so their views count a
+# fiftieth here. Check both after the rebuild.
+Red cabbage,views:0.02
+Red cabbage,fools_gold
+Turmeric,views:0.02
+Turmeric,single_crystal

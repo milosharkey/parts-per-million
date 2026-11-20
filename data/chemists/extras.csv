@@ -1,2 +1,5 @@
 # Answers the source misses. title = exact English Wikipedia article title.
 title,kind
+# Missed by the first query (see queries/chemists.rq), added to be sure.
+Marie Curie,person
+Pierre Curie,person

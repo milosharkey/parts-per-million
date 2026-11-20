@@ -3,17 +3,25 @@
 #
 # Paste this into https://query.wikidata.org to explore it.
 #
-# - wdt:P106 wd:Q593644 is "occupation: chemist" and wdt:P31 wd:Q5 "is a
+# - P106 wd:Q593644 is "occupation: chemist" and wdt:P31 wd:Q5 "is a
 #   human". Biochemists and others with only a more specific occupation are
 #   missed; add the famous ones through data/chemists/extras.csv.
+# - The occupation is read from every statement (p:/ps:), not just the
+#   "truthy" wdt: one. When one of a person's occupations is marked
+#   preferred, wdt: only sees that one, which is the likely reason the first
+#   version missed Marie and Pierre Curie (extras.csv adds them too, to be
+#   sure). Deprecated statements (marked wrong on Wikidata) are skipped.
 # - The 20-language floor is in the query itself, so tens of thousands of
 #   minor chemists never leave Wikidata.
 SELECT ?item ?label ?title ?sitelinks
        (GROUP_CONCAT(DISTINCT ?alias; separator="|") AS ?aliases)
 WHERE {
-  ?item wdt:P106 wd:Q593644 ;
+  ?item p:P106 ?job ;
         wdt:P31 wd:Q5 ;
         wikibase:sitelinks ?sitelinks .
+  ?job ps:P106 wd:Q593644 ;
+       wikibase:rank ?rank .
+  FILTER(?rank != wikibase:DeprecatedRank)
   FILTER(?sitelinks >= 20)
   ?item rdfs:label ?label .
   FILTER(LANG(?label) = "en")

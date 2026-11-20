@@ -12,6 +12,8 @@ colour = "#2E7D5B"
 # Subcategories by base metal (copper alloys, steels...) carry most of the answers.
 category = "Category:Alloys"
 category_depth = 1
-skip_categories = ["companies", "manufacturers", "people", "lists", "objects", "coins"]
+# "refractory metals" and "coinage metals" hold pure metals (gold, tungsten),
+# which aren't alloys.
+skip_categories = ["companies", "manufacturers", "people", "lists", "objects", "coins", "refractory metals", "coinage metals", "testing"]
 min_views = 0
 kind = "alloy"
