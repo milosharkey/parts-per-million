@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("solvents") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a solvent"
+label = "Solvents"
+status = "draft"
+subject = "chemistry"
+audience = "school"
+colour = "#1F6F8B"
+
+# Water is everyone's first answer, but its article isn't filed as a solvent, so it's an extra.
+category = "Category:Solvents"
+category_depth = 0
+skip_categories = ["lists", "people"]
+min_views = 0
+kind = "solvent"

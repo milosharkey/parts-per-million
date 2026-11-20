@@ -1,0 +1,8 @@
+# Hand-set tiers that override the model (same format as data/minerals/flags.csv).
+#   single_crystal   the day's gem: top end of Analytical grade, and fun
+#   fools_gold       famously obscure, so it lands in Reagent grade at most
+#   min:<tier>       no more common than this tier
+# Run the build first: its summary suggests candidates for both.
+name,flag
+# Lightest element with no stable isotopes, and the first one made artificially.
+technetium,single_crystal

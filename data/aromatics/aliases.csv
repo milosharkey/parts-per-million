@@ -1,0 +1,11 @@
+# Extra ways players might type a compound, on top of Wikidata's aliases
+# (which already include most brand names and US/UK names).
+name,alias
+Toluene,methylbenzene
+Aniline,phenylamine
+TNT,trinitrotoluene
+Styrene,phenylethene
+Adrenaline,epinephrine
+Paracetamol,acetaminophen
+Polyethylene terephthalate,PET
+Polyethylene terephthalate,polyester

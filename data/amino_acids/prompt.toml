@@ -1,0 +1,18 @@
+# Settings for this prompt. The folder name ("amino_acids") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name an amino acid"
+label = "Amino acids"
+status = "draft"
+subject = "biochemistry"
+audience = "school"
+colour = "#3C6E9F"
+
+# The 20-odd proteinogenic ones are the obvious answers; the subcategories add the
+# non-proteinogenic ones (ornithine, GABA) that make the long tail.
+category = "Category:Amino acids"
+category_depth = 1
+skip_categories = ["metabolism", "enzymes", "transporters", "receptors", "disorders", "lists", "people"]
+min_views = 0
+kind = "amino acid"

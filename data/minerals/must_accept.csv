@@ -1,0 +1,37 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks each against every spelling it accepts and fails a prompt check if
+# any is missing, so a gap shows up before a player finds it (DECISIONS.md, 39).
+# Write them as players would type them.
+name
+quartz
+diamond
+ruby
+sapphire
+emerald
+gold
+pyrite
+calcite
+feldspar
+mica
+talc
+gypsum
+haematite
+hematite
+magnetite
+galena
+halite
+fluorite
+garnet
+olivine
+topaz
+amethyst
+jade
+opal
+malachite
+graphite
+kaolinite
+orthoclase
+corundum
+beryl
+zircon
+turquoise

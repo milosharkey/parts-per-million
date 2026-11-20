@@ -1,0 +1,37 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks each against every spelling it accepts and fails a prompt check if
+# any is missing, so a gap shows up before a player finds it (DECISIONS.md, 39).
+# Write them as players would type them.
+name
+beaker
+conical flask
+Erlenmeyer flask
+Bunsen burner
+test tube
+pipette
+burette
+measuring cylinder
+thermometer
+microscope
+tripod
+gauze
+clamp stand
+balance
+goggles
+fume cupboard
+Petri dish
+centrifuge
+crucible
+evaporating basin
+spatula
+funnel
+condenser
+separating funnel
+rotavap
+NMR
+desiccator
+watch glass
+stopwatch
+mortar and pestle
+round-bottom flask
+Büchner funnel

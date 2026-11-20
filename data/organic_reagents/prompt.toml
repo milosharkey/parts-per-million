@@ -1,0 +1,18 @@
+# Settings for this prompt. The folder name ("organic_reagents") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a reagent used in organic chemistry"
+label = "Reagents"
+status = "draft"
+subject = "chemistry"
+audience = "specialist"
+colour = "#00796B"
+
+# About 230 articles plus subcategories (organolithiums, coupling reagents,
+# fluorinating agents...). Named reagents (Tollens', Fehling's) may need extras.
+category = "Category:Reagents for organic chemistry"
+category_depth = 1
+skip_categories = ["lists", "people"]
+min_views = 0
+kind = "reagent"

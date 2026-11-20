@@ -1,0 +1,26 @@
+# Settings for this prompt. The folder name is its id. Made from
+# templates/category.toml: answers are the articles in Wikipedia categories.
+# Field reference: README.md, "Prompt settings".
+
+text = "{text}"
+label = "{label}"
+status = "draft"            # draft until you've built it and reviewed the answers; then ready
+subject = "chemistry"       # chemistry, biochemistry, biology, earth science, physics, lab, history of science
+audience = "school"         # everyone, school, university or specialist
+colour = "{colour}"
+
+# The category, exactly as on Wikipedia (with "Category:"), or a list of
+# them. category_depth = 1 also reads each subcategory one level down:
+# more complete, but check the probe's "Came from" list for subcategories
+# that bring in things that aren't answers, and add a word from their names
+# to skip_categories.
+category = "Category:{category}"
+category_depth = 0
+skip_categories = ["companies", "manufacturers", "people", "lists"]
+min_views = 0
+kind = "{kind}"
+
+# Optional:
+# drop_title_patterns = ['^Isotopes of ']   # regular expressions for titles that aren't answers
+# surnames = true                           # for people: "Curie" counts for Marie Curie
+# min_sitelinks = 5                         # drop articles in fewer languages (big sets)

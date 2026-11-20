@@ -1,0 +1,12 @@
+# Compounds with a benzene ring that the infobox list misses. Rarely needed.
+title,kind
+# Added after the first full build (DECISIONS.md, 38): mixtures of isomers
+# and polymers have no single structure on Wikidata, so the benzene check
+# can't see them, but players will say them.
+Xylene,compound
+Cresol,compound
+Mauveine,compound
+Polystyrene,polymer
+Kevlar,polymer
+Polyethylene terephthalate,polymer
+Bakelite,polymer

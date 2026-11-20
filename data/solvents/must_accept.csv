@@ -1,0 +1,23 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks them every time (DECISIONS.md, 39). Write them as players would.
+name
+water
+ethanol
+methanol
+acetone
+hexane
+toluene
+benzene
+chloroform
+dichloromethane
+diethyl ether
+ethyl acetate
+DMSO
+dimethylformamide
+THF
+acetonitrile
+isopropyl alcohol
+carbon tetrachloride
+pyridine
+xylene
+turpentine

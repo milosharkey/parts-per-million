@@ -1,0 +1,30 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks each against every spelling it accepts and fails a prompt check if
+# any is missing, so a gap shows up before a player finds it (DECISIONS.md, 39).
+# Write them as players would type them.
+name
+amylase
+lipase
+protease
+catalase
+pepsin
+trypsin
+lactase
+DNA polymerase
+RNA polymerase
+helicase
+DNA ligase
+ATP synthase
+RuBisCO
+lysozyme
+maltase
+sucrase
+restriction enzyme
+reverse transcriptase
+Taq polymerase
+kinase
+carbonic anhydrase
+urease
+luciferase
+telomerase
+topoisomerase

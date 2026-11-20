@@ -1,0 +1,30 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks each against every spelling it accepts and fails a prompt check if
+# any is missing, so a gap shows up before a player finds it (DECISIONS.md, 39).
+# Write them as players would type them.
+name
+Grignard reaction
+Grignard
+Diels-Alder
+Wittig reaction
+Haber process
+Fischer esterification
+Friedel-Crafts
+Sandmeyer reaction
+Wurtz reaction
+Michael addition
+Suzuki reaction
+Heck reaction
+Sonogashira coupling
+Claisen condensation
+Cannizzaro reaction
+Williamson ether synthesis
+Strecker synthesis
+Maillard reaction
+Birch reduction
+Baeyer-Villiger oxidation
+Mitsunobu reaction
+Swern oxidation
+Ostwald process
+Clemmensen reduction
+Hofmann rearrangement

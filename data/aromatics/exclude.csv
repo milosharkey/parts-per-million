@@ -1,0 +1,22 @@
+# Articles the source lists that don't belong. title = exact Wikipedia title.
+# Combination medicines (two compounds sold together) aren't a compound, and
+# Estradiol (medication) is a second article about Estradiol (DECISIONS.md, 38).
+title
+Amlodipine/valsartan
+Amoxicillin/clavulanic acid
+Ampicillin/sulbactam
+Atovaquone/proguanil
+Budesonide/formoterol
+Buprenorphine/naloxone
+Carbidopa/levodopa
+Estradiol (medication)
+Hydrocodone/paracetamol
+Lidocaine/prilocaine
+Losartan/hydrochlorothiazide
+Naltrexone/bupropion
+Oxycodone/paracetamol
+Perindopril/indapamide
+Piperacillin/tazobactam
+Pyridoxine/doxylamine
+Sacubitril/valsartan
+Trimethoprim/sulfamethoxazole

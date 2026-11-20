@@ -1,0 +1,205 @@
+[
+ {
+  "item": "http://www.wikidata.org/entity/Q8100001",
+  "label": "diels–alder reaction",
+  "title": "Diels–Alder reaction",
+  "sitelinks": "90",
+  "aliases": "Diels-Alder cycloaddition"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100002",
+  "label": "grignard reaction",
+  "title": "Grignard reaction",
+  "sitelinks": "60",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100003",
+  "label": "wittig reaction",
+  "title": "Wittig reaction",
+  "sitelinks": "45",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100004",
+  "label": "friedel–crafts reaction",
+  "title": "Friedel–Crafts reaction",
+  "sitelinks": "50",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100005",
+  "label": "maillard reaction",
+  "title": "Maillard reaction",
+  "sitelinks": "70",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100006",
+  "label": "sandmeyer reaction",
+  "title": "Sandmeyer reaction",
+  "sitelinks": "35",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100007",
+  "label": "suzuki reaction",
+  "title": "Suzuki reaction",
+  "sitelinks": "40",
+  "aliases": "Suzuki coupling"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100008",
+  "label": "heck reaction",
+  "title": "Heck reaction",
+  "sitelinks": "35",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100009",
+  "label": "cannizzaro reaction",
+  "title": "Cannizzaro reaction",
+  "sitelinks": "30",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100010",
+  "label": "claisen condensation",
+  "title": "Claisen condensation",
+  "sitelinks": "30",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100011",
+  "label": "birch reduction",
+  "title": "Birch reduction",
+  "sitelinks": "28",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100012",
+  "label": "swern oxidation",
+  "title": "Swern oxidation",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100013",
+  "label": "wolff–kishner reduction",
+  "title": "Wolff–Kishner reduction",
+  "sitelinks": "28",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100014",
+  "label": "clemmensen reduction",
+  "title": "Clemmensen reduction",
+  "sitelinks": "26",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100015",
+  "label": "mannich reaction",
+  "title": "Mannich reaction",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100016",
+  "label": "wittig rearrangement",
+  "title": "Wittig rearrangement",
+  "sitelinks": "12",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100017",
+  "label": "hofmann rearrangement",
+  "title": "Hofmann rearrangement",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100018",
+  "label": "hofmann elimination",
+  "title": "Hofmann elimination",
+  "sitelinks": "22",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100019",
+  "label": "beckmann rearrangement",
+  "title": "Beckmann rearrangement",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100020",
+  "label": "baeyer–villiger oxidation",
+  "title": "Baeyer–Villiger oxidation",
+  "sitelinks": "26",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100021",
+  "label": "williamson ether synthesis",
+  "title": "Williamson ether synthesis",
+  "sitelinks": "30",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100022",
+  "label": "hell–volhard–zelinsky halogenation",
+  "title": "Hell–Volhard–Zelinsky halogenation",
+  "sitelinks": "18",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100023",
+  "label": "barton–mccombie deoxygenation",
+  "title": "Barton–McCombie deoxygenation",
+  "sitelinks": "12",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100024",
+  "label": "achmatowicz reaction",
+  "title": "Achmatowicz reaction",
+  "sitelinks": "8",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100025",
+  "label": "bargellini reaction",
+  "title": "Bargellini reaction",
+  "sitelinks": "5",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100026",
+  "label": "akabori amino-acid reaction",
+  "title": "Akabori amino-acid reaction",
+  "sitelinks": "4",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100027",
+  "label": "allen–millar–trippett rearrangement",
+  "title": "Allen–Millar–Trippett rearrangement",
+  "sitelinks": "3",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100028",
+  "label": "aston–greenburg rearrangement",
+  "title": "Aston–Greenburg rearrangement",
+  "sitelinks": "3",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8100030",
+  "label": "devarda's alloy",
+  "title": "Devarda's alloy",
+  "sitelinks": "6",
+  "aliases": ""
+ }
+]

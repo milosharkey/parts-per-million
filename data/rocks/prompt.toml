@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("rocks") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a rock"
+label = "Rocks"
+status = "draft"
+subject = "earth science"
+audience = "everyone"
+colour = "#558B2F"
+
+# The three classic rock types, one level each.
+category = ["Category:Igneous rocks", "Category:Sedimentary rocks", "Category:Metamorphic rocks"]
+category_depth = 0
+skip_categories = ["lists", "people", "formations"]
+min_views = 0
+kind = "rock"

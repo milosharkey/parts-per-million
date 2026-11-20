@@ -1,0 +1,26 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks them every time (DECISIONS.md, 39). Write them as players would.
+name
+granite
+basalt
+limestone
+sandstone
+marble
+slate
+shale
+obsidian
+pumice
+chalk
+coal
+gneiss
+schist
+quartzite
+conglomerate
+andesite
+gabbro
+diorite
+rhyolite
+tuff
+flint
+mudstone
+dolomite

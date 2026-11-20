@@ -1,0 +1,40 @@
+# How early people meet each reaction. Starter list: edit freely.
+# level 3 = school before 16 (GCSE), 2 = A-level/IB, 1 = first-year university.
+# Anything not listed counts as 0 (page views and sitelinks still count).
+# name can be any name the reaction goes by (case and dashes don't matter).
+name,level
+Haber process,3
+Friedel–Crafts reaction,2
+Hall–Héroult process,2
+Ostwald process,1
+Solvay process,1
+Fischer–Tropsch process,1
+Diels–Alder reaction,1
+Grignard reaction,1
+Wittig reaction,1
+Williamson ether synthesis,1
+Fischer–Speier esterification,1
+Sandmeyer reaction,1
+Hofmann elimination,1
+Hofmann rearrangement,1
+Cannizzaro reaction,1
+Claisen condensation,1
+Michael reaction,1
+Clemmensen reduction,1
+Wolff–Kishner reduction,1
+Birch reduction,1
+Baeyer–Villiger oxidation,1
+Swern oxidation,1
+Gabriel synthesis,1
+Strecker amino acid synthesis,1
+Robinson annulation,1
+Mannich reaction,1
+Knoevenagel condensation,1
+Dieckmann condensation,1
+Wurtz reaction,1
+Kolbe electrolysis,1
+Beckmann rearrangement,1
+Hell–Volhard–Zelinsky halogenation,1
+Reimer–Tiemann reaction,1
+Suzuki reaction,1
+Heck reaction,1

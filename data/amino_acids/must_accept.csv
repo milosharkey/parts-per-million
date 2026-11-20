@@ -1,0 +1,27 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks them every time (DECISIONS.md, 39). Write them as players would.
+name
+glycine
+alanine
+valine
+leucine
+isoleucine
+proline
+phenylalanine
+tryptophan
+methionine
+serine
+threonine
+cysteine
+tyrosine
+asparagine
+glutamine
+aspartic acid
+glutamic acid
+lysine
+arginine
+histidine
+selenocysteine
+ornithine
+citrulline
+GABA

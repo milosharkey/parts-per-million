@@ -1,0 +1,27 @@
+{
+  "_about": "Cases both implementations must agree on: Python (aliases.py, scoring.py) and the game's JavaScript (game/matching.js, game/scoring.js). Checked by tests/test_shared_cases.py and game/tests.html. Add a case whenever a rule changes.",
+  "normalise": [
+    ["Fool's Gold", "fools gold"],
+    ["  Diels–Alder  reaction ", "diels alder reaction"],
+    ["Gold (mineral)", "gold"],
+    ["The Quartz", "quartz"],
+    ["Mössbauer spectroscopy", "mossbauer spectroscopy"],
+    ["α-Pinene", "alpha pinene"],
+    ["Β-Carotene", "beta carotene"],
+    ["H₂O", "h2o"],
+    ["CH3COOH", "ch3cooh"],
+    ["Monazite-(Ce)", "monazite ce"],
+    ["AC/DC", "ac dc"],
+    ["Straße", "strasse"],
+    ["HAEMATITE", "haematite"],
+    ["", ""]
+  ],
+  "format_ppm": [
+    [0, "1,000,000 ppm"],
+    [145, "35,500 ppm"],
+    [355, "282 ppm"],
+    [580, "1.58 ppm"],
+    [600, "1 ppm"],
+    [700, "100 ppb"]
+  ]
+}

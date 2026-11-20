@@ -1,0 +1,12 @@
+# Hand-set tiers that override the model (same format as data/minerals/flags.csv).
+#   single_crystal   the day's gem: top end of Analytical grade, and fun
+#   fools_gold       famously obscure, so it lands in Reagent grade at most
+#   min:<tier>       no more common than this tier
+#   set:<tier>       exactly this tier, and the model ignores the answer when
+#                    setting its scale (DECISIONS.md, 33)
+# Run the build first: its summary suggests gem and Fool's gold candidates.
+name,flag
+# Gem: the carcinogen in soot and burnt toast. Fool's gold: feels clever,
+# and whether its hexagons count as benzene rings is a good argument.
+Benzo(a)pyrene,single_crystal
+Buckminsterfullerene,fools_gold

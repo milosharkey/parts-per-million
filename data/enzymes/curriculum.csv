@@ -1,0 +1,41 @@
+# How early people meet each enzyme. Starter list: edit freely.
+# level 3 = school before 16 (GCSE biology), 2 = A-level/IB, 1 = first-year university.
+# name can be any name the enzyme goes by (case doesn't matter).
+name,level
+Amylase,3
+Protease,3
+Lipase,3
+Catalase,3
+Pepsin,2
+Trypsin,2
+Lactase,2
+Maltase,2
+Sucrase,2
+DNA polymerase,2
+RNA polymerase,2
+DNA ligase,2
+Helicase,2
+Restriction enzyme,2
+ATP synthase,2
+RuBisCO,2
+Lysozyme,2
+Reverse transcriptase,2
+Acetylcholinesterase,2
+Carbonic anhydrase,2
+Hexokinase,1
+Phosphofructokinase,1
+Pyruvate kinase,1
+Citrate synthase,1
+Aconitase,1
+Isocitrate dehydrogenase,1
+Succinate dehydrogenase,1
+Lactate dehydrogenase,1
+Alcohol dehydrogenase,1
+Glyceraldehyde 3-phosphate dehydrogenase,1
+Chymotrypsin,1
+Cyclooxygenase,1
+Nitrogenase,1
+Telomerase,1
+Topoisomerase,1
+Luciferase,1
+Cas9,1

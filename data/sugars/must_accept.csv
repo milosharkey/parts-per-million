@@ -1,0 +1,16 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks them every time (DECISIONS.md, 39). Write them as players would.
+name
+glucose
+fructose
+galactose
+sucrose
+lactose
+maltose
+ribose
+deoxyribose
+mannose
+xylose
+trehalose
+arabinose
+dextrose

@@ -1,0 +1,5 @@
+# Short descriptions the game shows when a player finds an answer. Always
+# write one for the gem and Fool's gold; any other answer can have one too.
+# name can be any name the answer goes by. Keep each to two sentences.
+name,blurb
+Technetium,"The lightest element with no stable isotopes, and the first made artificially (1937): its name comes from the Greek for 'artificial'. Technetium-99m is used in tens of millions of medical scans a year."

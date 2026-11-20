@@ -1,0 +1,19 @@
+# Hand-set tiers that override the model (same format as data/minerals/flags.csv).
+#   single_crystal   the day's gem: top end of Analytical grade, and fun
+#   fools_gold       famously obscure, so it lands in Reagent grade at most
+#   min:<tier>       no more common than this tier
+#   set:<tier>       exactly this tier, and the model ignores the answer when
+#                    setting its scale (DECISIONS.md, 33)
+# Run the build first: its summary suggests gem and Fool's gold candidates.
+name,flag
+Strecker Degradation,single_crystal
+Azide-alkyne Huisgen cycloaddition,fools_gold
+# Read about far more by non-chemists (GCSE revision, history, cookery) than
+# by players. Left to the model, they set the scale for all ~520 reactions and
+# squash the rest into one huge middle tier. Tiers below are a first guess.
+Haber process,set:tap_water
+Maillard reaction,set:lab_grade
+Fischer–Tropsch process,set:lab_grade
+Hall–Héroult process,set:lab_grade
+Solvay process,set:reagent_grade
+Bessemer process,set:reagent_grade

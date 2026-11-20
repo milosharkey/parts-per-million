@@ -1,0 +1,20 @@
+# Settings for this prompt. The folder name is its id. Made from
+# templates/query.toml: answers come from a Wikidata query, in
+# queries/{id}.rq. Field reference: README.md, "Prompt settings".
+
+text = "{text}"
+label = "{label}"
+status = "draft"            # draft until you've built it and reviewed the answers; then ready
+subject = "chemistry"       # chemistry, biochemistry, biology, earth science, physics, lab, history of science
+audience = "school"         # everyone, school, university or specialist
+colour = "{colour}"
+
+# The query must return item, label, title, sitelinks and aliases (see the
+# comments in the .rq file). Try it on https://query.wikidata.org first.
+query = "{id}.rq"
+min_views = 0
+kind = "{kind}"
+
+# Optional:
+# min_sitelinks = 10        # drop answers in fewer languages before fetching page views
+# surnames = true           # for people: "Curie" counts for Marie Curie

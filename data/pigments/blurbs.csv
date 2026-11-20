@@ -1,0 +1,6 @@
+# Short descriptions the game shows when a player finds an answer. Always
+# write one for the gem and Fool's gold; any other answer can have one too.
+# name can be any name the answer goes by. Keep each to two sentences.
+name,blurb
+Indian yellow,"A glowing yellow said to be made from the urine of cows fed only on mango leaves, sold from Bihar until the early 1900s."
+Mummy brown,"A brown paint made from ground-up Egyptian mummies, used by artists from the 1500s. Its last maker stopped in the 1960s, saying it had run out of mummies."

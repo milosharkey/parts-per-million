@@ -1,0 +1,18 @@
+# Settings for this prompt. The folder name ("gemstones") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a gemstone"
+label = "Gemstones"
+status = "draft"
+subject = "earth science"
+audience = "everyone"
+colour = "#00838F"
+
+# Diamond itself is an extra because its subcategory is skipped (it's full of named stones).
+category = "Category:Gemstones"
+category_depth = 1
+# Individual famous stones (the Hope Diamond) aren't a kind of gemstone.
+skip_categories = ["Individual", "Diamonds", "mines", "companies", "people", "lists", "jewellery", "jewelry"]
+min_views = 0
+kind = "gemstone"

@@ -1,0 +1,20 @@
+# Hand-set tiers that override the model (same format as data/minerals/flags.csv).
+#   single_crystal   the day's gem: top end of Analytical grade, and fun
+#   fools_gold       famously obscure, so it lands in Reagent grade at most
+#   min:<tier>       no more common than this tier
+#   set:<tier>       exactly this tier, and the model ignores the answer when
+#                    setting its scale (DECISIONS.md, 33)
+# Run the build first: its summary suggests gem and Fool's gold candidates.
+name,flag
+# Page views from outside chemistry (DECISIONS.md, 38): saffron and
+# spirulina are read about as food, butterfly pea as a drink, methylene blue
+# as a supplement fad.
+Saffron,min:lab_grade
+Methylene blue,min:lab_grade
+Spirulina,min:reagent_grade
+Clitoria ternatea,min:reagent_grade
+# Gem: reputedly made from the urine of cows fed on mango leaves (backup if it
+# falls outside the gem window: Han purple and Han blue). Fool's gold: made
+# from ground-up mummies, which every bit of pigment trivia mentions.
+Indian yellow,single_crystal
+Mummy brown,fools_gold

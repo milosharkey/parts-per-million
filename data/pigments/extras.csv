@@ -1,0 +1,33 @@
+# Famous pigments and dyes Wikipedia may file outside the two categories.
+# title = exact English Wikipedia article title. Any already listed are counted once.
+title,kind
+Chlorophyll,pigment
+Melanin,pigment
+Carotene,pigment
+Anthocyanin,pigment
+Litmus,dye
+Methyl orange,dye
+Henna,dye
+Isatis tinctoria,dye
+Tyrian purple,dye
+Cochineal,dye
+Indigo dye,dye
+Mauveine,dye
+Prussian blue,pigment
+Ultramarine,pigment
+Vermilion,pigment
+Titanium dioxide,pigment
+Lead white,pigment
+Egyptian blue,pigment
+Han purple and Han blue,pigment
+Scheele's green,pigment
+Ochre,pigment
+# Added after the first full build (DECISIONS.md, 38). Dye plants are listed
+# by their articles' Latin titles; aliases.csv gives the names people say.
+Haematoxylum campechianum,dye
+Rubia tinctorum,dye
+Kermes (dye),dye
+Smalt,pigment
+Umber,pigment
+Sienna,pigment
+Vantablack,pigment

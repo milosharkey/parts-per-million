@@ -1,0 +1,191 @@
+[
+ {
+  "item": "http://www.wikidata.org/entity/Q8400001",
+  "label": "alpha-amylase",
+  "title": "Alpha-amylase",
+  "sitelinks": "40",
+  "aliases": "EC 3.2.1.1|amylase"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400002",
+  "label": "lactase",
+  "title": "Lactase",
+  "sitelinks": "40",
+  "aliases": "EC 3.2.1.108"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400003",
+  "label": "pepsin",
+  "title": "Pepsin",
+  "sitelinks": "60",
+  "aliases": "EC 3.4.23.1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400004",
+  "label": "trypsin",
+  "title": "Trypsin",
+  "sitelinks": "50",
+  "aliases": "EC 3.4.21.4"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400005",
+  "label": "catalase",
+  "title": "Catalase",
+  "sitelinks": "50",
+  "aliases": "EC 1.11.1.6"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400006",
+  "label": "lysozyme",
+  "title": "Lysozyme",
+  "sitelinks": "50",
+  "aliases": "EC 3.2.1.17|muramidase"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400007",
+  "label": "carbonic anhydrase",
+  "title": "Carbonic anhydrase",
+  "sitelinks": "40",
+  "aliases": "EC 4.2.1.1|carbonate dehydratase"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400008",
+  "label": "hexokinase",
+  "title": "Hexokinase",
+  "sitelinks": "35",
+  "aliases": "EC 2.7.1.1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400009",
+  "label": "phosphofructokinase 1",
+  "title": "Phosphofructokinase 1",
+  "sitelinks": "25",
+  "aliases": "EC 2.7.1.11|PFK-1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400010",
+  "label": "pyruvate kinase",
+  "title": "Pyruvate kinase",
+  "sitelinks": "30",
+  "aliases": "EC 2.7.1.40"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400011",
+  "label": "citrate synthase",
+  "title": "Citrate synthase",
+  "sitelinks": "25",
+  "aliases": "EC 2.3.3.1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400012",
+  "label": "aconitase",
+  "title": "Aconitase",
+  "sitelinks": "20",
+  "aliases": "EC 4.2.1.3"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400013",
+  "label": "isocitrate dehydrogenase",
+  "title": "Isocitrate dehydrogenase",
+  "sitelinks": "25",
+  "aliases": "EC 1.1.1.41"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400014",
+  "label": "succinate dehydrogenase",
+  "title": "Succinate dehydrogenase",
+  "sitelinks": "25",
+  "aliases": "EC 1.3.5.1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400015",
+  "label": "lactate dehydrogenase",
+  "title": "Lactate dehydrogenase",
+  "sitelinks": "35",
+  "aliases": "EC 1.1.1.27|LDH"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400016",
+  "label": "alcohol dehydrogenase",
+  "title": "Alcohol dehydrogenase",
+  "sitelinks": "35",
+  "aliases": "EC 1.1.1.1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400017",
+  "label": "chymotrypsin",
+  "title": "Chymotrypsin",
+  "sitelinks": "30",
+  "aliases": "EC 3.4.21.1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400018",
+  "label": "acetylcholinesterase",
+  "title": "Acetylcholinesterase",
+  "sitelinks": "40",
+  "aliases": "EC 3.1.1.7"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400019",
+  "label": "nitrogenase",
+  "title": "Nitrogenase",
+  "sitelinks": "30",
+  "aliases": "EC 1.18.6.1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400020",
+  "label": "luciferase",
+  "title": "Luciferase",
+  "sitelinks": "30",
+  "aliases": "1.13.12.7"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400021",
+  "label": "rubisco",
+  "title": "RuBisCO",
+  "sitelinks": "45",
+  "aliases": "EC 4.1.1.39|rubisco"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400022",
+  "label": "aldolase b",
+  "title": "Aldolase B",
+  "sitelinks": "10",
+  "aliases": "EC 4.1.2.13"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400023",
+  "label": "enolase",
+  "title": "Enolase",
+  "sitelinks": "20",
+  "aliases": "EC 4.2.1.11"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400024",
+  "label": "triosephosphate isomerase",
+  "title": "Triosephosphate isomerase",
+  "sitelinks": "20",
+  "aliases": "EC 5.3.1.1|TIM"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400025",
+  "label": "laccase",
+  "title": "Laccase",
+  "sitelinks": "15",
+  "aliases": "EC 1.10.3.2"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400026",
+  "label": "glucose oxidase",
+  "title": "Glucose oxidase",
+  "sitelinks": "15",
+  "aliases": "EC 1.1.3.4"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8400027",
+  "label": "old yellow enzyme",
+  "title": "Old yellow enzyme",
+  "sitelinks": "3",
+  "aliases": "EC 1.6.99.1"
+ }
+]

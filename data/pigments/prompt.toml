@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("pigments") is its id.
+# Field reference: README.md, "Prompt settings". Template: templates/.
+
+text = "Name a pigment or dye"
+label = "Pigments & dyes"            # short name on the label's colour band
+status = "ready"
+subject = "chemistry"
+audience = "everyone"
+colour = "#C2451C"
+
+category = ["Category:Pigments", "Category:Dyes"]
+category_depth = 1
+# Ikat is a weaving technique, not a dye. The others are lists of makers and
+# artists rather than colourants.
+skip_categories = ["Ikat", "companies", "manufacturers", "people", "artists"]
+min_views = 0
+kind = "colourant"

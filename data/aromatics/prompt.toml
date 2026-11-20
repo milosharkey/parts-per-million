@@ -1,0 +1,30 @@
+# Settings for this prompt. The folder name ("aromatics") is its id.
+# Field reference: README.md, "Prompt settings". Template: templates/.
+
+text = "Name a compound with a benzene ring"
+label = "Aromatics"            # short name on the label's colour band
+status = "ready"
+subject = "chemistry"
+audience = "university"
+colour = "#8A4F2A"
+
+# Every article with a chemical or drug infobox, kept if its structure on
+# Wikidata has a benzene ring (structure.py). Categories would miss compounds
+# filed by family elsewhere (serotonin under tryptamines, morphine under
+# opioids). Thousands of compounds qualify, so two notability floors keep the
+# set to the ones players could know: articles in 5+ languages, and 10,000+
+# English page views over the window (about 400 a month). Both are Milo's
+# call (DECISIONS.md, 34).
+templates = ["Template:Chembox", "Template:Infobox drug"]
+require_benzene = true
+min_sitelinks = 5
+min_views = 10_000
+kind = "compound"
+
+# Medicines' page views come mostly from patients and the curious, not from
+# people who'd play this: before this, ketamine, cocaine and sertraline
+# outranked toluene and phenol. Views of articles with a drug infobox count a
+# quarter for the familiarity score, a first guess for playtests to refine
+# (DECISIONS.md, 38).
+[view_discounts]
+"Template:Infobox drug" = 0.25

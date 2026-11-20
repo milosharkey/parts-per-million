@@ -1,0 +1,22 @@
+# Settings for this prompt. The folder name is its id. Made from
+# templates/infobox.toml: answers are every article using an infobox,
+# optionally kept only if their structure on Wikidata has a benzene ring.
+# Field reference: README.md, "Prompt settings".
+
+text = "{text}"
+label = "{label}"
+status = "draft"            # draft until you've built it and reviewed the answers; then ready
+subject = "chemistry"
+audience = "university"
+colour = "{colour}"
+
+templates = ["Template:Chembox"]
+# require_benzene = true
+# Infoboxes cover tens of thousands of articles: keep the floors.
+min_sitelinks = 5
+min_views = 10_000
+kind = "{kind}"
+
+# Optional: count some infoboxes' page views for less (DECISIONS.md, 38).
+# [view_discounts]
+# "Template:Infobox drug" = 0.25

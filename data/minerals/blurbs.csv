@@ -1,0 +1,6 @@
+# Short descriptions the game shows when a player finds an answer. Always
+# write one for the gem and Fool's gold; any other answer can have one too.
+# name can be any name the answer goes by. Keep each to two sentences.
+name,blurb
+Jadarite,"Found in Serbia's Jadar valley in 2004. Its formula is almost exactly the one on the kryptonite case in Superman Returns, minus the fluorine, and it's white, not green."
+Cummingtonite,"An amphibole named after Cummington, Massachusetts. Every geology student has sniggered at the name, so it's nowhere near as rare an answer as it feels."

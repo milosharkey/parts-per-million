@@ -1,0 +1,18 @@
+# Settings for this prompt. The folder name ("minerals") is its id.
+# Field reference: README.md, "Prompt settings". Template: templates/.
+
+text = "Name a mineral"
+label = "Minerals"            # short name on the label's colour band
+status = "ready"            # ready = in the bank and the playtest; draft = not reviewed yet
+subject = "earth science"
+audience = "everyone"       # everyone, school, university or specialist
+colour = "#5E7F3E"
+
+query = "minerals.rq"
+# The floor is off for this prompt. Every mineral species recognised by the
+# International Mineralogical Association is a real, checkable answer, and an
+# expert naming an obscure one deserves the points even if its Wikipedia stub
+# gets a handful of views a year. Prompts built from looser sources
+# (compounds, where anyone can name a molecule nobody has made) need a real
+# floor here.
+min_views = 0

@@ -1,0 +1,273 @@
+[
+ {
+  "item": "http://www.wikidata.org/entity/Q8300001",
+  "label": "benzene",
+  "title": "Benzene",
+  "sitelinks": "120",
+  "aliases": "",
+  "smiles": "C1=CC=CC=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300002",
+  "label": "toluene",
+  "title": "Toluene",
+  "sitelinks": "80",
+  "aliases": "methylbenzene",
+  "smiles": "CC1=CC=CC=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300003",
+  "label": "aspirin",
+  "title": "Aspirin",
+  "sitelinks": "130",
+  "aliases": "acetylsalicylic acid",
+  "smiles": "CC(=O)OC1=CC=CC=C1C(=O)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300004",
+  "label": "paracetamol",
+  "title": "Paracetamol",
+  "sitelinks": "110",
+  "aliases": "acetaminophen|Tylenol",
+  "smiles": "CC(=O)NC1=CC=C(C=C1)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300005",
+  "label": "ibuprofen",
+  "title": "Ibuprofen",
+  "sitelinks": "100",
+  "aliases": "",
+  "smiles": "CC(C)CC1=CC=C(C=C1)C(C)C(=O)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300006",
+  "label": "phenol",
+  "title": "Phenol",
+  "sitelinks": "70",
+  "aliases": "",
+  "smiles": "C1=CC=C(C=C1)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300007",
+  "label": "aniline",
+  "title": "Aniline",
+  "sitelinks": "60",
+  "aliases": "",
+  "smiles": "C1=CC=C(C=C1)N"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300008",
+  "label": "styrene",
+  "title": "Styrene",
+  "sitelinks": "50",
+  "aliases": "",
+  "smiles": "C=CC1=CC=CC=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300009",
+  "label": "tnt",
+  "title": "TNT",
+  "sitelinks": "70",
+  "aliases": "trinitrotoluene",
+  "smiles": "CC1=C(C=C(C=C1[N+](=O)[O-])[N+](=O)[O-])[N+](=O)[O-]"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300010",
+  "label": "naphthalene",
+  "title": "Naphthalene",
+  "sitelinks": "60",
+  "aliases": "",
+  "smiles": "C1=CC=C2C=CC=CC2=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300011",
+  "label": "serotonin",
+  "title": "Serotonin",
+  "sitelinks": "80",
+  "aliases": "",
+  "smiles": "C1=CC2=C(C=C1O)C(=CN2)CCN"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300012",
+  "label": "dopamine",
+  "title": "Dopamine",
+  "sitelinks": "85",
+  "aliases": "",
+  "smiles": "C1=CC(=C(C=C1CCN)O)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300013",
+  "label": "estradiol",
+  "title": "Estradiol",
+  "sitelinks": "50",
+  "aliases": "oestradiol",
+  "smiles": "C[C@]12CC[C@H]3[C@H]([C@@H]1CC[C@@H]2O)CCC4=C3C=CC(=C4)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300014",
+  "label": "morphine",
+  "title": "Morphine",
+  "sitelinks": "90",
+  "aliases": "",
+  "smiles": "CN1CC[C@]23[C@@H]4[C@H]1CC5=C2C(=C(C=C5)O)O[C@H]3[C@H](C=C4)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300015",
+  "label": "vanillin",
+  "title": "Vanillin",
+  "sitelinks": "50",
+  "aliases": "",
+  "smiles": "COC1=C(C=CC(=C1)C=O)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300016",
+  "label": "bisphenol a",
+  "title": "Bisphenol A",
+  "sitelinks": "45",
+  "aliases": "BPA",
+  "smiles": "CC(C)(C1=CC=C(C=C1)O)C2=CC=C(C=C2)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300017",
+  "label": "ddt",
+  "title": "DDT",
+  "sitelinks": "70",
+  "aliases": "",
+  "smiles": "C1=CC(=CC=C1C(C2=CC=C(C=C2)Cl)C(Cl)(Cl)Cl)Cl"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300018",
+  "label": "fluoxetine",
+  "title": "Fluoxetine",
+  "sitelinks": "60",
+  "aliases": "Prozac",
+  "smiles": "CNCCC(C1=CC=CC=C1)OC2=CC=C(C=C2)C(F)(F)F"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300019",
+  "label": "diazepam",
+  "title": "Diazepam",
+  "sitelinks": "70",
+  "aliases": "Valium",
+  "smiles": "CN1C(=O)CN=C(C2=C1C=CC(=C2)Cl)C3=CC=CC=C3"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300020",
+  "label": "capsaicin",
+  "title": "Capsaicin",
+  "sitelinks": "50",
+  "aliases": "",
+  "smiles": "CC(C)/C=C/CCCCC(=O)NCC1=CC(=C(C=C1)O)OC"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300021",
+  "label": "benzaldehyde",
+  "title": "Benzaldehyde",
+  "sitelinks": "40",
+  "aliases": "",
+  "smiles": "C1=CC=C(C=C1)C=O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300022",
+  "label": "acetophenone",
+  "title": "Acetophenone",
+  "sitelinks": "30",
+  "aliases": "",
+  "smiles": "CC(=O)C1=CC=CC=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300023",
+  "label": "cumene",
+  "title": "Cumene",
+  "sitelinks": "30",
+  "aliases": "",
+  "smiles": "CC(C)C1=CC=CC=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300024",
+  "label": "phenolphthalein",
+  "title": "Phenolphthalein",
+  "sitelinks": "40",
+  "aliases": "",
+  "smiles": "C1=CC=C(C=C1)C2(C3=CC=CC=C3C(=O)O2)C4=CC=C(C=C4)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300025",
+  "label": "terephthalic acid",
+  "title": "Terephthalic acid",
+  "sitelinks": "30",
+  "aliases": "",
+  "smiles": "C1=CC(=CC=C1C(=O)O)C(=O)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300026",
+  "label": "tyrosine",
+  "title": "Tyrosine",
+  "sitelinks": "70",
+  "aliases": "",
+  "smiles": "C1=CC(=CC=C1C[C@@H](C(=O)O)N)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300027",
+  "label": "phenylalanine",
+  "title": "Phenylalanine",
+  "sitelinks": "70",
+  "aliases": "",
+  "smiles": "C1=CC=C(C=C1)C[C@@H](C(=O)O)N"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300028",
+  "label": "caffeine",
+  "title": "Caffeine",
+  "sitelinks": "120",
+  "aliases": "",
+  "smiles": "CN1C=NC2=C1C(=O)N(C(=O)N2C)C"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300029",
+  "label": "pyridine",
+  "title": "Pyridine",
+  "sitelinks": "60",
+  "aliases": "",
+  "smiles": "C1=CC=NC=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300030",
+  "label": "cyclohexane",
+  "title": "Cyclohexane",
+  "sitelinks": "50",
+  "aliases": "",
+  "smiles": "C1CCCCC1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300031",
+  "label": "glucose",
+  "title": "Glucose",
+  "sitelinks": "120",
+  "aliases": "",
+  "smiles": "C(C1C(C(C(C(O1)O)O)O)O)O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300032",
+  "label": "sodium chloride",
+  "title": "Sodium chloride",
+  "sitelinks": "120",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300033",
+  "label": "obscurylbenzene",
+  "title": "Obscurylbenzene",
+  "sitelinks": "2",
+  "aliases": "",
+  "smiles": "CCCCCCCCCCC1=CC=CC=C1"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8300034",
+  "label": "littlereadophenone",
+  "title": "Littlereadophenone",
+  "sitelinks": "8",
+  "aliases": "",
+  "smiles": "O=C(C1=CC=CC=C1)CCCCCCC"
+ }
+]

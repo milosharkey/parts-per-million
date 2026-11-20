@@ -1,0 +1,27 @@
+# Settings for this prompt. The folder name ("elements") is its id.
+# Field reference: README.md, "Prompt settings". Template: templates/.
+
+text = "Name a chemical element"
+label = "Elements"            # short name on the label's colour band
+status = "ready"
+subject = "chemistry"
+audience = "everyone"
+colour = "#2F4B7C"
+
+query = "elements.rq"
+min_views = 0
+kind = "element"
+# Element symbols ("Fe", "Au", "O") are one or two letters, below the usual
+# 3-character minimum. Knowing them is chemistry, so they count, as a
+# suggestion to confirm: "fe" -> Iron (DECISIONS.md, 29).
+min_alias_length = 1
+# Placeholder names from before an element was discovered or named don't
+# count: all 118 have real names now, and knowing them is the point
+# (DECISIONS.md, 32).
+drop_alias_patterns = [
+    '^(?:nil|un|bi|tri|quad|pent|hex|sept|oct|enn?)+i?um$',  # ununoctium, unnilquadium
+    '^un(?:un|nil|bi)[a-z]*um$',              # misspelt ones on Wikidata (ununnubium)
+    '^u[nubtqphse][nilubtqphsoe]$',           # their symbols: Uuo, Unq, Uub
+    '^(?:eka|dvi) ?[a-z]+$',                  # Mendeleev's predictions: eka-radon
+    '^(?:element|atomic number) \d+$',        # "element 118"
+]

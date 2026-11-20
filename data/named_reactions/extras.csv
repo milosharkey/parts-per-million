@@ -1,0 +1,24 @@
+# Famous processes named after people that Wikipedia files under industrial
+# processes rather than "Name reactions". Chemical engineers will name these.
+# title = exact English Wikipedia article title. kind is just a label.
+# Any already in the category are simply counted once.
+title,kind
+Haber process,process
+Ostwald process,process
+Solvay process,process
+Fischer–Tropsch process,process
+Hall–Héroult process,process
+Deacon process,process
+Claus process,process
+Sabatier reaction,process
+Bosch reaction,process
+Birkeland–Eyde process,process
+Mond process,process
+Kroll process,process
+Leblanc process,process
+Bayer process,process
+Castner–Kellner process,process
+Wacker process,process
+Bergius process,process
+Bessemer process,process
+Pidgeon process,process

@@ -1,0 +1,205 @@
+[
+ {
+  "item": "http://www.wikidata.org/entity/Q83500",
+  "label": "feldspar",
+  "title": "Feldspar",
+  "sitelinks": "70",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83501",
+  "label": "mica",
+  "title": "Mica",
+  "sitelinks": "65",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83502",
+  "label": "garnet group",
+  "title": "Garnet",
+  "sitelinks": "70",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83503",
+  "label": "olivine",
+  "title": "Olivine",
+  "sitelinks": "55",
+  "aliases": "peridot"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83504",
+  "label": "ruby",
+  "title": "Ruby",
+  "sitelinks": "80",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83505",
+  "label": "amethyst",
+  "title": "Amethyst",
+  "sitelinks": "60",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83506",
+  "label": "opal",
+  "title": "Opal",
+  "sitelinks": "60",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83507",
+  "label": "tourmaline",
+  "title": "Tourmaline",
+  "sitelinks": "50",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83508",
+  "label": "pyroxene",
+  "title": "Pyroxene",
+  "sitelinks": "40",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83509",
+  "label": "amphibole",
+  "title": "Amphibole",
+  "sitelinks": "38",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83510",
+  "label": "zeolite",
+  "title": "Zeolite",
+  "sitelinks": "45",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83511",
+  "label": "apatite",
+  "title": "Apatite",
+  "sitelinks": "45",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83512",
+  "label": "serpentine subgroup",
+  "title": "Serpentine subgroup",
+  "sitelinks": "30",
+  "aliases": "serpentine"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83513",
+  "label": "sapphire",
+  "title": "Sapphire",
+  "sitelinks": "70",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83514",
+  "label": "emerald",
+  "title": "Emerald",
+  "sitelinks": "70",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83515",
+  "label": "jade",
+  "title": "Jade",
+  "sitelinks": "60",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83516",
+  "label": "agate",
+  "title": "Agate",
+  "sitelinks": "50",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83517",
+  "label": "onyx",
+  "title": "Onyx",
+  "sitelinks": "40",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83518",
+  "label": "jasper",
+  "title": "Jasper",
+  "sitelinks": "40",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83519",
+  "label": "chalcedony",
+  "title": "Chalcedony",
+  "sitelinks": "35",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83520",
+  "label": "rose quartz",
+  "title": "Rose quartz",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83521",
+  "label": "smoky quartz",
+  "title": "Smoky quartz",
+  "sitelinks": "20",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q897",
+  "label": "gold",
+  "title": "Gold",
+  "sitelinks": "200",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q1090",
+  "label": "silver",
+  "title": "Silver",
+  "sitelinks": "190",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q682",
+  "label": "sulfur",
+  "title": "Sulfur",
+  "sitelinks": "180",
+  "aliases": "brimstone|sulphur"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q880",
+  "label": "platinum",
+  "title": "Platinum",
+  "sitelinks": "170",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q942",
+  "label": "bismuth",
+  "title": "Bismuth",
+  "sitelinks": "150",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q925",
+  "label": "mercury",
+  "title": "Mercury (element)",
+  "sitelinks": "190",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q83522",
+  "label": "biotite",
+  "title": "Biotite",
+  "sitelinks": "30",
+  "aliases": ""
+ }
+]

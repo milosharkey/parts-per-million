@@ -1,0 +1,32 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks each against every spelling it accepts and fails a prompt check if
+# any is missing, so a gap shows up before a player finds it (DECISIONS.md, 39).
+# Write them as players would type them.
+name
+benzene
+toluene
+phenol
+aniline
+xylene
+styrene
+naphthalene
+aspirin
+paracetamol
+acetaminophen
+ibuprofen
+TNT
+benzoic acid
+nitrobenzene
+polystyrene
+Kevlar
+dopamine
+serotonin
+adrenaline
+phenylalanine
+tyrosine
+tryptophan
+vanillin
+methyl orange
+phenolphthalein
+cumene
+anthracene

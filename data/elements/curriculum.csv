@@ -1,0 +1,66 @@
+# How early people meet each element. Starter list: edit freely.
+# level 3 = school before 16 (GCSE), 2 = A-level/IB, 1 = first-year university.
+# Anything not listed counts as 0 (page views and sitelinks still count).
+# name can be any name the element goes by (case doesn't matter).
+name,level
+# The first 20, which most people learn at GCSE.
+hydrogen,3
+helium,3
+lithium,3
+beryllium,3
+boron,3
+carbon,3
+nitrogen,3
+oxygen,3
+fluorine,3
+neon,3
+sodium,3
+magnesium,3
+aluminium,3
+silicon,3
+phosphorus,3
+sulfur,3
+chlorine,3
+argon,3
+potassium,3
+calcium,3
+# Everyday metals, and the rest of groups 1, 7 and 0 (GCSE trends).
+iron,3
+copper,3
+zinc,3
+silver,3
+gold,3
+lead,3
+tin,3
+mercury,3
+nickel,3
+platinum,3
+bromine,3
+iodine,3
+krypton,3
+xenon,3
+radon,3
+rubidium,3
+caesium,3
+# A-level: the first row of transition metals, group 2, common catalysts,
+# and the bottom of groups 1 and 7.
+scandium,2
+titanium,2
+vanadium,2
+chromium,2
+manganese,2
+cobalt,2
+strontium,2
+barium,2
+palladium,2
+rhodium,2
+uranium,2
+francium,2
+astatine,2
+# First-year university.
+gallium,1
+germanium,1
+arsenic,1
+selenium,1
+tungsten,1
+plutonium,1

@@ -1,0 +1,41 @@
+# How early people meet each piece of equipment. Starter list: edit freely.
+# level 3 = school before 16 (GCSE), 2 = A-level/IB, 1 = first-year university.
+# name can be any name the item goes by (case and dashes don't matter).
+name,level
+Beaker,3
+Bunsen burner,3
+Test tube,3
+Erlenmeyer flask,3
+Graduated cylinder,3
+Pipette,3
+Burette,3
+Funnel,3
+Evaporating dish,3
+Crucible,3
+Thermometer,3
+Petri dish,3
+Spatula,3
+Watch glass,3
+Retort stand,3
+Microscope,3
+Condenser,2
+Volumetric flask,2
+Separatory funnel,2
+Büchner funnel,2
+Round-bottom flask,2
+Desiccator,2
+Mortar and pestle,2
+Wash bottle,2
+Centrifuge,2
+Fume hood,2
+Rotary evaporator,1
+Schlenk line,1
+Soxhlet extractor,1
+Dean–Stark apparatus,1
+Glovebox,1
+Heating mantle,1
+Magnetic stirrer,1
+Thiele tube,1
+Kipp's apparatus,1
+Spectrophotometer,1
+Autoclave,1

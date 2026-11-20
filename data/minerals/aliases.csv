@@ -1,0 +1,16 @@
+# Extra ways players might type an answer, on top of Wikidata's own aliases.
+# British/American spellings (haematite/hematite, sulphur/sulfur) are
+# handled automatically, so don't list those.
+name,alias
+halite,rock salt
+pyrite,fool's gold
+pyrite,iron pyrites
+quartz,rock crystal
+gypsum,selenite
+graphite,plumbago
+galena,lead glance
+sphalerite,zinc blende
+calcite,iceland spar
+magnetite,lodestone
+fluorite,fluorspar
+cassiterite,tinstone

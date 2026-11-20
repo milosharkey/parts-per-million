@@ -1,0 +1,36 @@
+# Answers players will definitely give, which must be accepted. The build
+# checks each against every spelling it accepts and fails a prompt check if
+# any is missing, so a gap shows up before a player finds it (DECISIONS.md, 39).
+# Write them as players would type them.
+name
+chlorophyll
+indigo
+woad
+Prussian blue
+ultramarine
+ochre
+umber
+sienna
+vermilion
+titanium white
+carbon black
+cochineal
+carmine
+henna
+saffron
+turmeric
+Tyrian purple
+mauveine
+methyl orange
+litmus
+phenolphthalein
+malachite green
+crystal violet
+eosin
+melanin
+carotene
+anthocyanin
+cadmium red
+cobalt blue
+lead white
+Vantablack

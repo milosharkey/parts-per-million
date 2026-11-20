@@ -1,0 +1,31 @@
+# Settings for this prompt. The folder name ("named_reactions") is its id.
+# Field reference: README.md, "Prompt settings". Template: templates/.
+
+text = "Name a named reaction"
+label = "Reactions"            # short name on the label's colour band
+status = "ready"
+subject = "chemistry"
+audience = "specialist"
+colour = "#A23B4A"
+
+# Wikidata files reactions under several classes, inconsistently, but
+# Wikipedia's "Name reactions" category is curated by chemistry editors and
+# means exactly "named after a person" (DECISIONS.md, 30). Every member is a
+# real, checkable answer, so no floor is needed.
+category = "Category:Name reactions"
+min_views = 0
+kind = "reaction"
+# Generic last words stripped to make the short form players type:
+# "Grignard" for Grignard reaction.
+strip_descriptors = [
+    "reaction", "rearrangement", "synthesis", "reduction", "oxidation",
+    "coupling", "condensation", "olefination", "process", "cyclization",
+    "cyclisation", "esterification", "degradation", "decarboxylation",
+    "addition", "elimination", "cycloaddition", "amination", "alkylation",
+    "acylation", "arylation", "allylation", "hydrolysis", "halogenation",
+    "bromination", "chlorination", "iodination", "fluorination",
+    "annulation", "epoxidation", "dihydroxylation", "aminohydroxylation",
+    "hydrogenation", "hydroboration", "cleavage", "fragmentation",
+    "cyclopropanation", "homologation", "deoxygenation", "method",
+    "procedure", "transposition", "contraction", "expansion",
+]

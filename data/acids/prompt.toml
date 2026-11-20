@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("acids") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name an acid"
+label = "Acids"
+status = "draft"
+subject = "chemistry"
+audience = "everyone"
+colour = "#9C3D54"
+
+# A big tree: check the probe's size and where things came from before building.
+category = "Category:Acids"
+category_depth = 1
+skip_categories = ["theory", "theories", "dissociation", "lists", "people", "salts", "esters", "derivatives"]
+min_views = 0
+kind = "acid"

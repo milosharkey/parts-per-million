@@ -1,0 +1,36 @@
+# Every chemical element, 1 to 118, with its English Wikipedia article.
+#
+# Paste this into https://query.wikidata.org and press the play button to
+# explore the results yourself.
+#
+# Why these choices:
+# - wd:Q11344 is Wikidata's "chemical element" class. Hypothetical elements
+#   (unbinilium, element 120) have their own class, and the atomic number
+#   filter keeps out anything beyond oganesson in case one is mis-filed.
+# - The element symbol (P246) is added to the aliases, so "Fe" and "Au"
+#   count. prompts.py lowers the minimum alias length for this prompt so
+#   one- and two-letter symbols survive.
+# - Wikidata's English aliases already include old and systematic names
+#   ("ununoctium", "element 118", "eka-radon"), which all count.
+# - Columns match minerals.rq, so the rest of the pipeline doesn't change.
+SELECT ?item ?label ?title ?sitelinks
+       (GROUP_CONCAT(DISTINCT ?alias; separator="|") AS ?aliases)
+WHERE {
+  ?item wdt:P31 wd:Q11344 ;
+        wdt:P1086 ?number ;
+        wikibase:sitelinks ?sitelinks ;
+        rdfs:label ?label .
+  FILTER(?number >= 1 && ?number <= 118)
+  FILTER(LANG(?label) = "en")
+
+  ?article schema:about ?item ;
+           schema:isPartOf <https://en.wikipedia.org/> ;
+           schema:name ?title .
+
+  OPTIONAL {
+    { ?item skos:altLabel ?alias . FILTER(LANG(?alias) = "en") }
+    UNION
+    { ?item wdt:P246 ?alias . }
+  }
+}
+GROUP BY ?item ?label ?title ?sitelinks

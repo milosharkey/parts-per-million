@@ -1,0 +1,35 @@
+# How early people meet each answer. Starter list: edit freely.
+# level 3 = school before 16 (GCSE), 2 = A-level/IB or school geology,
+# 1 = first-year university. Anything not listed counts as 0.
+# name must match the answer's English name on Wikidata (case doesn't matter).
+name,level
+quartz,3
+diamond,3
+graphite,3
+calcite,3
+halite,3
+gypsum,3
+talc,3
+feldspar,3
+mica,3
+fluorite,2
+apatite,2
+orthoclase,2
+topaz,2
+corundum,2
+hematite,2
+magnetite,2
+galena,2
+pyrite,2
+malachite,2
+chalcopyrite,2
+sphalerite,2
+cassiterite,2
+olivine,2
+garnet,2
+zeolite,1
+perovskite,1
+rutile,1
+kaolinite,1
+muscovite,1
+biotite,1

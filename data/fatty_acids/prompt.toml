@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("fatty_acids") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a fatty acid"
+label = "Fatty acids"
+status = "draft"
+subject = "biochemistry"
+audience = "university"
+colour = "#1565C0"
+
+# Omega-3 is a family rather than one acid, but it's what most people say first.
+category = "Category:Fatty acids"
+category_depth = 1
+skip_categories = ["lists", "people", "metabolism"]
+min_views = 0
+kind = "fatty acid"

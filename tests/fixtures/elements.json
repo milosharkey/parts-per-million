@@ -1,0 +1,212 @@
+[
+ {
+  "item": "http://www.wikidata.org/entity/Q8000001",
+  "label": "hydrogen",
+  "title": "Hydrogen",
+  "sitelinks": "260",
+  "aliases": "H"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000002",
+  "label": "helium",
+  "title": "Helium",
+  "sitelinks": "240",
+  "aliases": "He"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000003",
+  "label": "carbon",
+  "title": "Carbon",
+  "sitelinks": "250",
+  "aliases": "C"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000004",
+  "label": "nitrogen",
+  "title": "Nitrogen",
+  "sitelinks": "230",
+  "aliases": "N"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000005",
+  "label": "oxygen",
+  "title": "Oxygen",
+  "sitelinks": "255",
+  "aliases": "O"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000006",
+  "label": "sodium",
+  "title": "Sodium",
+  "sitelinks": "220",
+  "aliases": "Na"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000007",
+  "label": "aluminium",
+  "title": "Aluminium",
+  "sitelinks": "215",
+  "aliases": "Al|aluminum"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000008",
+  "label": "sulfur",
+  "title": "Sulfur",
+  "sitelinks": "205",
+  "aliases": "S"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000009",
+  "label": "chlorine",
+  "title": "Chlorine",
+  "sitelinks": "200",
+  "aliases": "Cl"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000010",
+  "label": "iron",
+  "title": "Iron",
+  "sitelinks": "235",
+  "aliases": "Fe"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000011",
+  "label": "copper",
+  "title": "Copper",
+  "sitelinks": "225",
+  "aliases": "Cu"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000012",
+  "label": "silver",
+  "title": "Silver",
+  "sitelinks": "220",
+  "aliases": "Ag"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000013",
+  "label": "gold",
+  "title": "Gold",
+  "sitelinks": "240",
+  "aliases": "Au"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000014",
+  "label": "mercury",
+  "title": "Mercury (element)",
+  "sitelinks": "210",
+  "aliases": "Hg"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000015",
+  "label": "lead",
+  "title": "Lead",
+  "sitelinks": "200",
+  "aliases": "Pb"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000016",
+  "label": "uranium",
+  "title": "Uranium",
+  "sitelinks": "205",
+  "aliases": "U"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000017",
+  "label": "caesium",
+  "title": "Caesium",
+  "sitelinks": "170",
+  "aliases": "Cs|cesium"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000018",
+  "label": "tungsten",
+  "title": "Tungsten",
+  "sitelinks": "175",
+  "aliases": "W|wolfram"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000019",
+  "label": "bismuth",
+  "title": "Bismuth",
+  "sitelinks": "160",
+  "aliases": "Bi"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000020",
+  "label": "gallium",
+  "title": "Gallium",
+  "sitelinks": "160",
+  "aliases": "Ga"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000021",
+  "label": "astatine",
+  "title": "Astatine",
+  "sitelinks": "150",
+  "aliases": "At"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000022",
+  "label": "francium",
+  "title": "Francium",
+  "sitelinks": "145",
+  "aliases": "Fr"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000023",
+  "label": "technetium",
+  "title": "Technetium",
+  "sitelinks": "140",
+  "aliases": "Tc"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000024",
+  "label": "promethium",
+  "title": "Promethium",
+  "sitelinks": "130",
+  "aliases": "Pm"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000025",
+  "label": "ytterbium",
+  "title": "Ytterbium",
+  "sitelinks": "130",
+  "aliases": "Yb"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000026",
+  "label": "hafnium",
+  "title": "Hafnium",
+  "sitelinks": "130",
+  "aliases": "Hf"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000027",
+  "label": "rhenium",
+  "title": "Rhenium",
+  "sitelinks": "130",
+  "aliases": "Re"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000028",
+  "label": "dubnium",
+  "title": "Dubnium",
+  "sitelinks": "125",
+  "aliases": "Db"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000029",
+  "label": "seaborgium",
+  "title": "Seaborgium",
+  "sitelinks": "125",
+  "aliases": "Sg"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8000030",
+  "label": "oganesson",
+  "title": "Oganesson",
+  "sitelinks": "140",
+  "aliases": "Og|ununoctium|element 118|eka-radon"
+ }
+]

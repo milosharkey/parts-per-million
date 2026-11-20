@@ -1,0 +1,19 @@
+# Settings for this prompt. The folder name ("isotopes") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name an isotope"
+label = "Isotopes"
+status = "draft"
+subject = "physics"
+audience = "school"
+colour = "#556B8D"
+
+# Players type "carbon-14" or "carbon 14": both match the article title.
+category = "Category:Isotopes"
+category_depth = 1
+skip_categories = ["lists", "people", "tables"]
+# "Isotopes of carbon" and the like are overviews, not an isotope.
+drop_title_patterns = ['^Isotopes of ', '^Table of ']
+min_views = 0
+kind = "isotope"

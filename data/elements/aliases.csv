@@ -1,0 +1,16 @@
+# Extra ways players might type an element, on top of Wikidata's aliases
+# (which already include symbols, old names and "element 26"-style names).
+# British/American spellings (aluminium, caesium, sulphur) are automatic.
+name,alias
+iron,ferrum
+gold,aurum
+silver,argentum
+copper,cuprum
+lead,plumbum
+tin,stannum
+mercury,hydrargyrum
+mercury,quicksilver
+sodium,natrium
+potassium,kalium
+antimony,stibium
+tungsten,wolfram

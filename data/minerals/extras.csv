@@ -1,0 +1,35 @@
+# Answers the main query misses because they aren't single IMA species:
+# mineral groups, gem varieties, mineraloids and native elements (gold, sulfur:
+# Wikidata files these under the chemical element, not "mineral species")
+# that players will type.
+# title = exact English Wikipedia article title. kind is just a label.
+title,kind
+Feldspar,group
+Mica,group
+Garnet,group
+Olivine,group
+Tourmaline,group
+Pyroxene,group
+Amphibole,group
+Zeolite,group
+Apatite,group
+Serpentine subgroup,group
+Biotite,group
+Ruby,variety
+Sapphire,variety
+Emerald,variety
+Amethyst,variety
+Jade,variety
+Agate,variety
+Onyx,variety
+Jasper,variety
+Chalcedony,variety
+Rose quartz,variety
+Smoky quartz,variety
+Opal,mineraloid
+Gold,native element
+Silver,native element
+Sulfur,native element
+Platinum,native element
+Bismuth,native element
+Mercury (element),native element

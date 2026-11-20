@@ -1,0 +1,18 @@
+# Settings for this prompt. The folder name ("enzymes") is its id.
+# Field reference: README.md, "Prompt settings". Template: templates/.
+
+text = "Name an enzyme"
+label = "Enzymes"            # short name on the label's colour band
+status = "ready"
+subject = "biochemistry"
+audience = "school"
+colour = "#A8437A"
+
+# Everything on Wikidata with an EC (Enzyme Commission) number and an English
+# article. Enzyme families without a single EC number (DNA polymerase,
+# protease) come in through extras.csv.
+query = "enzymes.rq"
+min_views = 0
+kind = "enzyme"
+# EC numbers ("EC 3.2.1.1") are listed as aliases; nobody types them.
+drop_alias_patterns = ['^ec ?\d', '^[\d ]+$']

@@ -1,0 +1,296 @@
+[
+ {
+  "item": "http://www.wikidata.org/entity/Q43010",
+  "label": "quartz",
+  "title": "Quartz",
+  "sitelinks": "120",
+  "aliases": "rock crystal"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q5283",
+  "label": "diamond",
+  "title": "Diamond",
+  "sitelinks": "140",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q5309",
+  "label": "graphite",
+  "title": "Graphite",
+  "sitelinks": "95",
+  "aliases": "plumbago"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q107198",
+  "label": "calcite",
+  "title": "Calcite",
+  "sitelinks": "80",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q184742",
+  "label": "halite",
+  "title": "Halite",
+  "sitelinks": "75",
+  "aliases": "rock salt"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q144127",
+  "label": "gypsum",
+  "title": "Gypsum",
+  "sitelinks": "85",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q134583",
+  "label": "talc",
+  "title": "Talc",
+  "sitelinks": "70",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190061",
+  "label": "fluorite",
+  "title": "Fluorite",
+  "sitelinks": "65",
+  "aliases": "fluorspar"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q193078",
+  "label": "orthoclase",
+  "title": "Orthoclase",
+  "sitelinks": "40",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190073",
+  "label": "topaz",
+  "title": "Topaz",
+  "sitelinks": "60",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190065",
+  "label": "corundum",
+  "title": "Corundum",
+  "sitelinks": "55",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q43455",
+  "label": "hematite",
+  "title": "Hematite",
+  "sitelinks": "60",
+  "aliases": "haematite"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190057",
+  "label": "magnetite",
+  "title": "Magnetite",
+  "sitelinks": "58",
+  "aliases": "lodestone"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190048",
+  "label": "galena",
+  "title": "Galena",
+  "sitelinks": "50",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q131705",
+  "label": "pyrite",
+  "title": "Pyrite",
+  "sitelinks": "65",
+  "aliases": "iron pyrite"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q178934",
+  "label": "malachite",
+  "title": "Malachite",
+  "sitelinks": "55",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190051",
+  "label": "chalcopyrite",
+  "title": "Chalcopyrite",
+  "sitelinks": "40",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190052",
+  "label": "sphalerite",
+  "title": "Sphalerite",
+  "sitelinks": "38",
+  "aliases": "zinc blende"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q193082",
+  "label": "cassiterite",
+  "title": "Cassiterite",
+  "sitelinks": "36",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190064",
+  "label": "rutile",
+  "title": "Rutile",
+  "sitelinks": "35",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q183670",
+  "label": "perovskite",
+  "title": "Perovskite (structure)",
+  "sitelinks": "30",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190067",
+  "label": "kaolinite",
+  "title": "Kaolinite",
+  "sitelinks": "33",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190072",
+  "label": "muscovite",
+  "title": "Muscovite",
+  "sitelinks": "30",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190081",
+  "label": "turquoise",
+  "title": "Turquoise",
+  "sitelinks": "50",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190085",
+  "label": "azurite",
+  "title": "Azurite",
+  "sitelinks": "35",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190090",
+  "label": "beryl",
+  "title": "Beryl",
+  "sitelinks": "45",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190091",
+  "label": "cinnabar",
+  "title": "Cinnabar",
+  "sitelinks": "40",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190094",
+  "label": "cummingtonite",
+  "title": "Cummingtonite",
+  "sitelinks": "22",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190095",
+  "label": "jadarite",
+  "title": "Jadarite",
+  "sitelinks": "12",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190096",
+  "label": "painite",
+  "title": "Painite",
+  "sitelinks": "20",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190097",
+  "label": "hemimorphite",
+  "title": "Hemimorphite",
+  "sitelinks": "15",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190098",
+  "label": "wulfenite",
+  "title": "Wulfenite",
+  "sitelinks": "14",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190099",
+  "label": "anatase",
+  "title": "Anatase",
+  "sitelinks": "14",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190100",
+  "label": "stishovite",
+  "title": "Stishovite",
+  "sitelinks": "10",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190101",
+  "label": "lonsdaleite",
+  "title": "Lonsdaleite",
+  "sitelinks": "12",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190102",
+  "label": "benitoite",
+  "title": "Benitoite",
+  "sitelinks": "9",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190103",
+  "label": "kernite",
+  "title": "Kernite",
+  "sitelinks": "7",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190104",
+  "label": "zircon",
+  "title": "Zircon",
+  "sitelinks": "50",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q190105",
+  "label": "spodumene",
+  "title": "Spodumene",
+  "sitelinks": "20",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q583353",
+  "label": "native copper",
+  "title": "Native copper",
+  "sitelinks": "25",
+  "aliases": "copper"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q3860580",
+  "label": "monazite-(Ce)",
+  "title": "Monazite-(Ce)",
+  "sitelinks": "6",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q3860582",
+  "label": "monazite-(La)",
+  "title": "Monazite-(La)",
+  "sitelinks": "5",
+  "aliases": ""
+ }
+]

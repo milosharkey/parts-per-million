@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("nobel_chemistry") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a winner of the Nobel Prize in Chemistry"
+label = "Nobel chemists"
+status = "draft"
+subject = "history of science"
+audience = "university"
+colour = "#4F5D2F"
+
+# About 190 laureates. Surnames count on their own unless two winners share one.
+category = "Category:Nobel laureates in Chemistry"
+category_depth = 0
+surnames = true             # "Curie" counts for Marie Curie
+min_views = 0
+kind = "person"

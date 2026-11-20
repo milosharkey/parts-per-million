@@ -1,0 +1,6 @@
+# Short descriptions the game shows when a player finds an answer. Always
+# write one for the gem and Fool's gold; any other answer can have one too.
+# name can be any name the answer goes by. Keep each to two sentences.
+name,blurb
+Strecker degradation,"Turns an amino acid into an aldehyde with one carbon fewer. It's part of the Maillard browning chemistry behind the smell of baking bread, roasting coffee and chocolate."
+Azide-alkyne Huisgen cycloaddition,"Sounds deeply obscure, but its copper-catalysed version is the flagship of click chemistry, which won the 2022 Nobel Prize. Plenty of chemists will say it."

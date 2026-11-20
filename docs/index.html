@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parts Per Million</title>
+  <!-- Typefaces from the design doc. If they can't load (offline), the
+       system fonts in style.css take over and nothing breaks. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 1.5h4M7 1.5v4.5L3 13a1 1 0 0 0 .9 1.5h8.2A1 1 0 0 0 13 13L9 6V1.5' fill='%237D2A86' stroke='%231d2124'/%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar card">
+      <span class="wordmark">Parts Per Million</span>
+      <span class="lot" id="lot"></span>
+    </header>
+
+    <main class="layout">
+      <!-- The distillation column: one band per answer, as tall as its points. -->
+      <aside class="column-panel card" aria-label="Distillation column">
+        <svg id="column" viewBox="0 0 170 620" preserveAspectRatio="xMidYMid meet" role="img"
+             aria-label="Distillation column showing your score"></svg>
+      </aside>
+
+      <!-- Start, play and results screens are drawn here by game.js. -->
+      <section class="centre" id="centre" aria-live="polite"></section>
+
+      <aside class="readout-panel card">
+        <div class="readout">
+          <div class="ppm" id="ppm">1,000,000 ppm</div>
+          <div class="purity" id="purity">0.0% pure · 0.00N</div>
+        </div>
+        <h2 class="panel-title">Answers so far</h2>
+        <ol class="so-far" id="so-far"></ol>
+      </aside>
+    </main>
+    <footer class="site-footer"><span>Parts Per Million · a daily rare-answer chemistry game</span>
+      <span id="contact"></span></footer>
+  </div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>

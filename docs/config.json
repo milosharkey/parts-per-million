@@ -1,0 +1,9 @@
+{
+ "mode": "playtest",
+ "promptsPerGame": 7,
+ "timeLimit": 25,
+ "resultsUrl": "https://script.google.com/macros/s/AKfycbzJa4aqg9XZRaOPZvNaXXwCOJ_4o-WEuLvLYISX__NFvDy2LG1S452hRfpzDXFtnS0H/exec",
+ "contact": "milosharkey1@gmail.com",
+ "dayStartsUtcHour": 5,
+ "local": false
+}

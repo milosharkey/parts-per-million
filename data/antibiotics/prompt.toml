@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("antibiotics") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name an antibiotic"
+label = "Antibiotics"
+status = "draft"
+subject = "biology"
+audience = "school"
+colour = "#BF360C"
+
+# All medicines, so page views are all patient-driven to a similar degree: no discount needed.
+category = "Category:Antibiotics"
+category_depth = 1
+skip_categories = ["resistance", "people", "companies", "lists", "stubs"]
+min_views = 0
+kind = "antibiotic"

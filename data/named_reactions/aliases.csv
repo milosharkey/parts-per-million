@@ -1,0 +1,15 @@
+# Extra ways players might type a reaction, on top of Wikidata's aliases.
+# The build already adds the name without its last word for most reactions
+# ("Grignard" for Grignard reaction, "Haber" for Haber process: see
+# strip_descriptors in prompts.py), so only list forms it can't work out.
+name,alias
+Williamson ether synthesis,Williamson
+Strecker amino acid synthesis,Strecker
+Fischer–Speier esterification,Fischer esterification
+Friedel–Crafts reaction,Friedel–Crafts alkylation
+Friedel–Crafts reaction,Friedel–Crafts acylation
+Haber process,Haber–Bosch process
+Haber process,Haber–Bosch
+Suzuki reaction,Suzuki coupling
+Suzuki reaction,Suzuki–Miyaura coupling
+Hell–Volhard–Zelinsky halogenation,HVZ reaction

@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("sugars") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a sugar"
+label = "Sugars"
+status = "draft"
+subject = "biochemistry"
+audience = "school"
+colour = "#A0522D"
+
+# Monosaccharides and disaccharides with their subcategories (hexoses, pentoses...).
+category = ["Category:Monosaccharides", "Category:Disaccharides"]
+category_depth = 1
+skip_categories = ["lists", "people", "derivatives"]
+min_views = 0
+kind = "sugar"

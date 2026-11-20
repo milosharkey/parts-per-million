@@ -1,0 +1,24 @@
+# Every item of one kind on Wikidata with an English Wikipedia article.
+# Replace wd:Q12345 with the class (find it by searching wikidata.org for
+# the kind of thing, then read its Q-number from the page title).
+#
+# wdt:P31 is "instance of". To include subclasses too, use wdt:P31/wdt:P279*
+# instead, which is slower and catches more that isn't an answer.
+SELECT ?item ?label ?title ?sitelinks
+       (GROUP_CONCAT(DISTINCT ?alias; separator="|") AS ?aliases)
+WHERE {
+  ?item wdt:P31 wd:Q12345 ;
+        wikibase:sitelinks ?sitelinks ;
+        rdfs:label ?label .
+  FILTER(LANG(?label) = "en")
+
+  ?article schema:about ?item ;
+           schema:isPartOf <https://en.wikipedia.org/> ;
+           schema:name ?title .
+
+  OPTIONAL {
+    ?item skos:altLabel ?alias .
+    FILTER(LANG(?alias) = "en")
+  }
+}
+GROUP BY ?item ?label ?title ?sitelinks

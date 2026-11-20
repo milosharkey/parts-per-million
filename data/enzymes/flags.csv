@@ -1,0 +1,17 @@
+# Hand-set tiers that override the model (same format as data/minerals/flags.csv).
+#   single_crystal   the day's gem: top end of Analytical grade, and fun
+#   fools_gold       famously obscure, so it lands in Reagent grade at most
+#   min:<tier>       no more common than this tier
+#   set:<tier>       exactly this tier, and the model ignores the answer when
+#                    setting its scale (DECISIONS.md, 33)
+# Run the build first: its summary suggests gem and Fool's gold candidates.
+name,flag
+# Famous as poisons, not as enzymes (DECISIONS.md, 38): their page views are
+# true-crime and news readers. Titin is read about for its long name.
+Botulinum toxin,set:reagent_grade
+Ricin,set:reagent_grade
+Titin,min:reagent_grade
+# Gem: the jellyfish protein that glows blue. Fool's gold: feels niche, but
+# anyone who's done PCR knows it.
+Aequorin,single_crystal
+Taq polymerase,fools_gold

@@ -1,0 +1,45 @@
+# Everyday lab equipment Wikipedia files outside "Laboratory equipment".
+# title = exact English Wikipedia article title. Any already listed are counted once.
+title,kind
+Thermometer,equipment
+Microscope,equipment
+Bunsen burner,equipment
+Fume hood,equipment
+Centrifuge,equipment
+PH meter,equipment
+Hot plate,equipment
+Magnetic stirrer,equipment
+Autoclave,equipment
+Desiccator,equipment
+Mortar and pestle,equipment
+Crucible,equipment
+Wash bottle,equipment
+Eye dropper,equipment
+Spatula,equipment
+Pipette,equipment
+Burette,equipment
+Filter paper,equipment
+Glovebox,equipment
+Laminar flow cabinet,equipment
+Biosafety cabinet,equipment
+Petri dish,equipment
+Test tube,equipment
+Retort stand,equipment
+Heating mantle,equipment
+Rotary evaporator,equipment
+Schlenk line,equipment
+Soxhlet extractor,equipment
+Dean–Stark apparatus,equipment
+Kipp's apparatus,equipment
+Analytical balance,equipment
+Spectrophotometer,equipment
+# Added after the first full build (DECISIONS.md, 38): school-lab basics and
+# the big instruments chemists name, which Wikipedia files elsewhere.
+Weighing scale,equipment
+Goggles,equipment
+Stopwatch,equipment
+Mass spectrometry,instrument
+Nuclear magnetic resonance spectroscopy,instrument
+Gas chromatography,instrument
+High-performance liquid chromatography,instrument
+Spectrophotometry,instrument

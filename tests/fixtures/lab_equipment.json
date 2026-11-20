@@ -1,0 +1,191 @@
+[
+ {
+  "item": "http://www.wikidata.org/entity/Q8200001",
+  "label": "beaker",
+  "title": "Beaker (laboratory equipment)",
+  "sitelinks": "60",
+  "aliases": "beaker"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200002",
+  "label": "erlenmeyer flask",
+  "title": "Erlenmeyer flask",
+  "sitelinks": "50",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200003",
+  "label": "graduated cylinder",
+  "title": "Graduated cylinder",
+  "sitelinks": "40",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200004",
+  "label": "burette",
+  "title": "Burette",
+  "sitelinks": "45",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200005",
+  "label": "volumetric flask",
+  "title": "Volumetric flask",
+  "sitelinks": "30",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200006",
+  "label": "round-bottom flask",
+  "title": "Round-bottom flask",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200007",
+  "label": "separatory funnel",
+  "title": "Separatory funnel",
+  "sitelinks": "28",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200008",
+  "label": "büchner funnel",
+  "title": "Büchner funnel",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200009",
+  "label": "condenser",
+  "title": "Condenser (laboratory)",
+  "sitelinks": "22",
+  "aliases": "Liebig condenser"
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200010",
+  "label": "desiccator",
+  "title": "Desiccator",
+  "sitelinks": "30",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200011",
+  "label": "watch glass",
+  "title": "Watch glass",
+  "sitelinks": "25",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200012",
+  "label": "evaporating dish",
+  "title": "Evaporating dish",
+  "sitelinks": "15",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200013",
+  "label": "test tube rack",
+  "title": "Test tube rack",
+  "sitelinks": "10",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200014",
+  "label": "schlenk flask",
+  "title": "Schlenk flask",
+  "sitelinks": "8",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200015",
+  "label": "thiele tube",
+  "title": "Thiele tube",
+  "sitelinks": "10",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200016",
+  "label": "dean–stark apparatus",
+  "title": "Dean–Stark apparatus",
+  "sitelinks": "9",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200017",
+  "label": "soxhlet extractor",
+  "title": "Soxhlet extractor",
+  "sitelinks": "20",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200018",
+  "label": "kipp's apparatus",
+  "title": "Kipp's apparatus",
+  "sitelinks": "15",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200019",
+  "label": "gas syringe",
+  "title": "Gas syringe",
+  "sitelinks": "6",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200020",
+  "label": "abderhalden's drying pistol",
+  "title": "Abderhalden's drying pistol",
+  "sitelinks": "4",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200021",
+  "label": "eudiometer",
+  "title": "Eudiometer",
+  "sitelinks": "12",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200022",
+  "label": "hirsch funnel",
+  "title": "Hirsch funnel",
+  "sitelinks": "5",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200023",
+  "label": "vigreux column",
+  "title": "Vigreux column",
+  "sitelinks": "7",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200024",
+  "label": "cold finger",
+  "title": "Cold finger",
+  "sitelinks": "5",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200025",
+  "label": "allihn condenser",
+  "title": "Allihn condenser",
+  "sitelinks": "4",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200026",
+  "label": "nmr tube",
+  "title": "NMR tube",
+  "sitelinks": "3",
+  "aliases": ""
+ },
+ {
+  "item": "http://www.wikidata.org/entity/Q8200027",
+  "label": "celloscope automated cell counter",
+  "title": "Celloscope automated cell counter",
+  "sitelinks": "2",
+  "aliases": ""
+ }
+]

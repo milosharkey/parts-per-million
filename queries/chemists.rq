@@ -1,0 +1,30 @@
+# Chemists on Wikidata with an English Wikipedia article and articles in at
+# least 20 languages: the ones players could know.
+#
+# Paste this into https://query.wikidata.org to explore it.
+#
+# - wdt:P106 wd:Q593644 is "occupation: chemist" and wdt:P31 wd:Q5 "is a
+#   human". Biochemists and others with only a more specific occupation are
+#   missed; add the famous ones through data/chemists/extras.csv.
+# - The 20-language floor is in the query itself, so tens of thousands of
+#   minor chemists never leave Wikidata.
+SELECT ?item ?label ?title ?sitelinks
+       (GROUP_CONCAT(DISTINCT ?alias; separator="|") AS ?aliases)
+WHERE {
+  ?item wdt:P106 wd:Q593644 ;
+        wdt:P31 wd:Q5 ;
+        wikibase:sitelinks ?sitelinks .
+  FILTER(?sitelinks >= 20)
+  ?item rdfs:label ?label .
+  FILTER(LANG(?label) = "en")
+
+  ?article schema:about ?item ;
+           schema:isPartOf <https://en.wikipedia.org/> ;
+           schema:name ?title .
+
+  OPTIONAL {
+    ?item skos:altLabel ?alias .
+    FILTER(LANG(?alias) = "en")
+  }
+}
+GROUP BY ?item ?label ?title ?sitelinks

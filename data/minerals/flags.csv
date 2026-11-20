@@ -1,0 +1,19 @@
+# Hand-set tiers that override the model.
+#   single_crystal       the day's gem (100 points)
+#   fools_gold           the famous "obscure" answer everyone thinks is clever (15 points)
+#   min:<tier>           no more common than this tier, e.g. min:reagent_grade.
+#                        For answers whose page views overstate how often
+#                        players would give them (see DECISIONS.md, 13).
+# name can be any name the answer goes by (display name, label or alias).
+name,flag
+jadarite,single_crystal
+cummingtonite,fools_gold
+# Native elements: the page views are for the element, and knowing that
+# native gold or sulfur counts as a mineral is niche.
+gold,min:reagent_grade
+silver,min:reagent_grade
+native copper,min:reagent_grade
+sulfur,min:reagent_grade
+platinum,min:reagent_grade
+bismuth,min:reagent_grade
+mercury,min:reagent_grade

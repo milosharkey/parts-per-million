@@ -1,0 +1,25 @@
+# Enzymes and enzyme families with no single EC number on Wikidata, which
+# the main query can't find. title = exact English Wikipedia article title.
+title,kind
+Protease,enzyme family
+Amylase,enzyme family
+Lipase,enzyme family
+DNA polymerase,enzyme family
+RNA polymerase,enzyme family
+DNA ligase,enzyme family
+Helicase,enzyme family
+Restriction enzyme,enzyme family
+Reverse transcriptase,enzyme family
+Telomerase,enzyme
+Topoisomerase,enzyme family
+Kinase,enzyme family
+Integrase,enzyme family
+Luciferase,enzyme family
+Cas9,enzyme
+ATP synthase,enzyme
+RuBisCO,enzyme
+Lysozyme,enzyme
+Catalase,enzyme
+Pepsin,enzyme
+Trypsin,enzyme
+Lactase,enzyme

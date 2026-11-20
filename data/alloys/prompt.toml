@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("alloys") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name an alloy"
+label = "Alloys"
+status = "draft"
+subject = "chemistry"
+audience = "everyone"
+colour = "#2E7D5B"
+
+# Subcategories by base metal (copper alloys, steels...) carry most of the answers.
+category = "Category:Alloys"
+category_depth = 1
+skip_categories = ["companies", "manufacturers", "people", "lists", "objects", "coins"]
+min_views = 0
+kind = "alloy"

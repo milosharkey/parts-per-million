@@ -1,0 +1,12 @@
+# Hand-set tiers that override the model (same format as data/minerals/flags.csv).
+#   single_crystal   the day's gem: top end of Analytical grade, and fun
+#   fools_gold       famously obscure, so it lands in Reagent grade at most
+#   min:<tier>       no more common than this tier
+#   set:<tier>       exactly this tier, and the model ignores the answer when
+#                    setting its scale (DECISIONS.md, 33)
+# Run the build first: its summary suggests gem and Fool's gold candidates.
+name,flag
+# Gem: Pasteur's flask from the experiment that ended spontaneous generation.
+# Fool's gold: sounds obscure, but every organic chemist has used one.
+Swan neck flask,single_crystal
+

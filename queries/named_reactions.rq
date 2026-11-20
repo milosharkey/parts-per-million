@@ -1,0 +1,52 @@
+# Every article in English Wikipedia's "Name reactions" category.
+#
+# Paste this into https://query.wikidata.org and press the play button to
+# explore the results yourself.
+#
+# Why a Wikipedia category rather than a Wikidata class:
+# - Wikidata files reactions inconsistently: some are "chemical reaction",
+#   some "organic reaction", some "name reaction", some have no class at all.
+#   The Wikipedia category is maintained by chemistry editors and means
+#   exactly what the prompt asks: a reaction named after a person.
+# - Wikidata's query service can read a category directly through its
+#   MediaWiki API service (wikibase:mwapi), following every page of results.
+#   gcmnamespace 0 keeps to articles, so subcategories and templates stay out.
+# - Famous named processes that sit in other categories (Haber, Ostwald,
+#   Solvay...) are added through data/named_reactions/extras.csv, and
+#   anything in the category that isn't a reaction is dropped through
+#   data/named_reactions/exclude.csv.
+# - hint:optimizer "None" makes the service run the query in the order it's
+#   written: fetch the ~500 category members first, then look up details for
+#   just those items. Without it, the query planner sometimes starts from the
+#   labels of every item on Wikidata and times out (HTTP 504), which is what
+#   happened on the first real run.
+# - Columns match minerals.rq, so the rest of the pipeline doesn't change.
+SELECT ?item ?label ?title ?sitelinks
+       (GROUP_CONCAT(DISTINCT ?alias; separator="|") AS ?aliases)
+WHERE {
+  hint:Query hint:optimizer "None" .
+
+  SERVICE wikibase:mwapi {
+    bd:serviceParam wikibase:api "Generator" ;
+                    wikibase:endpoint "en.wikipedia.org" ;
+                    mwapi:generator "categorymembers" ;
+                    mwapi:gcmtitle "Category:Name reactions" ;
+                    mwapi:gcmnamespace "0" ;
+                    mwapi:gcmlimit "max" .
+    ?item wikibase:apiOutputItem mwapi:item .
+  }
+
+  ?item wikibase:sitelinks ?sitelinks ;
+        rdfs:label ?label .
+  FILTER(LANG(?label) = "en")
+
+  ?article schema:about ?item ;
+           schema:isPartOf <https://en.wikipedia.org/> ;
+           schema:name ?title .
+
+  OPTIONAL {
+    ?item skos:altLabel ?alias .
+    FILTER(LANG(?alias) = "en")
+  }
+}
+GROUP BY ?item ?label ?title ?sitelinks

@@ -1,0 +1,18 @@
+# Settings for this prompt. The folder name ("lab_techniques") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a laboratory technique"
+label = "Techniques"
+status = "draft"
+subject = "lab"
+audience = "school"
+colour = "#283593"
+
+# About 270 articles, with some that aren't techniques (organisations, rules).
+# Many everyday techniques are filed elsewhere, hence the extras.
+category = "Category:Laboratory techniques"
+category_depth = 0
+skip_categories = ["equipment", "people", "companies", "lists", "types"]
+min_views = 0
+kind = "technique"

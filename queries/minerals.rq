@@ -1,0 +1,35 @@
+# Every mineral species on Wikidata that has an English Wikipedia article.
+#
+# Paste this into https://query.wikidata.org and press the play button to
+# explore the results yourself.
+#
+# Why these choices:
+# - wd:Q12089225 is Wikidata's "mineral species" class. Using P31 (instance
+#   of) directly, rather than walking subclasses with P31/P279*, keeps out
+#   groups, varieties and rocks. The ones players will type anyway (feldspar,
+#   ruby, garnet...) are added back explicitly through data/minerals/extras.csv.
+# - Requiring an English Wikipedia article gives every answer an English name
+#   players can type, and an article we can count page views for.
+# - wikibase:sitelinks is how many language Wikipedias cover the item: a
+#   cheap, hard-to-game signal of global familiarity.
+# - schema:name is the article's title as written ("Native gold"), which is
+#   what the page-view API needs and doubles as an alias.
+# - English aliases are joined with "|" so each mineral comes back as one row.
+SELECT ?item ?label ?title ?sitelinks
+       (GROUP_CONCAT(DISTINCT ?alias; separator="|") AS ?aliases)
+WHERE {
+  ?item wdt:P31 wd:Q12089225 ;
+        wikibase:sitelinks ?sitelinks ;
+        rdfs:label ?label .
+  FILTER(LANG(?label) = "en")
+
+  ?article schema:about ?item ;
+           schema:isPartOf <https://en.wikipedia.org/> ;
+           schema:name ?title .
+
+  OPTIONAL {
+    ?item skos:altLabel ?alias .
+    FILTER(LANG(?alias) = "en")
+  }
+}
+GROUP BY ?item ?label ?title ?sitelinks

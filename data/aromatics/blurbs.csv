@@ -1,0 +1,6 @@
+# Short descriptions the game shows when a player finds an answer. Always
+# write one for the gem and Fool's gold; any other answer can have one too.
+# name can be any name the answer goes by. Keep each to two sentences.
+name,blurb
+Benzo(a)pyrene,"Five fused benzene rings, found in soot, cigarette smoke and burnt toast. In 1933 it was isolated from coal tar as a cause of the cancers in chimney sweeps first described in 1775."
+Buckminsterfullerene,"Sixty carbon atoms in a football of 20 hexagons and 12 pentagons, discovered in 1985. Everyone thinks they're the clever one for saying it, and chemists still argue whether its hexagons count as benzene rings."

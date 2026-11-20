@@ -1,0 +1,36 @@
+# How early people meet each compound. Starter list: edit freely.
+# level 3 = school before 16 (GCSE), 2 = A-level/IB, 1 = first-year university.
+# name can be any name the compound goes by (case doesn't matter).
+name,level
+Aspirin,3
+Paracetamol,3
+Benzene,2
+Toluene,2
+Phenol,2
+Nitrobenzene,2
+Aniline,2
+Benzoic acid,2
+Salicylic acid,2
+Styrene,2
+Ibuprofen,2
+TNT,2
+Naphthalene,1
+Anthracene,1
+Phenylalanine,1
+Tyrosine,1
+Tryptophan,1
+Dopamine,1
+Adrenaline,1
+Serotonin,1
+Xylene,1
+Cumene,1
+Benzaldehyde,1
+Acetophenone,1
+Vanillin,1
+Bisphenol A,1
+Terephthalic acid,1
+DDT,1
+Oestradiol,1
+Morphine,1
+Methyl orange,1
+Phenolphthalein,1

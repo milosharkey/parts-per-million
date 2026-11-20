@@ -1,0 +1,18 @@
+# Settings for this prompt. The folder name ("ph_indicators") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a pH indicator"
+label = "pH indicators"
+status = "draft"
+subject = "chemistry"
+audience = "school"
+colour = "#AD1457"
+
+# Small (about 50 articles): the tiers will be coarse. Universal indicator and red
+# cabbage are what most people say first, so they're extras.
+category = "Category:PH indicators"
+category_depth = 0
+skip_categories = ["lists", "people"]
+min_views = 0
+kind = "indicator"

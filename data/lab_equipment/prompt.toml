@@ -1,0 +1,19 @@
+# Settings for this prompt. The folder name ("lab_equipment") is its id.
+# Field reference: README.md, "Prompt settings". Template: templates/.
+
+text = "Name a piece of lab equipment"
+label = "Lab equipment"            # short name on the label's colour band
+status = "ready"
+subject = "lab"
+audience = "school"
+colour = "#23756F"
+
+# The category plus one level of subcategories (glassware, centrifuges,
+# porcelainware...). Everyday items filed elsewhere (thermometer, microscope)
+# come in through extras.csv; the many subcategory articles that aren't lab
+# equipment are in exclude.csv (DECISIONS.md, 38).
+category = "Category:Laboratory equipment"
+category_depth = 1
+skip_categories = ["companies", "manufacturers", "people"]
+min_views = 0
+kind = "equipment"

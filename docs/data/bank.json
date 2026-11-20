@@ -1,0 +1,79 @@
+[
+ {
+  "id": "aromatics",
+  "text": "Name a compound with a benzene ring",
+  "label": "Aromatics",
+  "colour": "#8A4F2A",
+  "subject": "chemistry",
+  "audience": "university",
+  "file": "data/prompts/aromatics-714b326008.json",
+  "answers": 2195,
+  "generated": "2026-11-20T05:52:13+00:00"
+ },
+ {
+  "id": "elements",
+  "text": "Name a chemical element",
+  "label": "Elements",
+  "colour": "#2F4B7C",
+  "subject": "chemistry",
+  "audience": "everyone",
+  "file": "data/prompts/elements-f2a41e9dd6.json",
+  "answers": 118,
+  "generated": "2026-11-20T06:03:25+00:00"
+ },
+ {
+  "id": "enzymes",
+  "text": "Name an enzyme",
+  "label": "Enzymes",
+  "colour": "#A8437A",
+  "subject": "biochemistry",
+  "audience": "school",
+  "file": "data/prompts/enzymes-2f9ae941fd.json",
+  "answers": 5395,
+  "generated": "2026-11-20T06:03:27+00:00"
+ },
+ {
+  "id": "lab_equipment",
+  "text": "Name a piece of lab equipment",
+  "label": "Lab equipment",
+  "colour": "#23756F",
+  "subject": "lab",
+  "audience": "school",
+  "file": "data/prompts/lab_equipment-bd313cba6e.json",
+  "answers": 391,
+  "generated": "2026-11-20T06:38:16+00:00"
+ },
+ {
+  "id": "minerals",
+  "text": "Name a mineral",
+  "label": "Minerals",
+  "colour": "#5E7F3E",
+  "subject": "earth science",
+  "audience": "everyone",
+  "file": "data/prompts/minerals-0537597ab2.json",
+  "answers": 1769,
+  "generated": "2026-11-20T06:39:46+00:00"
+ },
+ {
+  "id": "named_reactions",
+  "text": "Name a named reaction",
+  "label": "Reactions",
+  "colour": "#A23B4A",
+  "subject": "chemistry",
+  "audience": "specialist",
+  "file": "data/prompts/named_reactions-2c809ad257.json",
+  "answers": 525,
+  "generated": "2026-11-20T06:39:46+00:00"
+ },
+ {
+  "id": "pigments",
+  "text": "Name a pigment or dye",
+  "label": "Pigments & dyes",
+  "colour": "#C2451C",
+  "subject": "chemistry",
+  "audience": "everyone",
+  "file": "data/prompts/pigments-639a0be91b.json",
+  "answers": 591,
+  "generated": "2026-11-20T06:44:13+00:00"
+ }
+]

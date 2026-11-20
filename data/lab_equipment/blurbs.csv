@@ -1,0 +1,6 @@
+# Short descriptions the game shows when a player finds an answer. Always
+# write one for the gem and Fool's gold; any other answer can have one too.
+# name can be any name the answer goes by. Keep each to two sentences.
+name,blurb
+Swan neck flask,"Louis Pasteur boiled broth in flasks with S-shaped necks: air got in, but dust and microbes stuck in the bend, so the broth stayed sterile. It helped kill off the idea of spontaneous generation."
+Soxhlet extractor,"Invented by Franz von Soxhlet in 1879 to extract fat from solid samples. It sounds wonderfully obscure, but most organic chemistry students have watched one siphon away for hours."

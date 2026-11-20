@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+contact.txt
+cache/
+results/
+.idea/workspace.xml
+.idea/shelf/
+.DS_Store
+playtests/
+
+# Project exclude paths
+/out/

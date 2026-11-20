@@ -1,0 +1,6 @@
+# Short descriptions the game shows when a player finds an answer. Always
+# write one for the gem and Fool's gold; any other answer can have one too.
+# name can be any name the answer goes by. Keep each to two sentences.
+name,blurb
+Aequorin,"The protein that makes the jellyfish Aequorea victoria flash blue when calcium binds. Osamu Shimomura found it alongside green fluorescent protein, which earned him a share of the 2008 Nobel Prize."
+Taq polymerase,"A DNA polymerase from Thermus aquaticus, a bacterium from Yellowstone's hot springs. It survives the heat of PCR, which made PCR practical, so anyone who's run one knows the name."

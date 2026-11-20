@@ -1,0 +1,17 @@
+# Settings for this prompt. The folder name ("catalysts") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a catalyst"
+label = "Catalysts"
+status = "draft"
+subject = "chemistry"
+audience = "university"
+colour = "#4E342E"
+
+# Named catalysts are the fun answers (Grubbs, Wilkinson's, Ziegler-Natta).
+category = "Category:Catalysts"
+category_depth = 1
+skip_categories = ["lists", "people", "companies"]
+min_views = 0
+kind = "catalyst"

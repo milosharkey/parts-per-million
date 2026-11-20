@@ -1,0 +1,20 @@
+# Settings for this prompt. The folder name ("chemists") is its id.
+# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
+# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+
+text = "Name a famous chemist"
+label = "Chemists"
+status = "draft"
+subject = "history of science"
+audience = "school"
+colour = "#8C5A3C"
+
+# From Wikidata: anyone whose occupation is chemist (Q593644). Overlaps the Nobel
+# prompt on purpose: this one reaches back to Boyle, Lavoisier and Dalton.
+query = "chemists.rq"
+# Only chemists with articles in 20+ languages: tens of thousands of chemists
+# are on Wikidata, and this keeps the ones players could know.
+min_sitelinks = 20
+surnames = true             # "Mendeleev" counts for Dmitri Mendeleev
+min_views = 0
+kind = "person"
