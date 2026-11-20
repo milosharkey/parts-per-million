@@ -55,3 +55,49 @@ def test_views_flag_scales_one_answer(tmp_path, capsys):
     assert thatcher["view_weight"] == 0.02
     assert boyle["view_weight"] == 1.0                     # 2 isn't a discount: refused
     assert "unknown flag 'views:2'" in capsys.readouterr().out
+
+
+def test_an_extra_the_source_also_lists_stays_an_extra(tmp_path):
+    from build_prompt import collect_answers
+    (tmp_path / "antibiotics_category.json").write_text(json.dumps(["Penicillin", "Amoxicillin"]))
+    (tmp_path / "antibiotics.json").write_text(json.dumps([
+        {"item": "http://www.wikidata.org/entity/Q12190", "title": "Penicillin", "sitelinks": "90"},
+        {"item": "http://www.wikidata.org/entity/Q199199", "title": "Amoxicillin", "sitelinks": "60"}]))
+    (tmp_path / "antibiotics_extras.json").write_text(json.dumps([
+        {"item": "http://www.wikidata.org/entity/Q12190", "title": "Penicillin", "sitelinks": "90",
+         "label": "penicillin", "aliases": ""}]))
+    data = tmp_path / "data"
+    data.mkdir()
+    (data / "extras.csv").write_text("title,kind\nPenicillin,antibiotic\n")
+    spec = {"id": "antibiotics", "category": "Category:Antibiotics"}
+    answers = collect_answers(spec, FixtureSource(tmp_path), data)
+    assert answers["Q12190"]["extra"] is True          # listed by both: still hand-picked
+    assert answers["Q199199"]["extra"] is False
+
+
+def test_pyramid_growth_rises_with_set_size():
+    from build_prompt import pyramid_growth
+    assert pyramid_growth(53) == pyramid_growth(100) == 1.0
+    assert abs(pyramid_growth(200) - 1.30) < 0.01
+    assert pyramid_growth(1000) == pyramid_growth(3299) == 2.0
+
+
+def test_pyramid_needs_each_tier_at_least_the_one_above():
+    from build_prompt import pyramid_check
+    assert pyramid_check([8, 17, 41, 50], 118)[0]           # the elements: small, fine
+    assert pyramid_check([7, 7, 36, 162], 213)[0]           # tap and lab only need to be equal
+    assert not pyramid_check([10, 100, 78, 11], 200)[0]     # too few rare answers
+    assert not pyramid_check([7, 23, 129, 200], 1226)[0]    # big sets need 2x
+    assert "1.30x+ below lab grade for 200 answers" in pyramid_check([10, 100, 78, 11], 200)[1]
+
+
+def test_a_prompt_can_set_its_own_top_share(tmp_path, monkeypatch):
+    from pathlib import Path
+    from build_prompt import build
+    import build_prompt
+    fixtures = Path(__file__).parent / "fixtures"
+    spec = dict(build_prompt.PROMPTS["minerals"], target_top_share=0.25)
+    monkeypatch.setitem(build_prompt.PROMPTS, "minerals", spec)
+    result = build("minerals", FixtureSource(fixtures), tmp_path)
+    trusted = [a for a in result["answers"] if a["tier"] not in ("single_crystal", "fools_gold")]
+    assert abs(max(a["share"] for a in trusted) - 0.25) < 0.01

@@ -145,7 +145,7 @@ Each prompt writes three files to `results/`, named after it (`minerals`, `eleme
 - how many answers landed in each tier
 - the 15 most common answers with their predicted shares
 - **gem candidates** (rare but recognisable) and **Fool's gold candidates** (famously obscure)
-- the automatic **prompt checks**: the design doc's three, the gem and Fool's gold ranges, and the must-accept answers
+- the automatic **prompt checks**: the design doc's three, the gem and Fool's gold ranges, and the must-accept answers. FAIL is a real problem (too few answers, or a must-accept answer refused) and stops a prompt being scheduled; NOTE is advice about the shape of the set (decision 45)
 - for category prompts, **where the answers came from**: which subcategory brought in how many
 
 `results/<prompt>_review.csv` is for your hand pass. Right-click it and choose **Edit as Table**, or open it in Numbers. It lists every answer ranked from most to least common, with its tier, share, page views (and any discount), sitelinks, school level and, for category prompts, the subcategory it came from, plus links to Wikidata and Wikipedia.
@@ -241,7 +241,7 @@ For the daily game rather than the playtest. The day changes at the same moment 
 
 1. **Plan the next 4 weeks** adds days to `data/schedule.csv` that aren't planned yet, from the bank, mixing subjects and not repeating a prompt within a week when the bank is big enough. Edit the file by hand as much as you like: planned days are never changed.
 2. **Publish site** writes a file for each day. A day is rewritten from your latest builds until it starts, then frozen: everyone playing it is scored against the same list, however often you rebuild. Prompt files are named by their contents, so old days keep theirs.
-3. **Check upcoming days** (also run at the end of every publish) lists anything that would stop a day in the next two weeks from being played as planned: nothing scheduled, a prompt not built or not ready, no gem, or a failing prompt check.
+3. **Check upcoming days** (also run at the end of every publish) lists anything that would stop a day in the next two weeks from being played as planned: nothing scheduled, a prompt not built or not ready, no gem, or a failing required check (NOTEs don't count).
 4. To try the daily mode: `?mode=daily` on the site's address, and locally `?mode=daily&date=2026-12-01` to preview a day. Set `SITE_MODE = "daily"` in `config.py` when the real game starts.
 
 **Show schedule** lists the next three weeks.
@@ -274,6 +274,7 @@ The fields of `prompt.toml`. The folder name is the prompt's id, which also name
 | `templates` | …every article using these infoboxes |
 | `require_benzene` | Keep only compounds whose structure has a benzene ring |
 | `require_properties` | Keep only answers whose Wikidata item has one of these properties, e.g. `["P274", "P233", "P231", "P662"]` (chemical formula, SMILES, CAS number, PubChem id): for prompts about substances, this drops the processes, diseases, people and products categories also hold. Extras always stay (decision 44) |
+| `target_top_share` | How steep the rarity curve is: the predicted share of the most common answer (default 0.15, `TARGET_TOP_SHARE` in `config.py`). Short or flat lists where nearly everyone gives one of a few answers need more, e.g. 0.25 for sugars (decision 46) |
 | `family` | Prompts too alike to play together share a family (`minerals` for minerals and gemstones, `chemists` for chemists and Nobel laureates): one per game, and never on two days running (decision 44) |
 | `min_sitelinks`, `min_views` | Notability floors: articles in at least this many languages; page views over the window |
 | `view_discounts` | Count some infoboxes' page views for less, e.g. medicines read by patients (decision 38) |

@@ -137,7 +137,9 @@ CURRICULUM_BOOST_SD = 2.0
 # 0.30, made the curve so steep on the real mineral data that predicted
 # shares collapsed after ~25 answers, leaving almost nothing between Lab
 # grade and the long tail (DECISIONS.md, 11). Still a guess until real
-# player data replaces it.
+# player data replaces it. A prompt can set its own (target_top_share in
+# prompt.toml): short or flat lists, where nearly everyone gives one of a
+# few answers, need a steeper curve than minerals (DECISIONS.md, 46).
 TARGET_TOP_SHARE = 0.15
 
 # ---- Tiers and points (design doc, scoring) ---------------------------------
@@ -200,7 +202,17 @@ LAB_GRADE_MIN = 3
 MIN_SET_SIZE = 25             # fewer answers and the tiers stop meaning anything
 MIN_TOP5_SHARE = 0.30         # a prompt needs some obvious answers to feel fair
 MAX_MEDIAN_NAME_LENGTH = 20   # 25 seconds isn't long enough to type long names
-MIN_TIER_GROWTH = 2.0         # each tier at least this many times the one above
+# The tier pyramid (advice, not a requirement: DECISIONS.md, 46). Each tier
+# should hold at least as many answers as the one above it. Below lab grade
+# it should also grow by a factor that rises with the size of the set, from
+# 1x at PYRAMID_SMALL_SET answers or fewer to MIN_TIER_GROWTH at
+# PYRAMID_LARGE_SET or more (on a log scale between): a short list where
+# most answers are well known, like the 118 elements, can't make a steep
+# pyramid, and shouldn't have to. Tap water and lab grade are a handful of
+# answers each by design, so between them only "at least equal" applies.
+MIN_TIER_GROWTH = 2.0
+PYRAMID_SMALL_SET = 100
+PYRAMID_LARGE_SET = 1000
 
 # Aliases shorter than this are ignored unless they're the answer's own name.
 # Wikidata's alias lists include chemical symbols and abbreviations ("Sn",

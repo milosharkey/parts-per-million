@@ -15,4 +15,8 @@ category = "Category:PH indicators"
 category_depth = 0
 skip_categories = ["lists", "people"]
 min_views = 0
+# A steeper curve than the default (config.py, TARGET_TOP_SHARE = 0.15): a
+# short or flat list where litmus, phenolphthalein and universal indicator take most answers.
+# A guess for playtests to check (DECISIONS.md, 46).
+target_top_share = 0.25
 kind = "indicator"

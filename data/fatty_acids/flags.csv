@@ -1,7 +1,8 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Gem: margarine is named after it. Fool's gold: on every fish oil label.
-# In their windows on the 20 November build (99.4% and 80.1% above).
+# Gem: margarine is named after it (98.4% above).
+# Fool's gold: on every fish oil label (87.9% above). DHA, the first pick,
+# came out too common (70.5%).
 Margaric acid,single_crystal
-Docosahexaenoic acid,fools_gold
+Eicosapentaenoic acid,fools_gold

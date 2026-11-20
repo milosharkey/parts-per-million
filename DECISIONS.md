@@ -639,6 +639,25 @@ This is the "TOML would also work" from the old `prompts.py` notes. It needs Pyt
 
 In the bank, pigments lost about 40 staining methods (Gram stain, H&E: procedures, not colourants), elements gained a Fool's gold (oganesson) and lab equipment another (the Liebig condenser, named after a man who didn't invent it).
 
+### 45. Advice and requirements among the prompt checks
+
+**Problem.** After decision 44 most drafts built cleanly, but nearly every prompt still "failed" the tier-pyramid check, elements included, and Nobel laureates failed the top-5 check. The readiness check treated any failing check as a reason a day couldn't be played, so a prompt that was fine would have blocked the schedule.
+
+**Decision.**
+1. Checks are required or advice. Required: enough answers, and every must-accept answer accepted, since a right answer refused is the one failure a player sees. Advice: the tier pyramid, the top-5 share, name length, and whether the gem and Fool's gold sit in their windows. The summary shows advice as NOTE; only a required FAIL stops a prompt being scheduled.
+2. An extra that the source also lists keeps an extra's exemptions. Penicillin, prolactin and omega-3 were listed by their categories, so their extras were skipped as repeats, and the formula filter (decision 44) then dropped them.
+3. The minus sign (−) matches like a hyphen, in Python and the game alike: Wikipedia titles "Omega−3 fatty acid" with one.
+4. Gems and Fool's golds that drifted out of their windows once the junk went were re-picked from the new builds, from answers comfortably inside. A few stay outside with a NOTE where the story is worth it (turmeric in pH indicators, set by hand because its views come from cooking; oganesson-294 in isotopes).
+
+### 46. A tier pyramid that fits the size of the set, and steeper curves for short lists
+
+**Problem.** The tier-pyramid check asked every tier to be twice the one above. Short lists where most answers are well known (the 118 elements, 53 pH indicators) can't do that, so it failed on most prompts and meant nothing. But some failures were real: in sugars, pH indicators, solvents, catalysts, chemists, Nobel laureates and isotopes, fewer answers were Analytical grade than Reagent grade, so too many answers were worth 60 points when they should be worth 85.
+
+**Decision.**
+1. Each tier needs at least as many answers as the one above (Milo's rule). Below lab grade, each also needs to grow by a factor that rises with the set's size: 1x at 100 answers or fewer, 2x at 1,000 or more, on a log scale between (1.3x at 200, 1.6x at 400). Between tap water and lab grade only "at least equal" applies, since both are a handful of answers by design. On the 20 November builds this takes the passes from 9 of 26 to 18, and every remaining failure is a real one at the bottom.
+2. A prompt can set its own `target_top_share`. The default 15% was tuned on minerals, which has a long tail; for short or flat lists the model spread players too evenly. Sugars and pH indicators use 25%, solvents and catalysts 20%, chemists 25% and Nobel laureates 30%. In a simulation on the existing builds this fixed sugars, pH indicators, solvents and catalysts. All are guesses for playtests to check.
+3. Not done yet: isotopes need a different fix. About 3,200 isotopes are each predicted for fewer than 1 player in 2,000, yet half land in Reagent grade, because the cut-offs follow cumulative share through a long flat stretch of near-identical answers. A rule that anything below 1 in 2,000 is Analytical would fix it, but applied to every prompt it would reshuffle the bank (minerals' Reagent tier would shrink from 190 to 64), so it waits for playtest data. Nobel laureates may stay uneven too: their page views are unusually even, and only real answers will show how players spread.
+
 ## Known limitations
 
 - The weights, `TARGET_TOP_SHARE`, the tier cut-offs and `CURRICULUM_BOOST_SD` are tuned by eye on one prompt, and remain guesses until real recall data exists.

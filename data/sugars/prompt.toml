@@ -20,4 +20,8 @@ skip_categories = ["lists", "people", "derivatives", "lactose"]
 # diseases, people and products the categories also hold (DECISIONS.md, 44).
 require_properties = ["P274", "P233", "P231", "P662"]
 min_views = 0
+# A steeper curve than the default (config.py, TARGET_TOP_SHARE = 0.15): a
+# short or flat list where glucose, sucrose and fructose take most answers.
+# A guess for playtests to check (DECISIONS.md, 46).
+target_top_share = 0.25
 kind = "sugar"

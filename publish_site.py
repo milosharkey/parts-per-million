@@ -20,7 +20,8 @@ Nothing in docs/data/ is ever deleted (DECISIONS.md, 41 and 42).
 The readiness check looks at the next config.READINESS_DAYS days and lists
 anything that would stop a day being played as planned: a day with nothing
 scheduled, a prompt that isn't built, isn't marked ready, has no gem or is
-failing its prompt checks. Run it whenever you change the schedule.
+failing a required prompt check (size, must-accept answers; the others are
+advice). Run it whenever you change the schedule.
 """
 from __future__ import annotations
 
@@ -116,7 +117,10 @@ def problems_for_day(day: date, schedule: dict[date, list[str]]) -> list[str]:
             continue
         if not any(a["tier"] == "single_crystal" for a in result["answers"]):
             problems.append(f"{pid}: no gem in flags.csv")
-        failing = [c["check"] for c in result.get("checks", []) if not c["ok"]]
+        # Only required checks block a day; the rest are advice. Builds from
+        # before checks had a "required" flag count every check.
+        failing = [c["check"] for c in result.get("checks", [])
+                   if not c["ok"] and c.get("required", True)]
         if failing:
             problems.append(f"{pid}: failing {'; '.join(failing)}")
     if len(set(schedule[day])) < len(schedule[day]):

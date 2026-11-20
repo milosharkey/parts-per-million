@@ -1,8 +1,9 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Fool's gold: sounds specialist, but every organic chemistry course
-# teaches it as the poisoned catalyst (80.7% above on the 20 November build).
-# Gem: a catalyst from WWI gas masks. Check both after the rebuild.
+# Fool's gold: sounds specialist, but every organic chemistry course teaches
+# it as the poisoned catalyst (88.3% above).
+# Gem: an accident that changed how plastics are made (98.4% above).
+# Hopcalite, the first pick, drifted out of the window (96.6%).
 Lindlar catalyst,fools_gold
-Hopcalite,single_crystal
+Kaminsky catalyst,single_crystal

@@ -24,4 +24,4 @@ kind = "amino acid"
 # Gabapentin and pregabalin are amino acids, so they count, but their views
 # come from patients: medicines count a quarter, as in aromatics.
 [view_discounts]
-"Template:Infobox drug" = 0.25
+"Template:Infobox drug" = 0.1

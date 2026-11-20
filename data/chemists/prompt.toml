@@ -20,4 +20,8 @@ query = "chemists.rq"
 min_sitelinks = 20
 surnames = true             # "Mendeleev" counts for Dmitri Mendeleev
 min_views = 0
+# A steeper curve than the default (config.py, TARGET_TOP_SHARE = 0.15): a
+# short or flat list where a handful of household names take most answers.
+# A guess for playtests to check (DECISIONS.md, 46).
+target_top_share = 0.25
 kind = "person"

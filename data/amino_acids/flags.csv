@@ -1,7 +1,12 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Gem: the 22nd amino acid. Fool's gold: on every tea and "focus" supplement.
-# In their windows on the 20 November build (98.3% and 85.1% above).
-Pyrrolysine,single_crystal
+# Gem: the amino acid bacteria start every protein with (99.0% above).
+# Fool's gold: on every tea and "focus" supplement (93.9% above).
+# Pyrrolysine, the first gem, drifted just out of the window (97.3%).
+N-Formylmethionine,single_crystal
 Theanine,fools_gold
+# They count (they're in the amino acid categories), but are read about as a
+# sweetener and a weedkiller.
+Aspartame,views:0.1
+Glyphosate,views:0.1

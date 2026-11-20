@@ -1,8 +1,9 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Gem: an 18th-century fake gold whose name became a word for a sham.
-# Fool's gold: shape-memory wire, beloved of science videos.
-# Both near their windows on the 20 November build: check after the rebuild.
-Pinchbeck,single_crystal
-Nickel titanium,fools_gold
+# Gem: a "silver" that usually has no silver in it (98.1% above).
+# Fool's gold: NaK, the metal that's liquid at room temperature, famous from
+# science videos (85.3% above). Both picked from the 20 November afternoon
+# build; Pinchbeck and nitinol drifted out of their windows.
+Tibetan silver,single_crystal
+Sodium–potassium alloy,fools_gold

@@ -79,9 +79,10 @@ def normalise(text: str) -> str:
     # the name: mineralogy's element suffixes ("monazite-(Ce)" and
     # "monazite-(La)" are different minerals) become "monazite ce" and so on.
     t = re.sub(r"\s\([^)]*\)", " ", t)
-    # Hyphens, the various dashes, underscores and slashes all become spaces,
-    # so "Diels-Alder", "Diels–Alder" and "Diels Alder" are the same.
-    t = re.sub(r"[‐-―_/-]", " ", t)
+    # Hyphens, the various dashes, the minus sign, underscores and slashes all
+    # become spaces, so "Diels-Alder", "Diels–Alder" and "Diels Alder" are the
+    # same, and so are "omega-3" and Wikipedia's "Omega−3" (a minus sign).
+    t = re.sub(r"[‐-―−_/-]", " ", t)
     # Anything else that isn't a letter, digit or space goes: apostrophes,
     # commas, full stops. "fool's" and "fools" become the same.
     t = re.sub(r"[^a-z0-9 ]", "", t)

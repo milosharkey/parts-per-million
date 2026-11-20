@@ -1,7 +1,8 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Gem: plastic made from milk (99.1% above). Fool's gold: sounds antique and
-# obscure, but it's the film in cinema's name (87.9% above).
-Galalith,single_crystal
-Celluloid,fools_gold
+# Gem: superglue (98.5% above). Fool's gold: sounds high-tech, but everyone
+# knows it from bulletproof vests (85.2% above). Galalith and celluloid, the
+# first picks, came out too rare once the junk went.
+Cyanoacrylate,single_crystal
+Kevlar,fools_gold

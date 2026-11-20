@@ -145,3 +145,16 @@ def test_bank_carries_each_prompts_family(site, monkeypatch):
     bank = {e["id"]: e for e in json.loads((docs / "data" / "bank.json").read_text())}
     assert bank["minerals"]["family"] == "minerals"
     assert bank["elements"]["family"] == ""
+
+
+def test_only_required_checks_block_a_day(site, monkeypatch):
+    results = config.OUT_DIR
+    advice = fake_result("elements")
+    advice["checks"] = [{"ok": False, "check": "tier pyramid 8 / 17 / 41 / 50", "required": False},
+                        {"ok": True, "check": "size 118 (need 25+)", "required": True}]
+    (results / "elements.json").write_text(json.dumps(advice))
+    day = date(2026, 12, 1)
+    assert problems_for_day(day, {day: ["elements"]}) == []
+    advice["checks"].append({"ok": False, "check": "24 of 25 must-accept answers accepted", "required": True})
+    (results / "elements.json").write_text(json.dumps(advice))
+    assert problems_for_day(day, {day: ["elements"]}) == ["elements: failing 24 of 25 must-accept answers accepted"]

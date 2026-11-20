@@ -1,10 +1,12 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Fool's gold: the school experiment everyone did. Gem: curry stains turn red
-# with soap. Both articles are read for the food, so their views count a
-# fiftieth here. Check both after the rebuild.
+# Fool's gold: the school experiment everyone did (95.4% above). Its article
+# is read for the vegetable, so its views count a fiftieth.
 Red cabbage,views:0.02
 Red cabbage,fools_gold
-Turmeric,views:0.02
+# Gem: curry stains turn red with soap. Turmeric's article is read for the
+# spice, so the model doesn't apply: its tier is set by hand, and its gem
+# window shows as a NOTE.
+Turmeric,set:analytical_grade
 Turmeric,single_crystal

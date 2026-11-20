@@ -26,4 +26,4 @@ kind = "acid"
 
 # Medicines are read about by patients, not players (as in aromatics).
 [view_discounts]
-"Template:Infobox drug" = 0.25
+"Template:Infobox drug" = 0.05

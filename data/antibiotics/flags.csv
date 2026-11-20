@@ -1,7 +1,6 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Gem: found by machine learning, named after HAL 9000. Check its window
-# after the rebuild (87.1% above on the 20 November build, with most of the
-# antibiotics missing).
-Halicin,single_crystal
+# Gem: the first antibacterial drug, before penicillin (98.2% above).
+# Halicin, the first pick, sat just past the window (99.6%).
+Prontosil,single_crystal

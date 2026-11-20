@@ -3,3 +3,6 @@ title,kind
 # Missed by the first query (see queries/chemists.rq), added to be sure.
 Marie Curie,person
 Pierre Curie,person
+# Also changes the extras lookup, so the empty result saved on 20 November
+# is fetched again.
+Jöns Jacob Berzelius,person

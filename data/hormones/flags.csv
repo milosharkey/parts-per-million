@@ -1,7 +1,8 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Gem: the plant hormone that's a gas. Its article is read for the chemical,
-# not the hormone, so its views count a fiftieth here. Check after the rebuild.
+# Gem: the plant hormone behind bigger seedless grapes (98.9% above).
+Gibberellic acid,single_crystal
+# Ethylene, the first gem pick, is read about as a chemical, not a hormone:
+# its views count a fiftieth. It came out too rare (99.7%) to be the gem.
 Ethylene,views:0.02
-Ethylene,single_crystal

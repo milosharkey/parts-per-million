@@ -352,7 +352,15 @@ def collect_answers(spec: dict, source, data_dir: Path) -> dict[str, dict]:
     answers: dict[str, dict] = {}
     for r in rows:
         qid = r["item"].rsplit("/", 1)[-1]   # ".../entity/Q43010" -> "Q43010"
-        if qid in answers or r["title"] in excluded:
+        if r["title"] in excluded:
+            continue
+        if qid in answers:
+            # An extra the source also lists is still hand-picked, so it keeps
+            # an extra's exemptions (the floors, require_properties). Without
+            # this, penicillin was listed by the category, its extra skipped
+            # as a repeat, and the formula filter then dropped it.
+            if r.get("extra"):
+                answers[qid]["extra"] = True
             continue
         # Rows from the light lookup (prompts built from Wikipedia lists) have
         # no names yet: those are fetched after the filters (build, stage 3b).
@@ -605,10 +613,14 @@ def build(prompt_id: str, source, out_dir: Path) -> dict:
     #    Shares are rescaled so the answers used for calibration sum to 1.
     familiarities = [a["familiarity"] for a in ordered]
     trusted = ["set_tier" not in a for a in ordered]
-    beta = calibrate_beta(familiarities, config.TARGET_TOP_SHARE, trusted)
+    # The top answer's share sets how steep the curve is: config.py's
+    # TARGET_TOP_SHARE, or the prompt's own target_top_share for short or
+    # flat lists where players pile onto a few answers (DECISIONS.md, 46).
+    top_share = spec.get("target_top_share", config.TARGET_TOP_SHARE)
+    beta = calibrate_beta(familiarities, top_share, trusted)
     raw = predicted_shares(familiarities, beta)
     trusted_total = sum(s for s, t in zip(raw, trusted) if t) or 1.0
-    shares = [s / trusted_total if t else min(s / trusted_total, config.TARGET_TOP_SHARE)
+    shares = [s / trusted_total if t else min(s / trusted_total, top_share)
               for s, t in zip(raw, trusted)]
     tiers, share_above = tiers_with_floors(shares, [a.get("min_tier") for a in ordered])
     for a, share, above, tier in zip(ordered, shares, share_above, tiers):
@@ -721,7 +733,8 @@ def build(prompt_id: str, source, out_dir: Path) -> dict:
     print_summary(spec, ordered, beta, collisions, json_path)
     # The prompt checks go into the game file too, for the readiness check
     # before a prompt is scheduled (publish_site.py).
-    result["checks"] = [{"ok": ok, "check": message} for ok, message in spec["_checks"]]
+    result["checks"] = [{"ok": ok, "check": message, "required": required}
+                        for ok, message, required in spec["_checks"]]
     json_path.write_text(json.dumps(result, ensure_ascii=False, indent=1))
     return result
 
@@ -764,6 +777,31 @@ def write_review_csv(path: Path, ordered: list[dict]) -> None:
             ])
 
 
+def pyramid_growth(n: int) -> float:
+    """How many times bigger each tier below lab grade should be than the one
+    above, for a set of n answers: 1 for PYRAMID_SMALL_SET answers or fewer,
+    MIN_TIER_GROWTH for PYRAMID_LARGE_SET or more, on a log scale between."""
+    lo, hi = math.log10(config.PYRAMID_SMALL_SET), math.log10(config.PYRAMID_LARGE_SET)
+    t = (math.log10(max(n, 1)) - lo) / (hi - lo)
+    return 1 + (config.MIN_TIER_GROWTH - 1) * min(1.0, max(0.0, t))
+
+
+def pyramid_check(sizes: list[int], n: int) -> tuple[bool, str]:
+    """The tier pyramid: tap water, lab, reagent and analytical counts.
+
+    Lab grade needs at least as many answers as tap water; reagent and
+    analytical each need pyramid_growth(n) times the tier above. Tap water
+    and lab grade are both a handful of answers by design (the answers that
+    make up the first half and the next 30% of predicted share), so their
+    ratio says little about the set.
+    """
+    growth = pyramid_growth(n)
+    tap, lab, reagent, analytical = sizes
+    ok = lab >= tap and reagent >= growth * lab and analytical >= growth * reagent
+    return ok, (f"tier pyramid {tap} / {lab} / {reagent} / {analytical} (each tier at least the one "
+                f"above, and {growth:.2f}x+ below lab grade for {n} answers)")
+
+
 def print_summary(spec, ordered, beta, collisions, json_path) -> None:
     """Tier counts, top answers, gem candidates and the prompt checks."""
     counts: dict[str, int] = {}
@@ -801,26 +839,31 @@ def print_summary(spec, ordered, beta, collisions, json_path) -> None:
     # What a player has to type is the shortest form accepted outright
     # ("Grignard", not "Grignard reaction"), so that's what's measured.
     median_len = statistics.median(min(len(s) for s in a["spellings"]) for a in ordered)
-    # The tiers should form a pyramid: each one several times bigger than the
-    # one above, so a rarer tier really is harder to reach.
+    # The tiers should form a pyramid, so a rarer tier really is harder to
+    # reach: pyramid_check, with a growth factor that rises with the set's size.
     sizes = [counts.get(t, 0) for t in TIER_ORDER]
-    pyramid = all(b >= config.MIN_TIER_GROWTH * a for a, b in zip(sizes, sizes[1:]))
+    pyramid, pyramid_message = pyramid_check(sizes, len(ordered))
+    # Each check is (passed, message, required). Required checks stop a
+    # prompt being scheduled (publish_site.py's readiness check): too few
+    # answers, or a right answer that would be refused. The rest are advice
+    # about the shape of the set, shown as NOTE when they fail: elements can
+    # never make a neat pyramid with 118 answers, and that's fine
+    # (DECISIONS.md, 45).
     checks = [
         (len(ordered) >= config.MIN_SET_SIZE,
-         f"size {len(ordered)} (need {config.MIN_SET_SIZE}+)"),
+         f"size {len(ordered)} (need {config.MIN_SET_SIZE}+)", True),
         (top5 >= config.MIN_TOP5_SHARE,
-         f"top 5 (not hand-set) hold {top5 * 100:.0f}% of predicted share (need {config.MIN_TOP5_SHARE * 100:.0f}%+)"),
+         f"top 5 (not hand-set) hold {top5 * 100:.0f}% of predicted share (need {config.MIN_TOP5_SHARE * 100:.0f}%+)",
+         False),
         (median_len <= config.MAX_MEDIAN_NAME_LENGTH,
-         f"median name length {median_len:.0f} characters (max {config.MAX_MEDIAN_NAME_LENGTH})"),
-        (pyramid,
-         f"tier pyramid {' / '.join(str(n) for n in sizes)} "
-         f"(each tier {config.MIN_TIER_GROWTH:g}x+ the one above)"),
+         f"median name length {median_len:.0f} characters (max {config.MAX_MEDIAN_NAME_LENGTH})", False),
+        (pyramid, pyramid_message, False),
     ]
     total, missing = spec.get("_must_accept", (0, []))
     if total:
         checks.append((not missing,
                        f"{total - len(missing)} of {total} must-accept answers accepted"
-                       + (f" (missing: {', '.join(missing)})" if missing else "")))
+                       + (f" (missing: {', '.join(missing)})" if missing else ""), True))
     # The hand-picked gem and Fool's gold must sit where the model puts
     # answers of that kind (config.GEM_WINDOW, FOOLS_GOLD_WINDOW).
     windows = {"single_crystal": ("gem", config.GEM_WINDOW),
@@ -833,6 +876,7 @@ def print_summary(spec, ordered, beta, collisions, json_path) -> None:
                 f"{role} {a['name']} sits at {a['share_above']:.1%} share above "
                 f"(needs {lo:.1%}-{hi:.1%}; the model alone says "
                 f"{config.TIER_LABELS[a['model_tier']]})",
+                False,
             ))
     spec["_checks"] = checks
     sources = Counter(a.get("via") for a in ordered if a.get("via"))
@@ -843,9 +887,9 @@ def print_summary(spec, ordered, beta, collisions, json_path) -> None:
             print(f"  {n:>5}  {via}")
         if len(sources) > 12:
             print(f"  ...and {len(sources) - 12} more (the review CSV's via column has them all)")
-    print("\nPrompt checks:")
-    for ok, message in checks:
-        print(f"  {'PASS' if ok else 'FAIL'}  {message}")
+    print("\nPrompt checks (NOTE is advice; only FAIL stops a prompt being scheduled):")
+    for ok, message, required in checks:
+        print(f"  {'PASS' if ok else 'FAIL' if required else 'NOTE'}  {message}")
     if collisions:
         print(f"  NOTE  {len(collisions)} spellings claimed by more than one answer "
               f"(see results/{json_path.stem}_collisions.txt)")

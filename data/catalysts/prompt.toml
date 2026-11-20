@@ -19,4 +19,8 @@ category_depth = 1
 # Category:Enzymes and anything else named after them (DECISIONS.md, 44).
 skip_categories = ["lists", "people", "companies", "enzyme"]
 min_views = 0
+# A steeper curve than the default (config.py, TARGET_TOP_SHARE = 0.15): a
+# short or flat list where a few school answers (platinum, iron, manganese dioxide) take most.
+# A guess for playtests to check (DECISIONS.md, 46).
+target_top_share = 0.20
 kind = "catalyst"

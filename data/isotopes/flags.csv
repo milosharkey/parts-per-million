@@ -1,7 +1,7 @@
 # Hand-set tiers: single_crystal (the gem), fools_gold, min:<tier>, set:<tier>
 # (same as data/minerals/flags.csv). The build suggests gem candidates.
 name,flag
-# Fool's gold: "stable until 2003" is a favourite fact (85.7% above).
-# Gem: the heaviest nucleus ever made (98.5% above on the 20 November build).
-Bismuth-209,fools_gold
+# Gem: the heaviest nucleus ever made. Every isotope with a good story sits
+# in Reagent grade, so it stays the gem with a NOTE (95.8% above). No Fool's
+# gold: nothing here is commonly given while sounding rare.
 Oganesson-294,single_crystal

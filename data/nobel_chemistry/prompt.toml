@@ -17,4 +17,8 @@ category = "Category:Nobel laureates in Chemistry"
 category_depth = 0
 surnames = true             # "Curie" counts for Marie Curie
 min_views = 0
+# A steeper curve than the default (config.py, TARGET_TOP_SHARE = 0.15): a
+# short or flat list where Marie Curie alone probably takes a quarter or more.
+# A guess for playtests to check (DECISIONS.md, 46).
+target_top_share = 0.30
 kind = "person"
