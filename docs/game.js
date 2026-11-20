@@ -442,20 +442,39 @@ async function sendGame(kind) {
     URL.revokeObjectURL(link.href);
     return say(`Downloaded ${record.file}. Please send it to whoever's running the playtest.`);
   }
+  // The button goes off the moment it's pressed, not when the send finishes:
+  // the Sheet takes a second or two to answer, and every extra click in that
+  // time used to add another copy of the same feedback.
+  const button = kind === "feedback" ? $("send-feedback") : null;
+  if (button) { button.disabled = true; button.textContent = "Sending…"; }
   state.sent = "sending";
   try {
     const saved = await postRecord(record);
     state.sent = "sent";
     if (kind === "feedback") {
-      $("send-feedback").disabled = true;
-      say(saved ? `Saved as ${saved}. Thanks!` : "Sent. Thank you, that really helps!");
+      button.textContent = "Sent";
+      say(saved ? `Saved as ${saved}. Thanks!` : "Sent. Thank you, that really helps! Change anything above to send an update.");
+      reopenFeedbackOnEdit();
     } else {
       say(saved ? `Your answers were saved as ${saved}.` : "Your answers have been sent. Thanks for playing!");
     }
   } catch {
     state.sent = "failed";
+    if (button) { button.disabled = false; button.textContent = "Send feedback"; }
     say("Couldn't send your answers (are you offline?). Press the button to try again.");
   }
+}
+
+/**
+ * After feedback is sent the button stays off until the player changes
+ * something in the form; then it offers to send an update. The report keeps
+ * the latest feedback for each game, so an update replaces the first.
+ */
+function reopenFeedbackOnEdit() {
+  document.querySelector(".feedback-form")?.addEventListener("input", () => {
+    const button = $("send-feedback");
+    if (button) { button.disabled = false; button.textContent = "Send update"; }
+  }, { once: true });
 }
 
 // Keyboard: Enter moves on after a result. Esc undoes a suggestion if one is

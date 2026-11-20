@@ -150,6 +150,7 @@ button {
   border: 2px solid var(--ink); background: var(--ink); color: #fff;
 }
 button.secondary { background: #fff; color: var(--ink); }
+button:disabled { opacity: 0.55; cursor: default; }
 button:focus-visible { outline: 3px solid #4fb3d9; outline-offset: 2px; }
 
 /* ---- Tier chips -------------------------------------------------------- */

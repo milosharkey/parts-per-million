@@ -48,26 +48,30 @@ def test_sheet_export_and_feedback(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(config, "OUT_DIR", results)
     monkeypatch.setattr(config, "ROOT", tmp_path)
 
-    def record(kind, feedback=None):
+    def record(kind, feedback=None, finished="2026-11-20T10:00:00Z"):
         return {"format": "ppm-playtest-2", "kind": kind, "gameId": "g1", "player": "Ada", "day": ["elements"],
                 "builds": {"elements": "g"}, "rounds": [{"prompt": "elements", "how": "exact", "answerId": "Q1",
                                                          "answer": "Iron", "tier": "tap_water", "typed": "iron"}],
-                "attempts": [], "feedback": feedback}
+                "attempts": [], "feedback": feedback, "finished": finished}
+    first = {"fun": "elements", "annoying": "", "playDaily": "maybe", "broke": "", "comments": ""}
+    update = {"fun": "elements", "annoying": "", "playDaily": "yes", "broke": "Iridium wasn't accepted",
+              "comments": ""}
     folder = tmp_path / "playtests"
     folder.mkdir()
     with (folder / "Games.csv").open("w", newline="") as f:
         w = csv.writer(f)
         w.writerow(["received", "game_id", "kind", "record"])
         w.writerow(["t1", "g1", "result", json.dumps(record("result"))])
-        w.writerow(["t2", "g1", "feedback", json.dumps(record("feedback", {
-            "fun": "elements", "annoying": "", "playDaily": "yes", "broke": "Iridium wasn't accepted",
-            "comments": ""}))])
-        w.writerow(["t3", "g2", "result", "{not json"])
+        # Feedback sent, then updated: the update wins even if it comes first.
+        w.writerow(["t3", "g1", "feedback", json.dumps(record("feedback", update, "2026-11-20T10:02:00Z"))])
+        w.writerow(["t2", "g1", "feedback", json.dumps(record("feedback", first, "2026-11-20T10:01:00Z"))])
+        w.writerow(["t4", "g2", "result", "{not json"])
 
     playtest_report.main([str(folder)])
     out = capsys.readouterr().out
-    assert "1 games" in out                          # sent twice, counted once
+    assert "1 games" in out                          # sent three times, counted once
     assert "Most fun: Name a chemical element ×1" in out
-    assert "Would play daily: yes ×1" in out
+    assert "Would play daily: yes ×1" in out         # the update, not the first send
+    assert "maybe" not in out
     assert "- Iridium wasn't accepted  (Ada)" in out
-    assert "row 4: the record isn't readable JSON" in out
+    assert "row 5: the record isn't readable JSON" in out

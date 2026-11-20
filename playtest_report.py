@@ -81,13 +81,24 @@ def load_records(paths: list[Path]) -> list[dict]:
         if record.get("format") not in FORMATS:
             print("  ! skipped something that isn't a playtest record")
             continue
-        # A game is sent when it ends and again with feedback: keep the one
-        # with feedback (the later), whichever order the files come in.
+        # A game is sent when it ends and again with feedback (and again if
+        # the player updates it): keep the latest feedback, whichever order
+        # the files come in. Records without feedback only fill a gap.
         key = record.get("gameId") or f"old-{n}"
         kept = games.get(key)
-        if kept is None or (record.get("feedback") and not kept.get("feedback")):
+        if kept is None or _newer_feedback(record, kept):
             games[key] = record
     return list(games.values())
+
+
+def _newer_feedback(record: dict, kept: dict) -> bool:
+    """Whether record should replace kept: it has feedback and kept hasn't,
+    or both have and record finished later (an updated send)."""
+    if not record.get("feedback"):
+        return False
+    if not kept.get("feedback"):
+        return True
+    return str(record.get("finished") or "") >= str(kept.get("finished") or "")
 
 
 def load_predictions(prompt_id: str) -> dict | None:
