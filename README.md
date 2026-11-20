@@ -214,7 +214,7 @@ The plan: the site lives on GitHub Pages (free), and every finished game, plus a
 3. On github.com, open the repository: **Settings → Pages**. Source: **Deploy from a branch**. Branch: **main**, folder **/docs**. **Save**.
 4. A minute or two later the site is at `https://<your-username>.github.io/<repository>/`. Send that link to your classmates.
 
-**Each update after that:** build, **Publish site**, then commit and push (**Git → Commit**, tick **Commit and Push**).
+**Each update after that:** build, **Publish site**, then commit and push (**Git → Commit**, then **Commit and Push**). Tick **Unversioned Files** as well as **Changes**: every rebuilt prompt gets a new file in `docs/data/prompts/`, and if it's left behind the site can't load it ("Couldn't load the prompts … 404"). In Terminal, `git add -A` does the same.
 
 **What players see.** The start screen says it's a playtest and what's sent: their answers (including ones that weren't accepted) and, if they fill it in, their feedback and a nickname. Each game is sent when it ends; the feedback form sends it again with the feedback.
 
