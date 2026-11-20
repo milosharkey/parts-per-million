@@ -514,7 +514,7 @@ function wireUp() {
   });
   $("pass")?.addEventListener("click", passPrompt);
   $("next")?.addEventListener("click", next);
-  $("again")?.addEventListener("click", playAgain);
+  document.querySelectorAll("[data-action=again]").forEach((b) => b.addEventListener("click", playAgain));
   $("copy")?.addEventListener("click", copyShare);
   $("send-feedback")?.addEventListener("click", () => sendGame("feedback"));
   document.querySelectorAll("input.search[data-prompt]").forEach((box) => box.addEventListener("input", filterLongTail));
@@ -653,6 +653,7 @@ function resultsHtml() {
       <h2>Share</h2>
       <div class="share"><textarea id="share-text" readonly>${escapeHtml(shareText())}</textarea>
         <button id="copy" class="secondary">Copy</button></div>
+      <div class="next-row">${againButton()}</div>
 
       ${feedbackHtml()}
 
@@ -661,8 +662,18 @@ function resultsHtml() {
 
       ${[...new Set(state.day)].map(fullList).join("")}
 
-      <div class="next-row"><button id="again">${state.mode === "playtest" ? "Play again with new prompts" : "Play again"}</button></div>
+      <div class="next-row">${againButton("secondary")}</div>
     </div>`;
+}
+
+/**
+ * "Play again", near the top of the results (under the share box) and again
+ * at the very bottom, after the full lists. It only promises new prompts when
+ * the bank has more than one game's worth.
+ */
+function againButton(style = "") {
+  const fresh = state.mode === "playtest" && (state.bank?.length ?? 0) > SITE.promptsPerGame;
+  return `<button class="again ${style}" data-action="again">${fresh ? "Play again with new prompts" : "Play again"}</button>`;
 }
 
 /** The feedback form at the end of a game. */
