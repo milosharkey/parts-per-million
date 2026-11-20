@@ -6,7 +6,9 @@ name,flag
 Red cabbage,views:0.02
 Red cabbage,fools_gold
 # Gem: curry stains turn red with soap. Turmeric's article is read for the
-# spice, so the model doesn't apply: its tier is set by hand, and its gem
-# window shows as a NOTE.
-Turmeric,set:analytical_grade
+# spice: its views count a fiftieth, and it's no more common than
+# Analytical grade (min:, not set:, which also capped its shown share at the
+# top answer's and put it first). Its gem window shows as a NOTE.
+Turmeric,views:0.02
+Turmeric,min:analytical_grade
 Turmeric,single_crystal

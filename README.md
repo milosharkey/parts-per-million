@@ -6,7 +6,7 @@ Two parts so far:
 - **Step 2, the demo** (`game/` and `serve.py`): a playable page that loads those answer sets. See [Playing the demo](#playing-the-demo).
 - **Step 3, the playtest and the bank**: a site you can host on GitHub Pages that deals random prompts from a bank of reviewed ones and sends games and feedback to a Google Sheet ([Hosting the playtest](#hosting-the-playtest)), a daily schedule for later ([Planning days](#planning-days)), and a way to design new prompts ([Designing a prompt](#designing-a-prompt)).
 
-The pipeline builds an answer set for each prompt. Seven are reviewed and in the bank: minerals, chemical elements, named reactions, lab equipment, compounds with a benzene ring, enzymes, and pigments and dyes. Another 19 are drafts, built once and cleaned up, waiting for a review (two more, vitamins and cell parts, are retired in `retired/`). Each answer set has:
+The pipeline builds an answer set for each prompt. 25 are in the bank, which playtest games deal from: the first seven (minerals, chemical elements, named reactions, lab equipment, compounds with a benzene ring, enzymes, pigments and dyes) and 18 more added on 20 November 2026. One draft, chemists, is waiting for a fix, and two prompts (vitamins and cell parts) are retired in `retired/`. Each answer set has:
 
 - every valid answer
 - how likely players are to say it
@@ -184,7 +184,7 @@ Why a server? Browsers won't let a page opened straight from disk read other fil
 
 How the demo plays:
 
-- Each game deals seven random prompts from the bank (prompts with `status = "ready"`), with a mix: no more than three of one subject or two specialist prompts. **Play again** deals new ones, avoiding the last game's where it can. The coloured band on the label shows which prompt you're on.
+- Each game deals seven random prompts from the bank (prompts with `status = "ready"`), with a mix: no more than three of one subject or two specialist prompts, and never two from one family (minerals and gemstones, say). **Play again** deals new ones, avoiding the last game's where it can. The coloured band on the label shows which prompt you're on.
 - 25 seconds each. Type an answer and press **Enter**. **Esc** passes. Something that isn't on the list doesn't use up your go, so you can try again while the burette runs.
 - Element symbols count, as a suggestion to confirm ("fe" → Iron). For reactions, the name on its own is enough: "Grignard" counts as Grignard reaction. British names count for lab equipment ("conical flask"), and brand names for compounds ("Prozac" → fluoxetine).
 - Near misses are suggested, not accepted outright: press **Enter** again to accept, edit it, or **Esc** to get your own text back. How close counts: none for 3 letters or fewer, 1 typo from 4 letters, 2 from 10 letters.
@@ -248,7 +248,7 @@ For the daily game rather than the playtest. The day changes at the same moment 
 
 ## Designing a prompt
 
-Every prompt is a folder in `data/`, and its settings are in `prompt.toml` there. 19 drafts are ready to pick (amino acids, alloys, plastics, solvents, acids, isotopes, Nobel chemists, chemists, hormones, sugars, functional groups, organic reagents, pH indicators, lab techniques, rocks, gemstones, antibiotics, catalysts not counting enzymes, fatty acids), each with its source, the answers it must accept, and a gem and Fool's gold to check after its next build. Retired prompts live in `retired/`, where nothing reads them.
+Every prompt is a folder in `data/`, and its settings are in `prompt.toml` there. Retired prompts live in `retired/`, where nothing reads them.
 
 **Taking a draft into the bank:**
 1. **Probe draft prompts** (or `python build_prompt.py probe <id>`): a quick look at every draft, without page views. It shows each one's size, its best-known candidates, where they came from (which subcategory), titles that look out of place (companies, dates, colons), and which must-accept answers are missing. It writes `results/<id>_probe.csv`.
@@ -285,7 +285,7 @@ The fields of `prompt.toml`. The folder name is the prompt's id, which also name
 | `strip_descriptors` | Last words to strip into a short form: "Grignard" for Grignard reaction |
 | `surnames` | For people: a surname on its own counts, unless two answers share it |
 
-And the files beside it: `curriculum.csv` (school level), `aliases.csv`, `extras.csv`, `exclude.csv`, `flags.csv`, `blurbs.csv` and `must_accept.csv` (answers checked every build: one missing fails a prompt check).
+And the files beside it: `curriculum.csv` (school level), `aliases.csv`, `extras.csv`, `exclude.csv`, `flags.csv`, `blurbs.csv` and `must_accept.csv` (answers checked every build: one missing fails a prompt check). An extra is an exact Wikipedia title, or a Wikidata id (`Q7186`) when a title won't resolve.
 
 The flags in `flags.csv`: `single_crystal` (the gem), `fools_gold`, `min:<tier>` (no more common than this tier), `set:<tier>` (exactly this tier), and `views:<factor>` (between 0 and 1), which counts one answer's page views for less, like `view_discounts` does for a whole infobox: Margaret Thatcher's article is read for her politics, not her chemistry. A name can have more than one flag, one per row.
 

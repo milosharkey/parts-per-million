@@ -4,3 +4,7 @@ name,flag
 # Gem: the carbene you can keep in a bottle (99.1% above on the 20 November
 # build).
 Persistent carbene,single_crystal
+# Articles about one compound (urea, the fertiliser; phosphine, the gas)
+# rather than the group.
+Urea,views:0.1
+Phosphine,views:0.2

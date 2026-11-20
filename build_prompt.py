@@ -76,6 +76,25 @@ def sparql_string(text: str) -> str:
     return '"' + text.replace("\\", "\\\\").replace('"', '\\"') + '"@en'
 
 
+# Extras given by Wikidata id rather than title (extras.csv: "Q7186"), with
+# the current English Wikipedia title whatever it is.
+ITEMS_QUERY = """
+SELECT ?item ?label ?title ?sitelinks
+       (GROUP_CONCAT(DISTINCT ?alias; separator="|") AS ?aliases)
+WHERE {{
+  VALUES ?item {{ {items} }}
+  ?article schema:about ?item ;
+           schema:isPartOf <https://en.wikipedia.org/> ;
+           schema:name ?title .
+  ?item wikibase:sitelinks ?sitelinks .
+  OPTIONAL {{ ?item rdfs:label ?label . FILTER(LANG(?label) = "en") }}
+  OPTIONAL {{ ?item skos:altLabel ?alias . FILTER(LANG(?alias) = "en") }}
+}}
+GROUP BY ?item ?label ?title ?sitelinks
+"""
+
+QID = re.compile(r"Q[1-9]\d*")
+
 # Prompts built from Wikipedia lists can have tens of thousands of articles,
 # most of which the filters then throw away (no benzene ring, too few
 # languages, too few views). So the lookup is done in two passes
@@ -312,16 +331,27 @@ def collect_answers(spec: dict, source, data_dir: Path) -> dict[str, dict]:
     extras = read_csv(data_dir / "extras.csv")
     kinds = {row["title"]: row.get("kind", "extra") for row in extras}
     if extras:
-        titles = " ".join(sparql_string(row["title"]) for row in extras)
-        extra_rows = source.sparql(f"{spec['id']}_extras", TITLES_QUERY.format(titles=titles))
-        # Report titles that didn't resolve, so a typo in the CSV is visible
+        # An extra is a Wikipedia title, or a Wikidata id ("Q7186") when the
+        # title won't do: Marie Curie's title stopped resolving on 20 November,
+        # and an id survives the article being renamed.
+        by_title = [t for t in kinds if not QID.fullmatch(t)]
+        by_id = [t for t in kinds if QID.fullmatch(t)]
+        extra_rows = []
+        if by_title:
+            titles = " ".join(sparql_string(t) for t in by_title)
+            extra_rows += source.sparql(f"{spec['id']}_extras", TITLES_QUERY.format(titles=titles))
+        if by_id:
+            items = " ".join(f"wd:{q}" for q in by_id)
+            extra_rows += source.sparql(f"{spec['id']}_extras_ids", ITEMS_QUERY.format(items=items))
+        # Report extras that didn't resolve, so a typo in the CSV is visible
         # rather than silently dropping an answer.
-        found = {r["title"] for r in extra_rows}
-        for title in kinds:
-            if title not in found:
-                print(f"  ! extras.csv: no Wikipedia article titled '{title}' found")
+        found = {r["title"] for r in extra_rows} | {r["item"].rsplit("/", 1)[-1] for r in extra_rows}
+        for name in kinds:
+            if name not in found:
+                what = "Wikidata item" if QID.fullmatch(name) else "Wikipedia article titled"
+                print(f"  ! extras.csv: no {what} '{name}' found (with an English Wikipedia article)")
         for r in extra_rows:
-            r["kind"] = kinds.get(r["title"], "extra")
+            r["kind"] = kinds.get(r["title"]) or kinds.get(r["item"].rsplit("/", 1)[-1], "extra")
             r["extra"] = True   # hand-picked: exempt from the notability floors
         rows = rows + extra_rows
 

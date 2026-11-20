@@ -1,10 +1,10 @@
 # Settings for this prompt. The folder name ("hormones") is its id.
-# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
-# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+# From the ready-to-pick list (DECISIONS.md, 43). Built, cleaned up and put in
+# the bank on 20 November 2026. Field reference: README.md, "Prompt settings".
 
 text = "Name a hormone"
 label = "Hormones"
-status = "draft"
+status = "ready"
 subject = "biology"
 audience = "school"
 colour = "#2D6A4F"

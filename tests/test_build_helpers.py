@@ -101,3 +101,28 @@ def test_a_prompt_can_set_its_own_top_share(tmp_path, monkeypatch):
     result = build("minerals", FixtureSource(fixtures), tmp_path)
     trusted = [a for a in result["answers"] if a["tier"] not in ("single_crystal", "fools_gold")]
     assert abs(max(a["share"] for a in trusted) - 0.25) < 0.01
+
+
+def test_an_extra_can_be_a_wikidata_id(tmp_path, capsys):
+    from build_prompt import collect_answers
+    (tmp_path / "chemists.json").write_text(json.dumps([]))
+    (tmp_path / "chemists_extras.json").write_text(json.dumps([]))      # the title no longer resolves
+    (tmp_path / "chemists_extras_ids.json").write_text(json.dumps([
+        {"item": "http://www.wikidata.org/entity/Q7186", "title": "Marie Curie", "sitelinks": "250",
+         "label": "Marie Curie", "aliases": "Maria Skłodowska"}]))
+    (tmp_path / "q.rq").write_text("SELECT")
+    data = tmp_path / "data"
+    data.mkdir()
+    (data / "extras.csv").write_text("title,kind\nQ7186,person\nPierre Curie,person\n")
+    import config
+    spec = {"id": "chemists", "query": "q.rq"}
+    old = config.QUERY_DIR
+    config.QUERY_DIR = tmp_path
+    try:
+        answers = collect_answers(spec, FixtureSource(tmp_path), data)
+    finally:
+        config.QUERY_DIR = old
+    assert answers["Q7186"]["kind"] == "person" and answers["Q7186"]["extra"]
+    out = capsys.readouterr().out
+    assert "no Wikipedia article titled 'Pierre Curie'" in out
+    assert "Q7186" not in out

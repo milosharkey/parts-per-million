@@ -658,6 +658,12 @@ In the bank, pigments lost about 40 staining methods (Gram stain, H&E: procedure
 2. A prompt can set its own `target_top_share`. The default 15% was tuned on minerals, which has a long tail; for short or flat lists the model spread players too evenly. Sugars and pH indicators use 25%, solvents and catalysts 20%, chemists 25% and Nobel laureates 30%. In a simulation on the existing builds this fixed sugars, pH indicators, solvents and catalysts. All are guesses for playtests to check.
 3. Not done yet: isotopes need a different fix. About 3,200 isotopes are each predicted for fewer than 1 player in 2,000, yet half land in Reagent grade, because the cut-offs follow cumulative share through a long flat stretch of near-identical answers. A rule that anything below 1 in 2,000 is Analytical would fix it, but applied to every prompt it would reshuffle the bank (minerals' Reagent tier would shrink from 190 to 64), so it waits for playtest data. Nobel laureates may stay uneven too: their page views are unusually even, and only real answers will show how players spread.
 
+### 47. Eighteen drafts join the bank
+
+**Decision.** On 20 November, 18 of the 19 drafts passed every required check and went into the bank (`status = "ready"`), making 25: acids, alloys, amino acids, antibiotics, catalysts, fatty acids, functional groups, gemstones, hormones, isotopes, lab techniques, Nobel laureates, organic reagents, pH indicators, plastics, rocks, solvents and sugars. A playtest game now deals 7 of the 25 at random: never two from one family, at most 3 of one subject and 2 specialist prompts, and "Play again" deals 7 not in the last game. Chemists waits for Marie Curie, whose Wikipedia title stopped resolving on Wikidata that day; extras can now be given by Wikidata id (`Q7186`), which survives renames.
+
+**Known effect.** 12 of the 25 are "chemistry", and the 3-per-subject rule means each chemistry prompt is dealt in about 24% of games against about 32% for the rest (a simulation of 20,000 deals). The discipline slots planned for the daily game (organic, inorganic, physical and so on) will replace the subject rule and even this out.
+
 ## Known limitations
 
 - The weights, `TARGET_TOP_SHARE`, the tier cut-offs and `CURRICULUM_BOOST_SD` are tuned by eye on one prompt, and remain guesses until real recall data exists.

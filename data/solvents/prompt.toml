@@ -1,10 +1,10 @@
 # Settings for this prompt. The folder name ("solvents") is its id.
-# A draft from the ready-to-pick list (DECISIONS.md, 43): probe it, build it,
-# review it, then set status = "ready". Field reference: README.md, "Prompt settings".
+# From the ready-to-pick list (DECISIONS.md, 43). Built, cleaned up and put in
+# the bank on 20 November 2026. Field reference: README.md, "Prompt settings".
 
 text = "Name a solvent"
 label = "Solvents"
-status = "draft"
+status = "ready"
 subject = "chemistry"
 audience = "school"
 colour = "#1F6F8B"

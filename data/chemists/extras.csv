@@ -6,3 +6,6 @@ Pierre Curie,person
 # Also changes the extras lookup, so the empty result saved on 20 November
 # is fetched again.
 Jöns Jacob Berzelius,person
+# Marie Curie by her Wikidata id: her title stopped resolving on 20 November
+# (build_prompt.py, ITEMS_QUERY).
+Q7186,person
